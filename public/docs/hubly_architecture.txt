@@ -1,0 +1,27 @@
+mon-projet/
+├── public/                 # Assets statiques (Logos, Images, Favicon)
+├── src/
+│   ├── app/                # ROUTAGE & PAGES (Next.js App Router)
+│   │   ├── api/            # --- BACKEND : Routes API (ex: /api/users) ---
+│   │   │   ├── auth/       # Authentification (Login/Register)
+│   │   │   └── users/      # Gestion des utilisateurs
+│   │   ├── (auth)/         # Groupe de routes (sans préfixe URL) pour Login/Signup
+│   │   ├── (dashboard)/    # Groupe de routes pour l'app principale
+│   │   ├── sandbox/        # Votre "Laboratoire" pour tester les composants 🧪
+│   │   │   └── page.tsx    
+│   │   ├── globals.css     # Variables CSS & Design Tokens (Dark/Light)
+│   │   └── layout.tsx      # Layout racine (Providers, Polices)
+│   ├── components/         # COMPOSANTS
+│   │   ├── ui/             # Composants "Atomes" (Bouton, Input, Badge)
+│   │   ├── modules/        # Composants complexes (Navbar, LoginForm, Cards)
+│   │   └── layouts/        # Structures de page (BottomNav, Sidebar)
+│   ├── hooks/              # LOGIQUE D'INTERFACE (useAuth, useForm, useTheme)
+│   ├── lib/                # OUTILS & CONFIG (Connexion MongoDB, utils Tailwind)
+│   │   ├── mongodb.ts      # Client de connexion à la base de données
+│   │   └── utils.ts        # Fonctions d'aide (ex: fusion de classes CSS)
+│   ├── models/             # MODÈLES DE DONNÉES (Schémas Mongoose/MongoDB)
+│   ├── services/           # LOGIQUE DE DONNÉES (Appels API fetch/axios)
+│   └── types/              # DÉFINITIONS TYPESCRIPT (Interfaces User, Product)
+├── tailwind.config.ts      # Configuration des thèmes et couleurs
+├── next.config.mjs         # Configuration Next.js (allowedDevOrigins)
+└── package.json            # Dépendances (lucide-react, mongoose, etc.)
