@@ -7,7 +7,7 @@ mon-projet/
 │   │   │   └── users/      # Gestion des utilisateurs
 │   │   ├── (auth)/         # Groupe de routes (sans préfixe URL) pour Login/Signup
 │   │   ├── (dashboard)/    # Groupe de routes pour l'app principale
-│   │   ├── sandbox/        # Votre "Laboratoire" pour tester les composants 🧪
+│   │   ├── sandbox/        # Votre "Laboratoire" pour tester les composants
 │   │   │   └── page.tsx    
 │   │   ├── globals.css     # Variables CSS & Design Tokens (Dark/Light)
 │   │   └── layout.tsx      # Layout racine (Providers, Polices)

@@ -1,0 +1,17 @@
+@layer components {
+  /* TEXT  */
+  .p-small {
+    @apply font-secondary font-normal text-[14px];
+  }
+  .caption {
+    @apply font-secondary font-medium text-[12px];
+  }
+  /* POSITION  */
+  .centerChild {
+    @apply flex items-center justify-center;
+  }
+  /* COMPONENTS  */
+  .iconBox {
+    @apply h-6 w-6;
+  }
+}
