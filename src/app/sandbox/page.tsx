@@ -1,7 +1,8 @@
 // COMPONENTS
-// BUTTONS
+// BADGES
 import IconBadge from "@/components/ui/badges/IconBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
+// BUTTONS
 import GoToBtn from "@/components/ui/buttons/GoToBtn";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import NavBtn from "@/components/ui/buttons/NavBtn";
@@ -32,10 +33,14 @@ import SearchIcon from "@/components/ui/icons/SearchIcon";
 import SunIcon from "@/components/ui/icons/SunIcon";
 import UserIcon from "@/components/ui/icons/UserIcon";
 import VideoGameIcon from "@/components/ui/icons/VideoGameIcon";
+// INPUTS
+import CheckboxInput from "@/components/ui/inputs/CheckboxInput";
+import FormInput from "@/components/ui/inputs/FormInput";
+import SearchInput from "@/components/ui/inputs/SearchInput";
 
 function page() {
   return (
-    <div className="px-12 py-6 flex flex-col gap-6">
+    <div className="bg-[#3a5b82] px-12 py-6 flex flex-col gap-6">
       <h1 className="text-center">Sandbox</h1>
       <div className="flex flex-col gap-6">
         <div className="border-b-2 border-b-gray-400">
@@ -73,10 +78,10 @@ function page() {
           <h2>Buttons</h2>
         </div>
         <div className="flex items-center gap-6">
-          <PillBtn label="Ajouter un élément" />
-          <RoundBtn icon="moon" variant="base" />
-          <NavBtn label="Home" icon="home" variant="base" />
-          <GoToBtn label="Retour" />
+          <PillBtn type="button" label="Ajouter un élément" />
+          <RoundBtn type="button" icon="moon" variant="base" />
+          <NavBtn type="button" label="Home" icon="home" variant="base" />
+          <GoToBtn type="button" label="Retour" />
           <LinkBtn link="/" label="Inscrivez-vous" />
         </div>
       </div>
@@ -87,6 +92,21 @@ function page() {
         <div className="flex items-center gap-6">
           <IconBadge icon="camera" />
           <InfoBadge icon="book" label="Livres" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <div className="border-b-2 border-b-gray-400">
+          <h2>Inputs</h2>
+        </div>
+        <div className="flex items-center gap-6">
+          <FormInput
+            iconLeft="mail"
+            type="email"
+            placeholder="Mot de passe"
+            iconRight="eye"
+          />
+          <SearchInput />
+          <CheckboxInput label="Par statut" />
         </div>
       </div>
     </div>

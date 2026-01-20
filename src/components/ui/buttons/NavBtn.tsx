@@ -19,15 +19,20 @@ const NAV_BTN_ICONS = {
 type NavBtnIcon = keyof typeof NAV_BTN_ICONS;
 
 type NavBtn = ComponentPropsWithoutRef<"button"> & {
+  type: "button";
   label: string;
   icon: NavBtnIcon;
   variant: "base" | "accent";
 };
 
-function NavBtn({ label, icon, variant = "base", ...rest }: NavBtn) {
+function NavBtn({ type, label, icon, variant = "base", ...rest }: NavBtn) {
   const Icon = NAV_BTN_ICONS[icon];
   return (
-    <button {...rest} className={`navBtn ${variant} ${rest.className ?? ""} `}>
+    <button
+      type={type}
+      {...rest}
+      className={`navBtn ${variant} ${rest.className ?? ""} `}
+    >
       <Icon />
       {label}
     </button>

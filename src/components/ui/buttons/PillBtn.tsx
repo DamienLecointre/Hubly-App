@@ -1,9 +1,14 @@
 type Props = {
+  type: "button";
   label: string;
 };
 
-function PillBtn({ label }: Props) {
-  return <button className="pillBtn">{label}</button>;
+function PillBtn({ type, label }: Props) {
+  return (
+    <button type={type} className="pillBtn">
+      {label}
+    </button>
+  );
 }
 
 export default PillBtn;

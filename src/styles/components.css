@@ -19,10 +19,10 @@
   }
   /* Buttons  */
   .pillBtn {
-    @apply font-secondary font-semibold text-base text-primary-btn tracking-wider bg-bg-primary-btn rounded-4xl px-[24] py-[16] cursor-pointer;
+    @apply font-secondary font-semibold text-base text-primary-btn tracking-wider bg-bg-primary-btn rounded-4xl px-6 py-4 cursor-pointer;
   }
   .roundBtn {
-    @apply h-fit w-fit border rounded-4xl p-[8] cursor-pointer;
+    @apply h-fit w-fit border rounded-4xl p-2 cursor-pointer;
   }
   .roundBtn.base {
     @apply bg-bg-secondary-btn border border-border-secondary-btn text-primary-icon;
@@ -37,6 +37,6 @@
     @apply text-secondary-btn cursor-pointer;
   }
   .navBtn.accent {
-    @apply h-[50] w-[50] bg-bg-primary-btn text-primary-btn rounded-lg p-[8];
+    @apply h-12.5 w-12.5 bg-bg-primary-btn text-primary-btn rounded-lg p-2;
   }
 }

@@ -24,8 +24,10 @@
   /* Inputs  */
   --bg-input: #12335c;
   --bg-focus: #2e5a8d;
+  --color-primary-input: #94a3b8;
   --color-border-input: #94a3b8;
   --color-border-focus: #f8fafc;
+  --color-checked: #c69344;
   /* --color-border-warning:#F8FAFC; */
   /* --color-border-valid:#F8FAFC; */
   --color-placeholder: #94a3b8;
@@ -71,8 +73,10 @@
   /* Inputs  */
   --bg-input: #cec4b5;
   --bg-focus: #97846c;
+  --color-primary-input: #7a6a56;
   --color-border-input: #42392e;
   --color-border-focus: #f5f2ed;
+  --color-checked: #bd8c5a;
   /* --color-border-warning:#F8FAFC; */
   /* --color-border-valid:#F8FAFC; */
   --color-placeholder: #7a6a56;
@@ -102,9 +106,11 @@
   /* Inputs  */
   --color-bg-input: var(--bg-input);
   --color-bg-focus: var(--bg-focus);
+  --color-primary-input: var(--color-primary-input);
   --color-border-input: var(--color-border-input);
   --color-border-focus: var(--color-border-focus);
   --color-placeholder: var(--color-placeholder);
+  --color-checked: var(--color-checked);
   /* Spacing  */
   --spacing-xs: var(--spacing-xs);
   --spacing-sm: var(--spacing-sm);

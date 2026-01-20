@@ -17,14 +17,19 @@ const ROUND_BTN_ICONS = {
 type RoundBtnIcon = keyof typeof ROUND_BTN_ICONS;
 
 type RoundBtnProps = ComponentPropsWithoutRef<"button"> & {
+  type: "button" | "submit";
   icon: RoundBtnIcon;
   variant?: "base" | "accent";
 };
 
-function RoundBtn({ icon, variant = "base", ...rest }: RoundBtnProps) {
+function RoundBtn({ type, icon, variant = "base", ...rest }: RoundBtnProps) {
   const Icon = ROUND_BTN_ICONS[icon];
   return (
-    <button {...rest} className={`roundBtn ${variant} ${rest.className ?? ""}`}>
+    <button
+      type={type}
+      {...rest}
+      className={`roundBtn ${variant} ${rest.className ?? ""}`}
+    >
       <Icon />
     </button>
   );
