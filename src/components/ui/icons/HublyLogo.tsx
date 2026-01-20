@@ -1,6 +1,11 @@
-function HublyLogo() {
+type HublyLogoProps = {
+  height: string;
+  width: string;
+};
+
+function HublyLogo({ height, width }: HublyLogoProps) {
   return (
-    <div className="iconBox centerChild">
+    <div className={`${height} ${width} centerChild`}>
       <svg
         id="Calque_1"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,10 @@
 // COMPONENTS
+// LAYOUTS
+import HublyLogo from "@/components/ui/icons/HublyLogo";
+import Footer from "@/components/layouts/footer/Footer";
+import Navbar from "@/components/layouts/navbar/Navbar";
 // BADGES
+import Header from "@/components/layouts/header/Header";
 import IconBadge from "@/components/ui/badges/IconBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 // BUTTONS
@@ -23,7 +28,6 @@ import FilterIcon from "@/components/ui/icons/FilterIcon";
 import GroupIcon from "@/components/ui/icons/GroupIcon";
 import HeartIcon from "@/components/ui/icons/HeartIcon";
 import HomeIcon from "@/components/ui/icons/HomeIcon";
-import HublyLogo from "@/components/ui/icons/HublyLogo";
 import LockIcon from "@/components/ui/icons/LockIcon";
 import MailIcon from "@/components/ui/icons/MailIcon";
 import MoonIcon from "@/components/ui/icons/MoonIcon";
@@ -33,6 +37,7 @@ import SearchIcon from "@/components/ui/icons/SearchIcon";
 import SunIcon from "@/components/ui/icons/SunIcon";
 import UserIcon from "@/components/ui/icons/UserIcon";
 import VideoGameIcon from "@/components/ui/icons/VideoGameIcon";
+import Copyright from "@/components/ui/icons/Copyright";
 // INPUTS
 import CheckboxInput from "@/components/ui/inputs/CheckboxInput";
 import FormInput from "@/components/ui/inputs/FormInput";
@@ -47,7 +52,7 @@ function page() {
           <h2>Icons</h2>
         </div>
         <div className="flex gap-2">
-          <HublyLogo />
+          <HublyLogo height="h-6" width="w-6" />
           <FilterIcon />
           <MailIcon />
           <LockIcon />
@@ -71,6 +76,7 @@ function page() {
           <PencilIcon />
           <CameraIcon />
           <ChevronIcon />
+          <Copyright />
         </div>
       </div>
       <div className="flex flex-col gap-6">
@@ -80,7 +86,7 @@ function page() {
         <div className="flex items-center gap-6">
           <PillBtn type="button" label="Ajouter un élément" />
           <RoundBtn type="button" icon="moon" variant="base" />
-          <NavBtn type="button" label="Home" icon="home" variant="base" />
+          <NavBtn href="/" label="Home" icon="home" variant="base" />
           <GoToBtn type="button" label="Retour" />
           <LinkBtn link="/" label="Inscrivez-vous" />
         </div>
@@ -107,6 +113,16 @@ function page() {
           />
           <SearchInput />
           <CheckboxInput label="Par statut" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <div className="border-b-2 border-b-gray-400">
+          <h2>Layouts</h2>
+        </div>
+        <div className="flex items-center gap-6">
+          <Header />
+          <Footer />
+          <Navbar />
         </div>
       </div>
     </div>

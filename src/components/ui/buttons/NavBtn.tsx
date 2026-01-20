@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from "react";
+import Link from "next/link";
 // ICONS
 import {
   HomeIcon,
@@ -18,24 +18,32 @@ const NAV_BTN_ICONS = {
 
 type NavBtnIcon = keyof typeof NAV_BTN_ICONS;
 
-type NavBtn = ComponentPropsWithoutRef<"button"> & {
-  type: "button";
+type NavBtnProps = {
+  href: string;
   label: string;
   icon: NavBtnIcon;
-  variant: "base" | "accent";
+  variant?: "base" | "accent";
+  className?: string;
 };
 
-function NavBtn({ type, label, icon, variant = "base", ...rest }: NavBtn) {
+function NavBtn({
+  href,
+  label,
+  icon,
+  variant = "base",
+  className,
+  ...rest
+}: NavBtnProps) {
   const Icon = NAV_BTN_ICONS[icon];
   return (
-    <button
-      type={type}
+    <Link
+      href={href}
+      className={`navBtn ${variant} ${className ?? ""}`}
       {...rest}
-      className={`navBtn ${variant} ${rest.className ?? ""} `}
     >
       <Icon />
       {label}
-    </button>
+    </Link>
   );
 }
 

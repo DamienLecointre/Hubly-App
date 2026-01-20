@@ -3,6 +3,10 @@
 :root {
   /* General  */
   --background: #072242;
+  /* Cards  */
+  --bg-card: #12335c;
+  /* --bg-gradient-card: #12335C; */
+  --border-card: #475569;
   /* Text  */
   --font-primary: "Playfair Display", serif;
   --font-secondary: "Plus Jakarta Sans", sans-serif;
@@ -31,6 +35,9 @@
   /* --color-border-warning:#F8FAFC; */
   /* --color-border-valid:#F8FAFC; */
   --color-placeholder: #94a3b8;
+  /* Shadow  */
+  --shadow-color: #041529;
+  --shadow-top: 0 -10px 60px 10px var(--shadow-color);
   /* Spacing  */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -54,6 +61,10 @@
 .light {
   /* General  */
   --background: #f0ebe0;
+  /* Cards  */
+  --bg-card: #cec4b5;
+  /* --bg-gradient-card: #12335C; */
+  --border-card: #5d5141;
   /* Text  */
   --color-primary: #42392e;
   --color-secondary: #97846c;
@@ -80,11 +91,17 @@
   /* --color-border-warning:#F8FAFC; */
   /* --color-border-valid:#F8FAFC; */
   --color-placeholder: #7a6a56;
+  /* Shadow  */
+  --shadow-color: #402e1e4d;
+  --shadow-top: 0 -10px 60px 10px var(--shadow-color);
 }
 
 @theme inline {
   /* General  */
   --color-background: var(--background);
+  /* Cards  */
+  --color-card-background: var(--bg-card);
+  --color-card-border: var(--border-card);
   /* Text  */
   --font-primary: var(--font-primary);
   --font-secondary: var(--font-secondary);
@@ -111,6 +128,9 @@
   --color-border-focus: var(--color-border-focus);
   --color-placeholder: var(--color-placeholder);
   --color-checked: var(--color-checked);
+  /* Shadow  */
+  --color-shadow-color: var(--shadow-color);
+  --shadow-top: var(--shadow-top);
   /* Spacing  */
   --spacing-xs: var(--spacing-xs);
   --spacing-sm: var(--spacing-sm);
