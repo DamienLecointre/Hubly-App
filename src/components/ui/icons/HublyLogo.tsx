@@ -10,8 +10,8 @@ function HublyLogo() {
           points="10 .29 .25 5.92 .25 17.18 10 22.81 19.75 17.18 19.75 5.92 10 .29"
           fill="none"
           stroke="#e5a13b"
-          stroke-miterlimit="10"
-          stroke-width=".5"
+          strokeMiterlimit="10"
+          strokeWidth=".5"
         />
         <g id="_x3C_Répétition_radiale_x3E_">
           <ellipse
@@ -21,8 +21,8 @@ function HublyLogo() {
             ry="2.47"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="10" cy="18.4" r=".75" fill="#e5a13b" />
           <rect
@@ -33,8 +33,8 @@ function HublyLogo() {
             transform="translate(20 34.52) rotate(180)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
         <g id="_x3C_Répétition_radiale_x3E_-2">
@@ -46,8 +46,8 @@ function HublyLogo() {
             transform="translate(-7.23 9.63) rotate(-45)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="5.16" cy="16.4" r=".75" fill="#e5a13b" />
           <rect
@@ -58,8 +58,8 @@ function HublyLogo() {
             transform="translate(-.84 30.83) rotate(-135)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
         <g id="_x3C_Répétition_radiale_x3E_-3">
@@ -70,8 +70,8 @@ function HublyLogo() {
             ry=".51"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="3.15" cy="11.55" r=".75" fill="#e5a13b" />
           <rect
@@ -82,8 +82,8 @@ function HublyLogo() {
             transform="translate(-7.26 15.84) rotate(-90)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
         <g id="_x3C_Répétition_radiale_x3E_-4">
@@ -95,8 +95,8 @@ function HublyLogo() {
             transform="translate(-4.41 8.46) rotate(-45)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="5.16" cy="6.7" r=".75" fill="#e5a13b" />
           <rect
@@ -107,8 +107,8 @@ function HublyLogo() {
             transform="translate(-3.56 6.42) rotate(-45)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
         <g id="_x3C_Répétition_radiale_x3E_-5">
@@ -119,8 +119,8 @@ function HublyLogo() {
             ry="2.47"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="10" cy="4.7" r=".75" fill="#e5a13b" />
           <rect
@@ -130,8 +130,8 @@ function HublyLogo() {
             height=".69"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
         <g id="_x3C_Répétition_radiale_x3E_-6">
@@ -143,8 +143,8 @@ function HublyLogo() {
             transform="translate(-3.24 11.28) rotate(-45)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="14.85" cy="6.7" r=".75" fill="#e5a13b" />
           <rect
@@ -155,8 +155,8 @@ function HublyLogo() {
             transform="translate(9.42 -7.73) rotate(45)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
         <g id="_x3C_Répétition_radiale_x3E_-7">
@@ -167,8 +167,8 @@ function HublyLogo() {
             ry=".51"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="16.86" cy="11.55" r=".75" fill="#e5a13b" />
           <rect
@@ -179,8 +179,8 @@ function HublyLogo() {
             transform="translate(27.26 -4.16) rotate(90)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
         <g id="_x3C_Répétition_radiale_x3E_-8">
@@ -192,8 +192,8 @@ function HublyLogo() {
             transform="translate(-6.06 12.45) rotate(-45)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
           <circle cx="14.85" cy="16.4" r=".75" fill="#e5a13b" />
           <rect
@@ -204,8 +204,8 @@ function HublyLogo() {
             transform="translate(34.99 16.68) rotate(135)"
             fill="none"
             stroke="#e5a13b"
-            stroke-miterlimit="10"
-            stroke-width=".25"
+            strokeMiterlimit="10"
+            strokeWidth=".25"
           />
         </g>
       </svg>

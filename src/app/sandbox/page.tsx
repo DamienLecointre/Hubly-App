@@ -1,5 +1,7 @@
 // COMPONENTS
 // BUTTONS
+import IconBadge from "@/components/ui/badges/IconBadge";
+import InfoBadge from "@/components/ui/badges/InfoBadge";
 import GoToBtn from "@/components/ui/buttons/GoToBtn";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import NavBtn from "@/components/ui/buttons/NavBtn";
@@ -76,6 +78,15 @@ function page() {
           <NavBtn label="Home" icon="home" variant="base" />
           <GoToBtn label="Retour" />
           <LinkBtn link="/" label="Inscrivez-vous" />
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <div className="border-b-2 border-b-gray-400">
+          <h2>Badges</h2>
+        </div>
+        <div className="flex items-center gap-6">
+          <IconBadge icon="camera" />
+          <InfoBadge icon="book" label="Livres" />
         </div>
       </div>
     </div>

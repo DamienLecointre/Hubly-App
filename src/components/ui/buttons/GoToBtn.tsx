@@ -6,7 +6,7 @@ type GoToBtnProps = {
 
 function GoToBtn({ label }: GoToBtnProps) {
   return (
-    <button className="flex justify-center items-center gap-[8] text-secondary-btn p-small cursor-pointer">
+    <button className="centerChild gap-[8] text-secondary-btn p-small cursor-pointer">
       <ArrowIcon />
       {label}
     </button>
