@@ -15,6 +15,6 @@
     @apply font-secondary font-normal text-[16px];
   }
   svg {
-    @apply stroke-primary-icon stroke-2;
+    @apply stroke-2;
   }
 }

@@ -6,8 +6,8 @@ function BinIcon() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path d="M10 11v6" />
         <path d="M14 11v6" />

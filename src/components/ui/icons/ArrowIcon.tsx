@@ -6,8 +6,8 @@ function ArrowIcon() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path d="M6 8L2 12L6 16" />
         <path d="M2 12H22" />

@@ -6,12 +6,37 @@
   .caption {
     @apply font-secondary font-medium text-[12px];
   }
+
   /* POSITION  */
   .centerChild {
     @apply flex items-center justify-center;
   }
+
   /* COMPONENTS  */
+  /* Icones  */
   .iconBox {
     @apply h-6 w-6;
+  }
+  /* Buttons  */
+  .pillBtn {
+    @apply font-secondary font-semibold text-base text-primary-btn tracking-wider bg-bg-primary-btn rounded-4xl px-[24] py-[16] cursor-pointer;
+  }
+  .roundBtn {
+    @apply h-fit w-fit border rounded-4xl p-[8] cursor-pointer;
+  }
+  .roundBtn.base {
+    @apply bg-bg-secondary-btn border border-border-secondary-btn text-primary-icon;
+  }
+  .roundBtn.accent {
+    @apply bg-bg-primary-btn border-border-accent-btn text-secondary-icon;
+  }
+  .navBtn {
+    @apply flex flex-col justify-center items-center font-secondary font-medium text-[12px] cursor-pointer;
+  }
+  .navBtn.base {
+    @apply text-secondary-btn cursor-pointer;
+  }
+  .navBtn.accent {
+    @apply h-[50] w-[50] bg-bg-primary-btn text-primary-btn rounded-lg p-[8];
   }
 }

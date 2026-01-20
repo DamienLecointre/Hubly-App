@@ -6,8 +6,8 @@ function LockIcon() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <circle cx="12" cy="16" r="1" />
         <rect x="3" y="10" width="18" height="12" rx="2" />

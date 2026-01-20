@@ -6,8 +6,8 @@ function VideoGameIcon() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <line x1="6" x2="10" y1="11" y2="11" />
         <line x1="8" x2="8" y1="9" y2="13" />

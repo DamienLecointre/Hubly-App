@@ -6,8 +6,8 @@ function DiskIcon() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <circle cx="12" cy="12" r="10" />
         <path d="M6 12c0-1.7.7-3.2 1.8-4.2" />
