@@ -41,7 +41,7 @@ function FormInput({ iconLeft, type, placeholder, iconRight }: FormInputProps) {
   const IconRight = FORM_INPUT_RIGHT_ICONS[iconRight];
 
   return (
-    <div className="flex items-center font-secondary font-normal text-[16px] bg-bg-input text-primary-input p-4 border border-border-input rounded-2xl placeholder:text-primary-input focus-within:ring-2 focus-within:ring-border-focus">
+    <div className="centerBetween font-secondary font-normal text-[16px] bg-bg-input text-primary-input p-4 border border-border-input rounded-2xl placeholder:text-primary-input focus-within:ring-2 focus-within:ring-border-focus">
       <div className="flex items-center gap-4">
         <IconLeft />
         <input

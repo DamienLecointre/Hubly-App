@@ -48,6 +48,8 @@ import CheckboxInput from "@/components/ui/inputs/CheckboxInput";
 import FormInput from "@/components/ui/inputs/FormInput";
 import SearchInput from "@/components/ui/inputs/SearchInput";
 import SortMenu from "@/components/modules/submenus/SortMenu";
+import LoginForm from "@/components/modules/forms/LoginForm";
+import SignupForm from "@/components/modules/forms/SignupForm";
 
 function page() {
   return (
@@ -157,6 +159,8 @@ function page() {
           <h2>Modules</h2>
         </div>
         <div className="flex-1 items-center gap-6">
+          <LoginForm />
+          <SignupForm />
           <FilterMenu />
           <SortMenu />
         </div>
