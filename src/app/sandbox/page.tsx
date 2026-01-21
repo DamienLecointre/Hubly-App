@@ -1,10 +1,12 @@
 // COMPONENTS
 // LAYOUTS
-import HublyLogo from "@/components/ui/icons/HublyLogo";
+import Header from "@/components/layouts/header/Header";
+import BrandHeader from "@/components/layouts/header/BrandHeader";
+import SectionHeader from "@/components/layouts/header/SectionHeader";
+import CollectionHeader from "@/components/layouts/header/CollectionHeader";
 import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar/Navbar";
 // BADGES
-import Header from "@/components/layouts/header/Header";
 import IconBadge from "@/components/ui/badges/IconBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 // BUTTONS
@@ -14,6 +16,7 @@ import NavBtn from "@/components/ui/buttons/NavBtn";
 import PillBtn from "@/components/ui/buttons/PillBtn";
 import RoundBtn from "@/components/ui/buttons/RoundBtn";
 // ICONS
+import HublyLogo from "@/components/ui/icons/HublyLogo";
 import ArrowIcon from "@/components/ui/icons/ArrowIcon";
 import BinIcon from "@/components/ui/icons/BinIcon";
 import BoardGameIcon from "@/components/ui/icons/BoardGameIcon";
@@ -45,8 +48,26 @@ import SearchInput from "@/components/ui/inputs/SearchInput";
 
 function page() {
   return (
-    <div className="bg-[#3a5b82] px-12 py-6 flex flex-col gap-6">
+    <div className="bg-[#3a5b82] px-12 pt-6 pb-45 flex flex-col gap-6">
       <h1 className="text-center">Sandbox</h1>
+      <div className="flex flex-col gap-6">
+        <div className="border-b-2 border-b-gray-400">
+          <h2>Texts</h2>
+        </div>
+        <div className="flex flex-col items-center gap-6">
+          <h1>To get started, edit the page.tsx file.</h1>
+          <h2>To get started, edit the page.tsx file.</h2>
+          <h3>To get started, edit the page.tsx file.</h3>
+          <h4>To get started, edit the page.tsx file.</h4>
+          <p>Looking for a starting point or more instructions? Head over to</p>
+          <p className="p-small">
+            Looking for a starting point or more instructions? Head over to
+          </p>
+          <p className="caption">
+            Looking for a starting point or more instructions? Head over to
+          </p>
+        </div>
+      </div>
       <div className="flex flex-col gap-6">
         <div className="border-b-2 border-b-gray-400">
           <h2>Icons</h2>
@@ -84,7 +105,7 @@ function page() {
           <h2>Buttons</h2>
         </div>
         <div className="flex items-center gap-6">
-          <PillBtn type="button" label="Ajouter un élément" />
+          <PillBtn type="button" label="Ajouter un élément" variant="bgfull" />
           <RoundBtn type="button" icon="moon" variant="base" />
           <NavBtn href="/" label="Home" icon="home" variant="base" />
           <GoToBtn type="button" label="Retour" />
@@ -119,8 +140,11 @@ function page() {
         <div className="border-b-2 border-b-gray-400">
           <h2>Layouts</h2>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex-1 items-center gap-6">
+          <BrandHeader />
           <Header />
+          <SectionHeader />
+          <CollectionHeader />
           <Footer />
           <Navbar />
         </div>

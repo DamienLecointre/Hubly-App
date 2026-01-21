@@ -10,21 +10,21 @@ const buttonTypes = [
   },
   {
     id: "button2",
-    href: "/likes",
+    href: "/favoris",
     label: "Likes",
     icon: "heart",
     variant: "base",
   },
   {
     id: "button3",
-    href: "/add",
+    href: "/ajouter_collection",
     label: "Add",
     icon: "plus",
     variant: "accent",
   },
   {
     id: "button4",
-    href: "/search",
+    href: "/recherche",
     label: "Search",
     icon: "search",
     variant: "base",
@@ -40,12 +40,11 @@ const buttonTypes = [
 
 function Navbar() {
   return (
-    <nav className="max-h-21.25 w-auto flex items-center bg-card-background border-t border-t-card-border px-6 py-4 shadow-top">
+    <nav className="fixed max-h-21.25 flex items-center justify-between bg-card-background border-t border-b border-t-card-border border-b-card-border px-6 py-4 shadow-top bottom-0 left-0 right-0">
       {buttonTypes.map((data) => (
         <NavBtn
           key={data.id}
           href={data.href}
-          type="button"
           label={data.label}
           icon={data.icon}
           variant={data.variant}

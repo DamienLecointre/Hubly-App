@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 // ICONS
 import {
   HomeIcon,
@@ -35,10 +38,13 @@ function NavBtn({
   ...rest
 }: NavBtnProps) {
   const Icon = NAV_BTN_ICONS[icon];
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
   return (
     <Link
       href={href}
-      className={`navBtn ${variant} ${className ?? ""}`}
+      className={`navBtn ${variant} ${className ?? ""} ${isActive && href !== "/ajouter_collection" ? "activeLink" : ""} `}
       {...rest}
     >
       <Icon />

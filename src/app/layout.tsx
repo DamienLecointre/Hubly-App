@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/layouts/navbar/Navbar";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-font-primary",
@@ -25,9 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfairDisplay.variable} ${plusJakarta.variable} antialiased`}
+        className={`bg-background ${playfairDisplay.variable} ${plusJakarta.variable} antialiased`}
       >
         {children}
+        <Navbar />
       </body>
     </html>
   );

@@ -21,6 +21,12 @@
   .pillBtn {
     @apply font-secondary font-semibold text-base text-primary-btn tracking-wider bg-bg-primary-btn rounded-4xl px-6 py-4 cursor-pointer;
   }
+  .pillBtn.bgfull {
+    @apply text-primary-btn bg-bg-primary-btn;
+  }
+  .pillBtn.bgempty {
+    @apply bg-transparent text-secondary-btn border border-border-secondary-btn px-4 py-2;
+  }
   .roundBtn {
     @apply h-fit w-fit border rounded-4xl p-2 cursor-pointer;
   }
@@ -38,5 +44,8 @@
   }
   .navBtn.accent {
     @apply h-12.5 w-12.5 bg-bg-primary-btn text-primary-btn rounded-lg p-2;
+  }
+  .navBtn.activeLink {
+    @apply text-accent-btn;
   }
 }

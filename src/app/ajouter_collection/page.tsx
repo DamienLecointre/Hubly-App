@@ -1,0 +1,11 @@
+import React from "react";
+
+function page() {
+  return (
+    <div>
+      <h2 className="text-white">New collection</h2>
+    </div>
+  );
+}
+
+export default page;
