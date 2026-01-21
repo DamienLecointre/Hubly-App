@@ -7,9 +7,17 @@
     @apply font-secondary font-medium text-[12px];
   }
 
+  /* SPACES  */
+  .suroudedSpace_X16_Y24 {
+    @apply px-6 py-4;
+  }
+
   /* POSITION  */
   .centerChild {
     @apply flex items-center justify-center;
+  }
+  .centerBetween {
+    @apply flex items-center justify-between;
   }
 
   /* COMPONENTS  */
@@ -47,5 +55,18 @@
   }
   .navBtn.activeLink {
     @apply text-accent-btn;
+  }
+  /* Badges  */
+  .infobadge {
+    @apply flex items-center text-secondary-btn text-nowrap  rounded-full border border-border-secondary-btn px-6 py-2 gap-2;
+  }
+  .infobadge.base {
+    @apply bg-bg-secondary-btn;
+  }
+  .infobadge.bgempty {
+    @apply bg-transparent;
+  }
+  .infobadge.active {
+    @apply bg-bg-primary-btn;
   }
 }

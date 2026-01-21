@@ -39,6 +39,7 @@
   --shadow-color: #041529;
   --shadow-top: 0 -10px 60px 10px var(--shadow-color);
   --shadow-bottom: 0 5px 50px 0 var(--shadow-color);
+  --shadow-bottom-xl: 0 30px 50px 0 var(--shadow-color);
   /* Spacing  */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -96,6 +97,7 @@
   --shadow-color: #402e1e4d;
   --shadow-top: 0 -10px 60px 10px var(--shadow-color);
   --shadow-bottom: 0 5px 50px 0 var(--shadow-color);
+  --shadow-bottom-xl: 0 30px 50px 0 var(--shadow-color);
 }
 
 @theme inline {
@@ -134,6 +136,7 @@
   --color-shadow-color: var(--shadow-color);
   --shadow-top: var(--shadow-top);
   --shadow-bottom: var(--shadow-bottom);
+  --shadow-bottom-xl: var(--shadow-bottom-xl);
   /* Spacing  */
   --spacing-xs: var(--spacing-xs);
   --spacing-sm: var(--spacing-sm);

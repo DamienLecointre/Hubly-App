@@ -16,6 +16,7 @@ const INFO_BADGE_ICONS = {
   boardGame: BoardGameIcon,
   filter: FilterIcon,
   group: GroupIcon,
+  empty: () => <></>,
 };
 
 type InfoBadgeIcon = keyof typeof INFO_BADGE_ICONS;
@@ -23,12 +24,13 @@ type InfoBadgeIcon = keyof typeof INFO_BADGE_ICONS;
 type InfoBadgeProps = {
   icon: InfoBadgeIcon;
   label: string;
+  variant?: "base" | "bgempty" | "active";
 };
 
-function InfoBadge({ icon, label }: InfoBadgeProps) {
+function InfoBadge({ icon, label, variant = "base" }: InfoBadgeProps) {
   const IconLeft = INFO_BADGE_ICONS[icon];
   return (
-    <div className="flex items-center text-secondary-btn bg-bg-secondary-btn rounded-full border border-border-secondary-btn px-4 py-2 gap-2">
+    <div className={`infobadge ${variant}`}>
       <IconLeft />
       <p>{label}</p>
     </div>

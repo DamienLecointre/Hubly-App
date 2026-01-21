@@ -3,7 +3,7 @@ import HublyLogo from "@/components/ui/icons/HublyLogo";
 
 function Footer() {
   return (
-    <div className="flex flex-col items-center gap-2 ">
+    <div className="flex flex-col items-center gap-2">
       <div className="flex items-center gap-2">
         <HublyLogo height="h-[18px]" width="w-[18px]" />
         <h1 className="font-primary font-medium text-[20px] text-primary">

@@ -2,7 +2,7 @@ import HublyLogo from "@/components/ui/icons/HublyLogo";
 
 function BrandHeader() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center suroudedSpace_X16_Y24">
       <HublyLogo height="h-[50px]" width="w-[50px]" />
       <div>
         <h1 className="font-primary font-semibold text-[48px] text-primary text-center tracking-wide">

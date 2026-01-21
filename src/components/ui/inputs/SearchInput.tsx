@@ -6,7 +6,7 @@ function SearchInput() {
       <div className="flex items-center gap-4">
         <SearchIcon />
         <input
-          className="outline-none"
+          className="w-full outline-none "
           type="search"
           name="search"
           placeholder="Rechercher"

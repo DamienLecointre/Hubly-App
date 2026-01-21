@@ -6,6 +6,8 @@ import SectionHeader from "@/components/layouts/header/SectionHeader";
 import CollectionHeader from "@/components/layouts/header/CollectionHeader";
 import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar/Navbar";
+// LAYOUTS
+import FilterMenu from "@/components/modules/submenus/FilterMenu";
 // BADGES
 import IconBadge from "@/components/ui/badges/IconBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
@@ -45,6 +47,7 @@ import Copyright from "@/components/ui/icons/Copyright";
 import CheckboxInput from "@/components/ui/inputs/CheckboxInput";
 import FormInput from "@/components/ui/inputs/FormInput";
 import SearchInput from "@/components/ui/inputs/SearchInput";
+import SortMenu from "@/components/modules/submenus/SortMenu";
 
 function page() {
   return (
@@ -118,7 +121,7 @@ function page() {
         </div>
         <div className="flex items-center gap-6">
           <IconBadge icon="camera" />
-          <InfoBadge icon="book" label="Livres" />
+          <InfoBadge icon="book" label="Livres" variant="base" />
         </div>
       </div>
       <div className="flex flex-col gap-6">
@@ -147,6 +150,15 @@ function page() {
           <CollectionHeader />
           <Footer />
           <Navbar />
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <div className="border-b-2 border-b-gray-400">
+          <h2>Modules</h2>
+        </div>
+        <div className="flex-1 items-center gap-6">
+          <FilterMenu />
+          <SortMenu />
         </div>
       </div>
     </div>

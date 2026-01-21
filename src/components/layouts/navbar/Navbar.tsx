@@ -40,7 +40,7 @@ const buttonTypes = [
 
 function Navbar() {
   return (
-    <nav className="fixed max-h-21.25 flex items-center justify-between bg-card-background border-t border-b border-t-card-border border-b-card-border px-6 py-4 shadow-top bottom-0 left-0 right-0">
+    <nav className="fixed h-21.25 centerBetween bg-card-background border-t border-b border-t-card-border border-b-card-border suroudedSpace_X16_Y24 shadow-top bottom-0 left-0 right-0">
       {buttonTypes.map((data) => (
         <NavBtn
           key={data.id}
