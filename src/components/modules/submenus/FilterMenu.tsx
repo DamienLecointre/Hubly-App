@@ -1,6 +1,6 @@
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 
-const filterMenuContent = [
+const filterMenuData = [
   {
     id: "filter1",
     icon: "empty",
@@ -36,7 +36,7 @@ const filterMenuContent = [
 function FilterMenu() {
   return (
     <div className="flex items-center overflow-x-auto gap-2 pt-6 ">
-      {filterMenuContent.map((data) => (
+      {filterMenuData.map((data) => (
         <InfoBadge
           key={data.id}
           icon={data.icon}

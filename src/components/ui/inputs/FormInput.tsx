@@ -7,6 +7,7 @@ import {
   UserIcon,
   PlusIcon,
   ArrowIcon,
+  PencilIcon,
 } from "@/components/ui/icons";
 
 const FORM_INPUT_LEFT_ICONS = {
@@ -23,6 +24,7 @@ const FORM_INPUT_RIGHT_ICONS = {
   mail: MailIcon,
   plus: PlusIcon,
   arrow: ArrowIcon,
+  pencil: PencilIcon,
   empty: () => <></>,
 } as const;
 

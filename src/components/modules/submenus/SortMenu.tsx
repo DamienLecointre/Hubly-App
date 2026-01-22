@@ -1,7 +1,7 @@
 import RoundBtn from "@/components/ui/buttons/RoundBtn";
 import CheckboxInput from "@/components/ui/inputs/CheckboxInput";
 
-const sortlabels = [
+const sortlabelsData = [
   {
     id: "label1",
     label: "Ordre alphabétique",
@@ -31,7 +31,7 @@ function SortMenu() {
         <p className="text-primary">Trier par :</p>
         <RoundBtn type="button" icon="cross" variant="base" />
       </div>
-      {sortlabels.map((data) => (
+      {sortlabelsData.map((data) => (
         <CheckboxInput key={data.id} label={data.label} />
       ))}
     </div>

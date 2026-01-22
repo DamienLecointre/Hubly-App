@@ -1,6 +1,6 @@
 import NavBtn from "@/components/ui/buttons/NavBtn";
 
-const buttonTypes = [
+const buttonData = [
   {
     id: "button1",
     href: "/",
@@ -41,7 +41,7 @@ const buttonTypes = [
 function Navbar() {
   return (
     <nav className="fixed h-21.25 centerBetween bg-card-background border-t border-b border-t-card-border border-b-card-border suroudedSpace_X16_Y24 shadow-top bottom-0 left-0 right-0">
-      {buttonTypes.map((data) => (
+      {buttonData.map((data) => (
         <NavBtn
           key={data.id}
           href={data.href}

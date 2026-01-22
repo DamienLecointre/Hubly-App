@@ -6,8 +6,14 @@ import SectionHeader from "@/components/layouts/header/SectionHeader";
 import CollectionHeader from "@/components/layouts/header/CollectionHeader";
 import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar/Navbar";
-// LAYOUTS
+// MODULES
 import FilterMenu from "@/components/modules/submenus/FilterMenu";
+import SortMenu from "@/components/modules/submenus/SortMenu";
+import LoginForm from "@/components/modules/forms/LoginForm";
+import SignupForm from "@/components/modules/forms/SignupForm";
+import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
+import UserDetailForm from "@/components/modules/forms/UserDetailForm";
+import UserShareForm from "@/components/modules/forms/UserShareForm";
 // BADGES
 import IconBadge from "@/components/ui/badges/IconBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
@@ -43,13 +49,12 @@ import SunIcon from "@/components/ui/icons/SunIcon";
 import UserIcon from "@/components/ui/icons/UserIcon";
 import VideoGameIcon from "@/components/ui/icons/VideoGameIcon";
 import Copyright from "@/components/ui/icons/Copyright";
+// FEEDBACK
+import PasswordRequirements from "@/components/ui/feedback/PasswordRequirements";
 // INPUTS
 import CheckboxInput from "@/components/ui/inputs/CheckboxInput";
 import FormInput from "@/components/ui/inputs/FormInput";
 import SearchInput from "@/components/ui/inputs/SearchInput";
-import SortMenu from "@/components/modules/submenus/SortMenu";
-import LoginForm from "@/components/modules/forms/LoginForm";
-import SignupForm from "@/components/modules/forms/SignupForm";
 
 function page() {
   return (
@@ -103,6 +108,14 @@ function page() {
           <CameraIcon />
           <ChevronIcon />
           <Copyright />
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <div className="border-b-2 border-b-gray-400">
+          <h2>Feedback</h2>
+        </div>
+        <div className="flex items-center gap-6">
+          <PasswordRequirements label="label" />
         </div>
       </div>
       <div className="flex flex-col gap-6">
@@ -163,6 +176,9 @@ function page() {
           <SignupForm />
           <FilterMenu />
           <SortMenu />
+          <PasswordChecker />
+          <UserDetailForm />
+          <UserShareForm />
         </div>
       </div>
     </div>
