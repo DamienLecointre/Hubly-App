@@ -88,7 +88,7 @@ function page() {
           <h2>Icons</h2>
         </div>
         <div className="flex gap-2">
-          <HublyLogo height="h-6" width="w-6" />
+          <HublyLogo height="h-6" width="w-6" rotate={false} />
           <FilterIcon />
           <MailIcon />
           <LockIcon />

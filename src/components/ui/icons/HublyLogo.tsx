@@ -1,11 +1,14 @@
 type HublyLogoProps = {
   height: string;
   width: string;
+  rotate?: boolean;
 };
 
-function HublyLogo({ height, width }: HublyLogoProps) {
+function HublyLogo({ height, width, rotate }: HublyLogoProps) {
   return (
-    <div className={`${height} ${width} centerChild`}>
+    <div
+      className={`${height} ${width} centerChild ${rotate ? "animate-spin" : ""} `}
+    >
       <svg
         id="Calque_1"
         xmlns="http://www.w3.org/2000/svg"
