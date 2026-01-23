@@ -6,17 +6,21 @@ import SectionHeader from "@/components/layouts/header/SectionHeader";
 import CollectionHeader from "@/components/layouts/header/CollectionHeader";
 import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar/Navbar";
-// MODULES
-import FilterMenu from "@/components/modules/submenus/FilterMenu";
-import SortMenu from "@/components/modules/submenus/SortMenu";
+// CARDS
+
+// FORMS
 import LoginForm from "@/components/modules/forms/LoginForm";
 import SignupForm from "@/components/modules/forms/SignupForm";
-import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
 import UserDetailForm from "@/components/modules/forms/UserDetailForm";
 import UserShareForm from "@/components/modules/forms/UserShareForm";
+// SUBMENUS
+import FilterMenu from "@/components/modules/submenus/FilterMenu";
+import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
+import SortMenu from "@/components/modules/submenus/SortMenu";
 // BADGES
 import IconBadge from "@/components/ui/badges/IconBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
+import ImgBadge from "@/components/ui/badges/ImgBadge";
 // BUTTONS
 import GoToBtn from "@/components/ui/buttons/GoToBtn";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
@@ -55,6 +59,7 @@ import PasswordRequirements from "@/components/ui/feedback/PasswordRequirements"
 import CheckboxInput from "@/components/ui/inputs/CheckboxInput";
 import FormInput from "@/components/ui/inputs/FormInput";
 import SearchInput from "@/components/ui/inputs/SearchInput";
+import CollectionCard from "@/components/modules/cards/CollectionCard";
 
 function page() {
   return (
@@ -135,6 +140,7 @@ function page() {
           <h2>Badges</h2>
         </div>
         <div className="flex items-center gap-6">
+          <ImgBadge src="" />
           <IconBadge icon="camera" />
           <InfoBadge icon="book" label="Livres" variant="base" />
         </div>
@@ -179,6 +185,7 @@ function page() {
           <PasswordChecker />
           <UserDetailForm />
           <UserShareForm />
+          <CollectionCard />
         </div>
       </div>
     </div>

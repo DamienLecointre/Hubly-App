@@ -1,4 +1,10 @@
 @layer components {
+  /* BACKGROUND  */
+  .bg-card-gradient {
+    @apply bg-gradient-to-t 
+           from-[var(--color-gradient-light)] 
+           to-[var(--color-gradient-dark)];
+  }
   /* TEXT  */
   .p-small {
     @apply font-secondary font-normal text-[14px];
@@ -10,6 +16,9 @@
   /* SPACES  */
   .suroudedSpace_X16_Y24 {
     @apply px-6 py-4;
+  }
+  .suroudedSpace_X24_YT32 {
+    @apply px-6 pt-8;
   }
 
   /* POSITION  */
@@ -27,7 +36,7 @@
   }
   /* Buttons  */
   .pillBtn {
-    @apply font-secondary font-semibold text-base text-primary-btn tracking-wider bg-bg-primary-btn rounded-4xl px-6 py-4 cursor-pointer;
+    @apply font-secondary font-semibold text-base text-primary-btn tracking-wider bg-bg-primary-btn rounded-4xl p-4 cursor-pointer;
   }
   .pillBtn.bgfull {
     @apply text-primary-btn bg-bg-primary-btn;
