@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { usePathname } from "next/navigation";
+
 import Navbar from "@/components/layouts/navbar/Navbar";
 import BrandHeader from "@/components/layouts/header/BrandHeader";
 
@@ -11,6 +13,8 @@ export default function ClientWrapper({
   children: React.ReactNode;
 }) {
   const [appReady, setAppReady] = useState(false);
+  const pathname = usePathname();
+  const hideNavbar = pathname === "/login" || pathname === "/signup";
 
   useEffect(() => {
     // const hasLoaded = sessionStorage.getItem("app_loaded");
@@ -31,14 +35,14 @@ export default function ClientWrapper({
     <>
       {!appReady && (
         <div className="h-full w-full centerChild">
-          <BrandHeader />
+          <BrandHeader location="loading" />
         </div>
       )}
 
       {appReady && (
         <>
           {children}
-          <Navbar />
+          {!hideNavbar && <Navbar />}
         </>
       )}
     </>

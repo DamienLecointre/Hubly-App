@@ -1,9 +1,19 @@
 import HublyLogo from "@/components/ui/icons/HublyLogo";
 
-function BrandHeader() {
+type BrandHeaderProps = {
+  location: "loading" | "other";
+};
+
+function BrandHeader({ location }: BrandHeaderProps) {
   return (
-    <div className="flex flex-col items-center suroudedSpace_X16_Y24 gap-4 loadedFadeOut ">
-      <HublyLogo height="h-[50px]" width="w-[50px]" rotate={true} />
+    <div
+      className={`flex flex-col items-center suroudedSpace_X16_Y24 gap-4 ${location === "loading" ? "loadedFadeOut" : ""}`}
+    >
+      <HublyLogo
+        height="h-[50px]"
+        width="w-[50px]"
+        rotate={location === "loading" ? true : false}
+      />
       <div>
         <h1 className="font-primary font-semibold text-[48px] text-primary text-center tracking-wide">
           Hubly

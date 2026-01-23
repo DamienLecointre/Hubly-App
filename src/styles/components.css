@@ -1,4 +1,6 @@
 @layer components {
+  /* GENERAL  */
+
   /* BACKGROUND  */
   .bg-card-gradient {
     @apply bg-gradient-to-t 
@@ -65,7 +67,7 @@
   .navBtn.activeLink {
     @apply text-accent-btn;
   }
-  /* BADGES  */
+  /* Badges  */
   .infobadge {
     @apply flex items-center text-secondary-btn text-nowrap  rounded-full border border-border-secondary-btn px-6 py-2 gap-2;
   }
@@ -92,7 +94,7 @@
     100% {
       opacity: 0;
       visibility: hidden;
-      transform: scale(0.8);
+      transform: scale(0.6);
     }
   }
   .loadedFadeOut {

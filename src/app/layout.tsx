@@ -29,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`h-dvh w-dvw bg-background ${playfairDisplay.variable} ${plusJakarta.variable} antialiased`}
+        className={`${playfairDisplay.variable} ${plusJakarta.variable} antialiased`}
       >
-        <ClientWrapper>{children}</ClientWrapper>
+        <div className="h-dvh w-full bg-background pb-[env(safe-area-inset-bottom)]">
+          <ClientWrapper>{children}</ClientWrapper>
+        </div>
       </body>
     </html>
   );
