@@ -22,7 +22,6 @@ import IconBadge from "@/components/ui/badges/IconBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import ImgBadge from "@/components/ui/badges/ImgBadge";
 // BUTTONS
-import GoToBtn from "@/components/ui/buttons/GoToBtn";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import NavBtn from "@/components/ui/buttons/NavBtn";
 import PillBtn from "@/components/ui/buttons/PillBtn";
@@ -131,8 +130,12 @@ function page() {
           <PillBtn type="button" label="Ajouter un élément" variant="bgfull" />
           <RoundBtn type="button" icon="moon" variant="base" />
           <NavBtn href="/" label="Home" icon="home" variant="base" />
-          <GoToBtn type="button" label="Retour" />
-          <LinkBtn link="/" label="Inscrivez-vous" />
+          <LinkBtn
+            icon="arrow"
+            link="/"
+            label="Inscrivez-vous"
+            variant="accent"
+          />
         </div>
       </div>
       <div className="flex flex-col gap-6">
@@ -165,7 +168,7 @@ function page() {
           <h2>Layouts</h2>
         </div>
         <div className="flex-1 items-center gap-6">
-          <BrandHeader />
+          <BrandHeader location="other" />
           <Header />
           <SectionHeader />
           <CollectionHeader />

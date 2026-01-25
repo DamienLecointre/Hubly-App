@@ -1,4 +1,4 @@
-import ArrowIcon from "../icons/ArrowIcon";
+import ArrowIcon from "../components/ui/icons/ArrowIcon";
 
 type GoToBtnProps = {
   type: "button";

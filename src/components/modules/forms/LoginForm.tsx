@@ -1,6 +1,6 @@
 import FormInput from "@/components/ui/inputs/FormInput";
 
-const LoginFormData = [
+const loginFormData = [
   {
     id: "loginForm1",
     iconLeft: "mail",
@@ -21,7 +21,7 @@ function LoginForm() {
   return (
     <div className="flex flex-col text-secondary gap-4 ">
       <p>Connectez vous à votre compte</p>
-      {LoginFormData.map((data) => (
+      {loginFormData.map((data) => (
         <FormInput
           key={data.id}
           iconLeft={data.iconLeft}

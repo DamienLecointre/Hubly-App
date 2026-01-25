@@ -1,5 +1,5 @@
 type Props = {
-  type: "button";
+  type: "button" | "submit";
   label: string;
   variant: "bgfull" | "bgempty";
 };
