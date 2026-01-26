@@ -27,7 +27,7 @@ function PasswordChecker() {
   return (
     <div className="flex flex-col gap-6 ">
       <p className="text-primary">Le mot de passe doit contenir au moins :</p>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
         {passwordCheckerData.map((data) => (
           <PasswordRequirements key={data.id} label={data.label} />
         ))}

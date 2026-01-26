@@ -1,7 +1,12 @@
-import { ComponentPropsWithoutRef } from "react";
+"use client";
+
+import { ComponentPropsWithoutRef, useState } from "react";
+
+import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
 
 import {
   EyeIcon,
+  EyeOffIcon,
   LockIcon,
   MailIcon,
   UserIcon,
@@ -20,6 +25,7 @@ const FORM_INPUT_LEFT_ICONS = {
 
 const FORM_INPUT_RIGHT_ICONS = {
   eye: EyeIcon,
+  eyeOff: EyeOffIcon,
   lock: LockIcon,
   mail: MailIcon,
   plus: PlusIcon,
@@ -36,24 +42,50 @@ type FormInputProps = ComponentPropsWithoutRef<"input"> & {
   type: "text" | "email" | "password";
   placeholder: string;
   iconRight: IconRight;
+  hasPasswordChecker?: boolean;
 };
 
-function FormInput({ iconLeft, type, placeholder, iconRight }: FormInputProps) {
+function FormInput({
+  iconLeft,
+  type,
+  placeholder,
+  iconRight,
+  hasPasswordChecker,
+}: FormInputProps) {
+  const [isActive, setIsActive] = useState(false);
+
   const IconLeft = FORM_INPUT_LEFT_ICONS[iconLeft];
-  const IconRight = FORM_INPUT_RIGHT_ICONS[iconRight];
+  const IconRight =
+    type === "password"
+      ? isActive
+        ? EyeOffIcon
+        : EyeIcon
+      : FORM_INPUT_RIGHT_ICONS[iconRight];
+
+  const inputType = isActive ? "text" : type;
+
+  const handleclick = () => {
+    setIsActive((prev) => !prev);
+  };
 
   return (
-    <div className="centerBetween font-secondary font-normal text-[16px] bg-bg-input text-primary-input p-4 border border-border-input rounded-2xl placeholder:text-primary-input focus-within:ring-1 focus-within:ring-border-focus">
-      <div className="flex items-center gap-4">
-        <IconLeft />
-        <input
-          className="outline-none"
-          type={type}
-          placeholder={placeholder}
-        ></input>
+    <>
+      <div className="centerBetween font-secondary font-normal text-[16px] bg-bg-input text-primary-input p-4 border border-border-input rounded-2xl placeholder:text-primary-input focus-within:ring-1 focus-within:ring-border-focus">
+        <div className="flex items-center gap-4">
+          <IconLeft />
+          <input
+            className="outline-none"
+            type={inputType}
+            placeholder={placeholder}
+          ></input>
+        </div>
+        <div onClick={handleclick}>
+          <IconRight />
+        </div>
       </div>
-      <IconRight />
-    </div>
+
+      {/* {hasPasswordChecker && <PasswordChecker />} */}
+    </>
   );
 }
 

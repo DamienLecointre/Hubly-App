@@ -4,16 +4,16 @@ import Footer from "@/components/layouts/footer/Footer";
 import PillBtn from "@/components/ui/buttons/PillBtn";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
 
-function page() {
+function Page() {
   return (
-    <div className="h-full flex flex-col">
-      <div className="h-full flex flex-col justify-between suroudedSpace_X24_YT32">
-        <form action="" className="h-full flex flex-col justify-between ">
+    <div className="flexFullHeigh w-full ">
+      <main className="flexFullHeigh suroudedSpace_X24_YT32">
+        <form className="flexFullHeigh justify-between gap-6">
           <BrandHeader location="other" />
           <LoginForm />
           <div className="flex flex-col gap-4">
             <PillBtn type="submit" label="Se connecter" variant="bgfull" />
-            <div className="centerChild gap-2 ">
+            <div className="centerChild gap-2">
               <p className="caption text-primary">Pas encore de compte ?</p>
               <LinkBtn
                 icon="empty"
@@ -24,10 +24,10 @@ function page() {
             </div>
           </div>
         </form>
-      </div>
+      </main>
       <Footer />
     </div>
   );
 }
 
-export default page;
+export default Page;

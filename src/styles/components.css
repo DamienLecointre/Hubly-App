@@ -24,6 +24,12 @@
   }
 
   /* POSITION  */
+  .flexColumn {
+    @apply flex flex-col;
+  }
+  .flexFullHeigh {
+    @apply flex flex-col flex-1;
+  }
   .centerChild {
     @apply flex items-center justify-center;
   }

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="h-[calc(100vh-82px-85px)] overflow-y-auto">
+      <main>
         <SectionHeader />
         <div className="suroudedSpace_X24_YT32">
           <CollectionCard />
@@ -16,3 +16,5 @@ export default function Home() {
     </>
   );
 }
+
+// h-[calc(100vh-82px-85px)] overflow-y-auto

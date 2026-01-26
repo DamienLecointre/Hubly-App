@@ -38,6 +38,7 @@ import ChevronIcon from "@/components/ui/icons/ChevronIcon";
 import CrossLineIcon from "@/components/ui/icons/CrossLineIcon";
 import DiskIcon from "@/components/ui/icons/DiskIcon";
 import EyeIcon from "@/components/ui/icons/EyeIcon";
+import EyeOffIcon from "@/components/ui/icons/EyeOffIcon";
 import FilterIcon from "@/components/ui/icons/FilterIcon";
 import GroupIcon from "@/components/ui/icons/GroupIcon";
 import HeartIcon from "@/components/ui/icons/HeartIcon";
@@ -92,6 +93,7 @@ function page() {
           <MailIcon />
           <LockIcon />
           <EyeIcon />
+          <EyeOffIcon />
           <UserIcon />
           <ArrowIcon />
           <HomeIcon />

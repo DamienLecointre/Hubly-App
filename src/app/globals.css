@@ -3,3 +3,8 @@
 @import "../styles/theme.css";
 @import "../styles/base.css";
 @import "../styles/components.css";
+
+/* html,
+body {
+  height: 100%;
+} */

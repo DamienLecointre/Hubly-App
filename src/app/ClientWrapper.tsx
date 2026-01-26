@@ -32,9 +32,9 @@ export default function ClientWrapper({
   }, []);
 
   return (
-    <>
+    <div className="flexFullHeigh">
       {!appReady && (
-        <div className="h-full w-full centerChild">
+        <div className="flex-1 centerChild">
           <BrandHeader location="loading" />
         </div>
       )}
@@ -45,6 +45,6 @@ export default function ClientWrapper({
           {!hideNavbar && <Navbar />}
         </>
       )}
-    </>
+    </div>
   );
 }

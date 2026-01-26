@@ -16,6 +16,7 @@ export { default as BoardGameIcon } from "./BoardGameIcon";
 export { default as FilterIcon } from "./FilterIcon";
 export { default as GroupIcon } from "./GroupIcon";
 export { default as EyeIcon } from "./EyeIcon";
+export { default as EyeOffIcon } from "./EyeOffIcon";
 export { default as LockIcon } from "./LockIcon";
 export { default as MailIcon } from "./MailIcon";
 export { default as ArrowIcon } from "./ArrowIcon";

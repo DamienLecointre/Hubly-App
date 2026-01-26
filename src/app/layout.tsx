@@ -29,12 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfairDisplay.variable} ${plusJakarta.variable} antialiased`}
+        className={`${playfairDisplay.variable} ${plusJakarta.variable} antialiased  `}
       >
-        <div className="h-dvh w-full bg-background pb-[env(safe-area-inset-bottom)]">
+        <div className=" min-h-dvh bg-background flexColumn pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
           <ClientWrapper>{children}</ClientWrapper>
         </div>
       </body>
     </html>
   );
 }
+
+// pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]

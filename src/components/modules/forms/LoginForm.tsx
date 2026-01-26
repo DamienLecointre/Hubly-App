@@ -28,6 +28,7 @@ function LoginForm() {
           type={data.type}
           placeholder={data.placeholder}
           iconRight={data.iconRight}
+          location="loginPage"
         />
       ))}
       <p className="caption text-right cursor-pointer">Mot de passe oublié ?</p>

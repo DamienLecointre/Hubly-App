@@ -7,6 +7,7 @@ const signupFormData = [
     type: "text",
     placeholder: "Nom d'utilisateur",
     iconRight: "empty",
+    hasPasswordChecker: false,
   },
   {
     id: "signupForm2",
@@ -14,6 +15,7 @@ const signupFormData = [
     type: "email",
     placeholder: "Adresse email",
     iconRight: "empty",
+    hasPasswordChecker: false,
   },
   {
     id: "signupForm3",
@@ -21,6 +23,7 @@ const signupFormData = [
     type: "password",
     placeholder: "Mot de passe",
     iconRight: "eye",
+    hasPasswordChecker: true,
   },
   {
     id: "signupForm4",
@@ -28,6 +31,7 @@ const signupFormData = [
     type: "password",
     placeholder: "Confirmez vote mot de passe",
     iconRight: "empty",
+    hasPasswordChecker: false,
   },
 ] as const;
 
@@ -44,6 +48,7 @@ function SignupForm() {
           type={data.type}
           placeholder={data.placeholder}
           iconRight={data.iconRight}
+          hasPasswordChecker={data.hasPasswordChecker}
         />
       ))}
     </div>
