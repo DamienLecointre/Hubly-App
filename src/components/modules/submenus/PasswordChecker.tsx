@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext } from "react";
+import { useContext } from "react";
 import { SignupContext } from "@/context/SignupContext";
 import { passwordCheckerData } from "@/data/PasswordCheckerData";
 import { passwordWarningStyles } from "@/lib/passwordWarningStyles";
@@ -40,24 +40,3 @@ function PasswordChecker() {
 }
 
 export default PasswordChecker;
-function PasswordStyleMapping(signupContext: {
-  isInputField: boolean;
-  emailValue: string;
-  isValidEmail: boolean;
-  passwordValue: string;
-  isPasswordValid: boolean;
-  confirmValue: string;
-  hasUppercase: boolean;
-  hasLowercase: boolean;
-  hasNumber: boolean;
-  hasSpecial: boolean;
-  errorMessage: string;
-  setErrorMessage: Dispatch<SetStateAction<string>>;
-  stateValueMapping: {
-    value: string;
-    setter: Dispatch<SetStateAction<string>>;
-    borderStyle: string;
-  }[];
-}) {
-  throw new Error("Function not implemented.");
-}
