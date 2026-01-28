@@ -1,35 +1,38 @@
+import { Dispatch, SetStateAction, useContext } from "react";
+import { SignupContext } from "@/context/SignupContext";
+import { passwordCheckerData } from "@/data/PasswordCheckerData";
+import { passwordWarningStyles } from "@/lib/passwordWarningStyles";
+
 import PasswordRequirements from "@/components/ui/feedback/PasswordRequirements";
 
-const passwordCheckerData = [
-  {
-    id: "passwordChecker1",
-    label: "12 caractères",
-  },
-  {
-    id: "passwordChecker2",
-    label: "Une lettre majuscule",
-  },
-  {
-    id: "passwordChecker3",
-    label: "Une lettre minuscule",
-  },
-  {
-    id: "passwordChecker4",
-    label: "Un chiffre",
-  },
-  {
-    id: "passwordChecker5",
-    label: "Un caractère spécial",
-  },
-];
-
 function PasswordChecker() {
+  const signupContext = useContext(SignupContext);
+  if (!signupContext) {
+    throw new Error("SignupPage must be used within a SignupProvider");
+  }
+
+  const { passwordValue, hasUppercase, hasLowercase, hasNumber, hasSpecial } =
+    signupContext;
+
+  const styleBoxMapping = passwordWarningStyles({
+    passwordValue,
+    hasUppercase,
+    hasLowercase,
+    hasNumber,
+    hasSpecial,
+  });
+
   return (
     <div className="flex flex-col gap-6 ">
       <p className="text-primary">Le mot de passe doit contenir au moins :</p>
       <div className="flex flex-col gap-4">
-        {passwordCheckerData.map((data) => (
-          <PasswordRequirements key={data.id} label={data.label} />
+        {passwordCheckerData.map((data, i) => (
+          <PasswordRequirements
+            key={data.id}
+            label={data.label}
+            boxStyle={styleBoxMapping[i].boxStyle}
+            textStyle={styleBoxMapping[i].textStyle}
+          />
         ))}
       </div>
     </div>
@@ -37,3 +40,24 @@ function PasswordChecker() {
 }
 
 export default PasswordChecker;
+function PasswordStyleMapping(signupContext: {
+  isInputField: boolean;
+  emailValue: string;
+  isValidEmail: boolean;
+  passwordValue: string;
+  isPasswordValid: boolean;
+  confirmValue: string;
+  hasUppercase: boolean;
+  hasLowercase: boolean;
+  hasNumber: boolean;
+  hasSpecial: boolean;
+  errorMessage: string;
+  setErrorMessage: Dispatch<SetStateAction<string>>;
+  stateValueMapping: {
+    value: string;
+    setter: Dispatch<SetStateAction<string>>;
+    borderStyle: string;
+  }[];
+}) {
+  throw new Error("Function not implemented.");
+}

@@ -3,6 +3,8 @@
 :root {
   /* General  */
   --background: #072242;
+  --color-warning: #ff3d12;
+  --color-valid: #4caf50;
   /* Cards  */
   --bg-card: #12335c;
   --bg-gradient-light: #2e5a8d;
@@ -33,8 +35,6 @@
   --color-border-input: #94a3b8;
   --color-border-focus: #f8fafc;
   --color-checked: #c69344;
-  /* --color-border-warning:#F8FAFC; */
-  /* --color-border-valid:#F8FAFC; */
   --color-placeholder: #94a3b8;
   /* Shadow  */
   --shadow-color: #041529;
@@ -64,6 +64,8 @@
 .light {
   /* General  */
   --background: #f0ebe0;
+  --color-warning: #d64f1e;
+  --color-valid: #6b8e23;
   /* Cards  */
   --bg-card: #cec4b5;
   --bg-gradient-light: #faf9f6;
@@ -92,8 +94,6 @@
   --color-border-input: #42392e;
   --color-border-focus: #f5f2ed;
   --color-checked: #bd8c5a;
-  /* --color-border-warning:#F8FAFC; */
-  /* --color-border-valid:#F8FAFC; */
   --color-placeholder: #7a6a56;
   /* Shadow  */
   --shadow-color: #402e1e4d;
@@ -105,6 +105,8 @@
 @theme inline {
   /* General  */
   --color-background: var(--background);
+  --color-warning: var(--color-warning);
+  --color-valid: var(--color-valid);
   /* Cards  */
   --color-card-background: var(--bg-card);
   --color-card-border: var(--border-card);

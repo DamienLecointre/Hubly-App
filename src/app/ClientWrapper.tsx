@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import SignupProvider from "@/context/SignupContext";
 import { usePathname } from "next/navigation";
-
 import Navbar from "@/components/layouts/navbar/Navbar";
 import BrandHeader from "@/components/layouts/header/BrandHeader";
 
@@ -32,19 +31,21 @@ export default function ClientWrapper({
   }, []);
 
   return (
-    <div className="flexFullHeigh">
-      {!appReady && (
-        <div className="flex-1 centerChild">
-          <BrandHeader location="loading" />
-        </div>
-      )}
+    <SignupProvider>
+      <div className="flexFullHeigh">
+        {!appReady && (
+          <div className="flex-1 centerChild">
+            <BrandHeader location="loading" />
+          </div>
+        )}
 
-      {appReady && (
-        <>
-          {children}
-          {!hideNavbar && <Navbar />}
-        </>
-      )}
-    </div>
+        {appReady && (
+          <>
+            {children}
+            {!hideNavbar && <Navbar />}
+          </>
+        )}
+      </div>
+    </SignupProvider>
   );
 }
