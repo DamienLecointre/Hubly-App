@@ -16,15 +16,15 @@ export default function ClientWrapper({
   const hideNavbar = pathname === "/login" || pathname === "/signup";
 
   useEffect(() => {
-    // const hasLoaded = sessionStorage.getItem("app_loaded");
+    const hasLoaded = sessionStorage.getItem("app_loaded");
 
     const timer = setTimeout(
       () => {
-        // sessionStorage.setItem("app_loaded", "true");
+        sessionStorage.setItem("app_loaded", "true");
         setAppReady(true);
       },
-      3000,
-      // hasLoaded ? 0 : 3000,
+      // 3000,
+      hasLoaded ? 0 : 3000,
     );
 
     return () => clearTimeout(timer);

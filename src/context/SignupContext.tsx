@@ -10,22 +10,22 @@ import {
 
 type signupContextType = {
   isInputField: boolean;
+  userValue: string;
+  setUserValue: Dispatch<SetStateAction<string>>;
   emailValue: string;
+  setEmailValue: Dispatch<SetStateAction<string>>;
   isValidEmail: boolean;
   passwordValue: string;
+  setPasswordValue: Dispatch<SetStateAction<string>>;
   isPasswordValid: boolean;
   confirmValue: string;
+  setConfirmValue: Dispatch<SetStateAction<string>>;
   hasUppercase: boolean;
   hasLowercase: boolean;
   hasNumber: boolean;
   hasSpecial: boolean;
   errorMessage: string;
   setErrorMessage: Dispatch<SetStateAction<string>>;
-  stateValueMapping: {
-    value: string;
-    setter: Dispatch<SetStateAction<string>>;
-    borderStyle: string;
-  }[];
 };
 
 export const SignupContext = createContext<signupContextType | null>(null);
@@ -66,48 +66,26 @@ export default function SignupProvider({ children }: ChildrenProps) {
     hasNumber &&
     hasSpecial;
 
-  const stateValueMapping = [
-    {
-      value: userValue,
-      setter: setUserValue,
-      borderStyle: "border-border-input",
-    },
-    {
-      value: emailValue,
-      setter: setEmailValue,
-      borderStyle:
-        errorMessage === "email" ? "border-warning" : "border-border-input",
-    },
-    {
-      value: passwordValue,
-      setter: setPasswordValue,
-      borderStyle:
-        errorMessage === "password" ? "border-warning" : "border-border-input",
-    },
-    {
-      value: confirmValue,
-      setter: setConfirmValue,
-      borderStyle:
-        errorMessage === "confirm" ? "border-warning" : "border-border-input",
-    },
-  ];
-
   return (
     <SignupContext.Provider
       value={{
         isInputField,
+        userValue,
+        setUserValue,
         emailValue,
+        setEmailValue,
         isValidEmail,
         passwordValue,
+        setPasswordValue,
         isPasswordValid,
         confirmValue,
+        setConfirmValue,
         hasUppercase,
         hasLowercase,
         hasNumber,
         hasSpecial,
         errorMessage,
         setErrorMessage,
-        stateValueMapping,
       }}
     >
       {children}

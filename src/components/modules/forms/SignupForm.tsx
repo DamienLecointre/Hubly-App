@@ -5,6 +5,7 @@ import { SignupContext } from "@/context/SignupContext";
 import { signupFormData } from "@/data/SignupFormData";
 
 import FormInput from "@/components/ui/inputs/FormInput";
+import { inputStateValue } from "@/lib/inputStateValue";
 
 function SignupForm() {
   const signupContext = useContext(SignupContext);
@@ -12,7 +13,30 @@ function SignupForm() {
     throw new Error("SignupForm must be used within a SignupProvider");
   }
 
-  const { stateValueMapping } = signupContext;
+  // const { stateValueMapping } = signupContext;
+  const {
+    userValue,
+    setUserValue,
+    emailValue,
+    setEmailValue,
+    passwordValue,
+    setPasswordValue,
+    confirmValue,
+    setConfirmValue,
+    errorMessage,
+  } = signupContext;
+
+  const stateValueMapping = inputStateValue({
+    userValue,
+    setUserValue,
+    emailValue,
+    setEmailValue,
+    passwordValue,
+    setPasswordValue,
+    confirmValue,
+    setConfirmValue,
+    errorMessage,
+  });
 
   return (
     <div className="flex flex-col gap-4">
