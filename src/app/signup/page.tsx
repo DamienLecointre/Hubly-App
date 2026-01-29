@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { SignupContext } from "@/context/SignupContext";
 import { useSignupSubmit } from "@/hooks/useSignupSubmit";
 
+import AuthenticationPopup from "@/components/modules/popup/AuthenticationPopup";
+import BlurLayer from "@/components/modules/popup/BlurLayer";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import SignupForm from "@/components/modules/forms/SignupForm";
 import PillBtn from "@/components/ui/buttons/PillBtn";
@@ -15,19 +17,28 @@ function Page() {
     throw new Error("SignupPage must be used within a SignupProvider");
   }
 
-  const { errorMessage } = signupContext;
+  const { errorMessage, submitValid } = signupContext;
 
   const { handleSubmit } = useSignupSubmit();
 
   return (
-    <div className="flexFullHeigh w-full ">
-      <main className="flexFullHeigh suroudedSpace_X24_YT32">
+    <div className="flexFullHeight w-full ">
+      <main className="flexFullHeight suroudedSpace_X24_YT32">
+        {submitValid && (
+          <>
+            <AuthenticationPopup
+              title="Félicitation !"
+              subtitle="Votre compte a été créé  avec succès."
+            />
+            && <BlurLayer />
+          </>
+        )}
         <div className="flex items-start pb-6">
           <LinkBtn icon="arrow" link="/login" label="Retour" variant="base" />
         </div>
         <form
           onSubmit={handleSubmit}
-          className="flexFullHeigh justify-between gap-8"
+          className="flexFullHeight justify-between gap-8"
         >
           <h1 className="text-primary text-center">Créez votre compte</h1>
           <SignupForm />

@@ -13,7 +13,6 @@ function SignupForm() {
     throw new Error("SignupForm must be used within a SignupProvider");
   }
 
-  // const { stateValueMapping } = signupContext;
   const {
     userValue,
     setUserValue,

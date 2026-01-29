@@ -27,7 +27,7 @@
   .flexColumn {
     @apply flex flex-col;
   }
-  .flexFullHeigh {
+  .flexFullHeight {
     @apply flex flex-col flex-1;
   }
   .centerChild {
@@ -114,5 +114,23 @@
   }
   .loadedFadeOut {
     animation: fadeout 3.5s ease-in-out forwards;
+  }
+
+  @keyframes showPopup {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(15%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .translatePopup {
+    animation: showPopup 0.5s ease-in-out forwards;
   }
 }

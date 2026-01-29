@@ -14,6 +14,7 @@ export function useSignupSubmit() {
     isPasswordValid,
     passwordValue,
     confirmValue,
+    setsubmitValid,
   } = signupContext;
 
   const errorTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -32,6 +33,11 @@ export function useSignupSubmit() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const canSubmit =
+      isInputField &&
+      isValidEmail &&
+      isPasswordValid &&
+      passwordValue === confirmValue;
     if (!isInputField) {
       triggerError("required");
       return;
@@ -46,6 +52,10 @@ export function useSignupSubmit() {
     }
     if (passwordValue !== confirmValue) {
       triggerError("confirm");
+      return;
+    }
+    if (canSubmit) {
+      setsubmitValid(true);
       return;
     }
   };

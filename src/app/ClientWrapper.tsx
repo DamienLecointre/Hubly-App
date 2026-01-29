@@ -32,7 +32,7 @@ export default function ClientWrapper({
 
   return (
     <SignupProvider>
-      <div className="flexFullHeigh">
+      <div className="flexFullHeight">
         {!appReady && (
           <div className="flex-1 centerChild">
             <BrandHeader location="loading" />

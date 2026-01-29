@@ -41,6 +41,8 @@
   --shadow-top: 0 -10px 60px 10px var(--shadow-color);
   --shadow-bottom: 0 5px 50px 0 var(--shadow-color);
   --shadow-bottom-xl: 0 30px 50px 0 var(--shadow-color);
+  /* Blur  */
+  --blur-color: #1d43734d;
   /* Spacing  */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -100,6 +102,8 @@
   --shadow-top: 0 -10px 60px 10px var(--shadow-color);
   --shadow-bottom: 0 5px 50px 0 var(--shadow-color);
   --shadow-bottom-xl: 0 30px 50px 0 var(--shadow-color);
+  /* Blur  */
+  --blur-color: #f0ebe04d;
 }
 
 @theme inline {
@@ -143,6 +147,8 @@
   --shadow-top: var(--shadow-top);
   --shadow-bottom: var(--shadow-bottom);
   --shadow-bottom-xl: var(--shadow-bottom-xl);
+  /* Blur */
+  --color-blur-color: var(--blur-color);
   /* Spacing  */
   --spacing-xs: var(--spacing-xs);
   --spacing-sm: var(--spacing-sm);
