@@ -78,7 +78,7 @@ function FormInput({
     throw new Error("FormInput must be used within a SignupProvider");
   }
 
-  const { errorMessage } = signupContext;
+  const { errorMessage, apiMessage } = signupContext;
 
   const handleClick = () => {
     setIsActive((prev) => !prev);
@@ -115,6 +115,11 @@ function FormInput({
       {/* Contrôle la validité du champ email */}
       {isEmailInput && errorMessage === "email" && (
         <p className="text-warning">Veuillez saisir un email valide</p>
+      )}
+
+      {/* Contrôle si l'email existe déjà en bd */}
+      {isEmailInput && apiMessage && errorMessage === "apiWarning" && (
+        <p className="text-warning">Un compte a déjà été créé avec cet email</p>
       )}
 
       {/* Contrôle la concordance des champs password et confirm */}

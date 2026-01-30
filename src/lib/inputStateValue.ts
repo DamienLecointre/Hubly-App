@@ -33,7 +33,9 @@ export function inputStateValue({
       value: emailValue,
       setter: setEmailValue,
       borderStyle:
-        errorMessage === "email" ? "border-warning" : "border-border-input",
+        errorMessage === "email" || errorMessage === "apiWarning"
+          ? "border-warning"
+          : "border-border-input",
     },
     {
       value: passwordValue,

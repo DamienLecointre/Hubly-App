@@ -28,6 +28,8 @@ type signupContextType = {
   setErrorMessage: Dispatch<SetStateAction<string>>;
   submitValid: boolean;
   setsubmitValid: Dispatch<SetStateAction<boolean>>;
+  apiMessage: boolean;
+  setApiMessage: Dispatch<SetStateAction<boolean>>;
 };
 
 export const SignupContext = createContext<signupContextType | null>(null);
@@ -43,6 +45,7 @@ export default function SignupProvider({ children }: ChildrenProps) {
   const [confirmValue, setConfirmValue] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [submitValid, setsubmitValid] = useState(false);
+  const [apiMessage, setApiMessage] = useState(false);
 
   /* Contrôle si tous les champs sont rempli */
   const isInputField =
@@ -91,6 +94,8 @@ export default function SignupProvider({ children }: ChildrenProps) {
         setErrorMessage,
         submitValid,
         setsubmitValid,
+        apiMessage,
+        setApiMessage,
       }}
     >
       {children}
