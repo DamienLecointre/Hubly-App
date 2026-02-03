@@ -29,6 +29,8 @@ export default function ClientWrapper({
           else setAppReady(true);
         }
       } catch (err) {
+        console.error("serveur erreur : ", err);
+
         if (!isAuthPage) router.replace("/login");
       }
     };

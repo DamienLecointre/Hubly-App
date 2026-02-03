@@ -17,7 +17,6 @@ export function useLoginSubmit() {
     setPasswordValue,
     isLoginField,
     isValidEmail,
-    apiMessage,
     setApiMessage,
     setsubmitValid,
   } = signupContext;
