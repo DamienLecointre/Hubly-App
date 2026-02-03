@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SignupContext } from "@/context/SignupContext";
+import { SignupContext } from "@/context/AuthContext";
 import { passwordCheckerData } from "@/data/PasswordCheckerData";
 import { passwordWarningStyles } from "@/lib/passwordWarningStyles";
 

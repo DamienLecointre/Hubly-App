@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import ConnectToDB from "@/lib/mongodb/mongodb";
 import User from "@/models/User";
+import jwt from "jsonwebtoken";
 
 export async function POST(req: NextRequest) {
   try {
@@ -40,7 +41,13 @@ export async function POST(req: NextRequest) {
     const newUser = new User({ username, email, password });
     await newUser.save();
 
-    return NextResponse.json(
+    const token = jwt.sign(
+      { userId: newUser._id },
+      process.env.JWT_SECRET as string,
+      { expiresIn: "7d" },
+    );
+
+    const response = NextResponse.json(
       {
         success: true,
         data: {
@@ -52,6 +59,16 @@ export async function POST(req: NextRequest) {
       },
       { status: 201 },
     );
+
+    response.cookies.set("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+    });
+
+    return response;
   } catch (err) {
     console.error("Erreur signup API :", err);
     return NextResponse.json(

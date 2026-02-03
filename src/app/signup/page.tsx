@@ -1,8 +1,8 @@
 "use client";
 
 import { useContext } from "react";
-import { SignupContext } from "@/context/SignupContext";
-import { useSignupSubmit } from "@/hooks/useSignupSubmit";
+import { SignupContext } from "@/context/AuthContext";
+import { useSignupSubmit } from "@/hooks/forms/useSignupSubmit";
 
 import AuthenticationPopup from "@/components/modules/popup/AuthenticationPopup";
 import BlurLayer from "@/components/modules/popup/BlurLayer";
@@ -19,7 +19,7 @@ function Page() {
 
   const { errorMessage, submitValid } = signupContext;
 
-  const { handleSubmit } = useSignupSubmit();
+  const { handleSigupSubmit } = useSignupSubmit();
 
   return (
     <div className="flexFullHeight w-full ">
@@ -37,7 +37,7 @@ function Page() {
           <LinkBtn icon="arrow" link="/login" label="Retour" variant="base" />
         </div>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSigupSubmit}
           className="flexFullHeight justify-between gap-8"
         >
           <h1 className="text-primary text-center">Créez votre compte</h1>
@@ -45,7 +45,7 @@ function Page() {
           <div className="flexColumn gap-4">
             {errorMessage === "required" && (
               <p className="text-warning text-center">
-                Tous les champs du formulaire doivent être rempli
+                Tous les champs du formulaire doivent être remplis
               </p>
             )}
             <PillBtn type="submit" label="Créer mon compte" variant="bgfull" />

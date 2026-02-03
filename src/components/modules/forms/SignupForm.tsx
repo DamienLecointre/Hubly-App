@@ -1,11 +1,11 @@
 "use client";
 
 import { useContext } from "react";
-import { SignupContext } from "@/context/SignupContext";
+import { SignupContext } from "@/context/AuthContext";
 import { signupFormData } from "@/data/SignupFormData";
+import { inputSignupStateValue } from "@/lib/inputSignupStateValue";
 
 import FormInput from "@/components/ui/inputs/FormInput";
-import { inputStateValue } from "@/lib/inputStateValue";
 
 function SignupForm() {
   const signupContext = useContext(SignupContext);
@@ -25,7 +25,7 @@ function SignupForm() {
     errorMessage,
   } = signupContext;
 
-  const stateValueMapping = inputStateValue({
+  const stateValueMapping = inputSignupStateValue({
     userValue,
     setUserValue,
     emailValue,
@@ -52,9 +52,8 @@ function SignupForm() {
           value={stateValueMapping[i].value}
           onchange={stateValueMapping[i].setter}
           inputBoderStyle={stateValueMapping[i].borderStyle}
-          isEmailInput={data.isEmailInput}
-          isPassworInput={data.isPassworInput}
-          isPasswordConfirm={data.isPasswordConfirm}
+          name={data.name}
+          location="signup"
         />
       ))}
     </div>

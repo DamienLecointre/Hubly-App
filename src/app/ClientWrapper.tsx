@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SignupProvider from "@/context/SignupContext";
-import { usePathname } from "next/navigation";
+import AuthProvider from "@/context/AuthContext";
+import { usePathname, useRouter } from "next/navigation";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import BrandHeader from "@/components/layouts/header/BrandHeader";
 
@@ -12,40 +12,52 @@ export default function ClientWrapper({
   children: React.ReactNode;
 }) {
   const [appReady, setAppReady] = useState(false);
+  const router = useRouter();
   const pathname = usePathname();
-  const hideNavbar = pathname === "/login" || pathname === "/signup";
+  const isAuthPage = pathname === "/login" || pathname === "/signup";
 
   useEffect(() => {
-    const hasLoaded = sessionStorage.getItem("app_loaded");
+    const checkAuth = async () => {
+      try {
+        const res = await fetch("/api/me");
 
-    const timer = setTimeout(
-      () => {
-        sessionStorage.setItem("app_loaded", "true");
-        setAppReady(true);
-      },
-      // 3000,
-      hasLoaded ? 0 : 3000,
-    );
+        if (res.ok) {
+          if (isAuthPage) router.replace("/");
+          else setAppReady(true);
+        } else {
+          if (!isAuthPage) router.replace("/login");
+          else setAppReady(true);
+        }
+      } catch (err) {
+        if (!isAuthPage) router.replace("/login");
+      }
+    };
+
+    const hasLoadedBefore = sessionStorage.getItem("app_loaded");
+    const delay = hasLoadedBefore ? 0 : 3000;
+
+    const timer = setTimeout(() => {
+      sessionStorage.setItem("app_loaded", "true");
+      checkAuth();
+    }, delay);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname, router, isAuthPage]);
+
+  if (!appReady) {
+    return (
+      <div className="flex-1 centerChild">
+        <BrandHeader location="loading" />
+      </div>
+    );
+  }
 
   return (
-    <SignupProvider>
+    <AuthProvider>
       <div className="flexFullHeight">
-        {!appReady && (
-          <div className="flex-1 centerChild">
-            <BrandHeader location="loading" />
-          </div>
-        )}
-
-        {appReady && (
-          <>
-            {children}
-            {!hideNavbar && <Navbar />}
-          </>
-        )}
+        {children}
+        {!isAuthPage && <Navbar />}
       </div>
-    </SignupProvider>
+    </AuthProvider>
   );
 }

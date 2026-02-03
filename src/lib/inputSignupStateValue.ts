@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
+import { getInputBorderStyle } from "@/utils/inputWarningStyle";
 
-type InputStateValue = {
+type InputSignupStateValue = {
   userValue: string;
   setUserValue: Dispatch<SetStateAction<string>>;
   emailValue: string;
@@ -12,7 +13,7 @@ type InputStateValue = {
   errorMessage: string;
 };
 
-export function inputStateValue({
+export function inputSignupStateValue({
   userValue,
   setUserValue,
   emailValue,
@@ -22,7 +23,7 @@ export function inputStateValue({
   confirmValue,
   setConfirmValue,
   errorMessage,
-}: InputStateValue) {
+}: InputSignupStateValue) {
   return [
     {
       value: userValue,
@@ -32,22 +33,19 @@ export function inputStateValue({
     {
       value: emailValue,
       setter: setEmailValue,
-      borderStyle:
-        errorMessage === "email" || errorMessage === "apiWarning"
-          ? "border-warning"
-          : "border-border-input",
+      borderStyle: getInputBorderStyle(
+        errorMessage === "email" || errorMessage === "apiWarning",
+      ),
     },
     {
       value: passwordValue,
       setter: setPasswordValue,
-      borderStyle:
-        errorMessage === "password" ? "border-warning" : "border-border-input",
+      borderStyle: getInputBorderStyle(errorMessage === "password"),
     },
     {
       value: confirmValue,
       setter: setConfirmValue,
-      borderStyle:
-        errorMessage === "confirm" ? "border-warning" : "border-border-input",
+      borderStyle: getInputBorderStyle(errorMessage === "confirm"),
     },
   ];
 }

@@ -1,7 +1,9 @@
 "use client";
 
-import { ComponentPropsWithoutRef, useContext, useState } from "react";
-import { SignupContext } from "@/context/SignupContext";
+import { ComponentPropsWithoutRef } from "react";
+import { useInputValidation } from "@/hooks/inputs/useInputValidation";
+import { useToggle } from "@/hooks/utils/useToggle";
+
 import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
 
 import {
@@ -44,9 +46,8 @@ type FormInputProps = ComponentPropsWithoutRef<"input"> & {
   iconRight: IconRight;
   value: string;
   onchange: (value: string) => void;
-  isEmailInput: boolean;
-  isPassworInput: boolean;
-  isPasswordConfirm: boolean;
+  location: string;
+  name: "user" | "email" | "password" | "passwordConfirm";
   inputBoderStyle: string;
 };
 
@@ -57,12 +58,11 @@ function FormInput({
   iconRight,
   value,
   onchange,
-  isEmailInput,
-  isPassworInput,
-  isPasswordConfirm,
+  location,
+  name,
   inputBoderStyle,
 }: FormInputProps) {
-  const [isActive, setIsActive] = useState(false);
+  const { isActive, toggle } = useToggle();
   const inputType = isActive ? "text" : type;
 
   const IconLeft = FORM_INPUT_LEFT_ICONS[iconLeft];
@@ -73,16 +73,7 @@ function FormInput({
         : EyeIcon
       : FORM_INPUT_RIGHT_ICONS[iconRight];
 
-  const signupContext = useContext(SignupContext);
-  if (!signupContext) {
-    throw new Error("FormInput must be used within a SignupProvider");
-  }
-
-  const { errorMessage, apiMessage } = signupContext;
-
-  const handleClick = () => {
-    setIsActive((prev) => !prev);
-  };
+  const validationMessage = useInputValidation(name);
 
   return (
     <>
@@ -99,32 +90,16 @@ function FormInput({
             onChange={(e) => onchange(e.target.value)}
           ></input>
         </div>
-        <div onClick={handleClick}>
+        <div onClick={toggle}>
           <IconRight />
         </div>
       </div>
 
-      {/* Contrôle la validité du champ password */}
-      {isPassworInput && errorMessage === "password" && (
-        <p className="text-warning">Veuillez saisir un mot de passe valide</p>
-      )}
+      {validationMessage && <p className="text-warning">{validationMessage}</p>}
 
       {/* Affichage PasswordChecker */}
-      {isPassworInput && value.length > 0 && <PasswordChecker />}
-
-      {/* Contrôle la validité du champ email */}
-      {isEmailInput && errorMessage === "email" && (
-        <p className="text-warning">Veuillez saisir un email valide</p>
-      )}
-
-      {/* Contrôle si l'email existe déjà en bd */}
-      {isEmailInput && apiMessage && errorMessage === "apiWarning" && (
-        <p className="text-warning">Un compte a déjà été créé avec cet email</p>
-      )}
-
-      {/* Contrôle la concordance des champs password et confirm */}
-      {isPasswordConfirm && errorMessage === "confirm" && (
-        <p className="text-warning">Veuillez vérifier votre saisie</p>
+      {name === "password" && value.length > 0 && location === "signup" && (
+        <PasswordChecker />
       )}
     </>
   );

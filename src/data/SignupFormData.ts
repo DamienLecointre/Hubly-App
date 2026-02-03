@@ -5,9 +5,7 @@ export const signupFormData = [
     type: "text",
     placeholder: "Nom d'utilisateur",
     iconRight: "empty",
-    isEmailInput: false,
-    isPassworInput: false,
-    isPasswordConfirm: false,
+    name: "user",
   },
   {
     id: "signupForm2",
@@ -15,9 +13,7 @@ export const signupFormData = [
     type: "email",
     placeholder: "Adresse email",
     iconRight: "empty",
-    isEmailInput: true,
-    isPassworInput: false,
-    isPasswordConfirm: false,
+    name: "email",
   },
   {
     id: "signupForm3",
@@ -25,9 +21,7 @@ export const signupFormData = [
     type: "password",
     placeholder: "Mot de passe",
     iconRight: "eye",
-    isEmailInput: false,
-    isPassworInput: true,
-    isPasswordConfirm: false,
+    name: "password",
   },
   {
     id: "signupForm4",
@@ -35,8 +29,6 @@ export const signupFormData = [
     type: "password",
     placeholder: "Confirmez vote mot de passe",
     iconRight: "empty",
-    isEmailInput: false,
-    isPassworInput: false,
-    isPasswordConfirm: true,
+    name: "passwordConfirm",
   },
 ] as const;

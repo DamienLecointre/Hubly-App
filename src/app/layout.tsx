@@ -38,5 +38,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]

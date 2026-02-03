@@ -121,16 +121,24 @@
       opacity: 0;
       transform: translateY(-100%);
     }
-    50% {
+    10% {
       opacity: 1;
       transform: translateY(15%);
     }
-    100% {
+    20% {
       opacity: 1;
       transform: translateY(0);
     }
+    90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
   }
   .translatePopup {
-    animation: showPopup 0.5s ease-in-out forwards;
+    animation: showPopup 2s ease-in-out forwards;
   }
 }

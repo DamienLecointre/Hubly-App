@@ -16,5 +16,3 @@ export default function Home() {
     </>
   );
 }
-
-// h-[calc(100vh-82px-85px)] overflow-y-auto

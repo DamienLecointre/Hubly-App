@@ -9,7 +9,8 @@ import {
 } from "react";
 
 type signupContextType = {
-  isInputField: boolean;
+  isSignupField: boolean;
+  isLoginField: boolean;
   userValue: string;
   setUserValue: Dispatch<SetStateAction<string>>;
   emailValue: string;
@@ -47,12 +48,15 @@ export default function SignupProvider({ children }: ChildrenProps) {
   const [submitValid, setsubmitValid] = useState(false);
   const [apiMessage, setApiMessage] = useState(false);
 
-  /* Contrôle si tous les champs sont rempli */
-  const isInputField =
+  /* Contrôle si tous les champs signup sont rempli */
+  const isSignupField =
     userValue.length > 0 &&
     emailValue.length > 0 &&
     passwordValue.length > 0 &&
     confirmValue.length > 0;
+
+  /* Contrôle si tous les champs login sont rempli */
+  const isLoginField = emailValue.length > 0 && passwordValue.length > 0;
 
   /* Contrôle la validité du champ email */
   const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
@@ -75,7 +79,8 @@ export default function SignupProvider({ children }: ChildrenProps) {
   return (
     <SignupContext.Provider
       value={{
-        isInputField,
+        isSignupField,
+        isLoginField,
         userValue,
         setUserValue,
         emailValue,
