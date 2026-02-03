@@ -24,6 +24,8 @@ export async function GET() {
       { status: 201 },
     );
   } catch (err) {
+    console.error("Serveur erreur : ", err);
+
     return NextResponse.json(
       {
         success: false,
