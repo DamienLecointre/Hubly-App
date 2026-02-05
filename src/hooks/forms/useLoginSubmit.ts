@@ -51,7 +51,7 @@ export function useLoginSubmit() {
 
       const data = await response.json();
 
-      if (!data.success && data.error.code === "WRONG_ID") {
+      if (!data.success && data.error.code === "UNAUTHORIZED") {
         triggerError("wrongId");
         setApiMessage(true);
         return;

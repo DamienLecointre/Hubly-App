@@ -20,14 +20,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error: { code: "WRONG_ID", message: "Identifiants incorrects" },
+          error: { code: "UNAUTHORIZED", message: "Identifiants incorrects" },
         },
         { status: 401 },
       );
     }
 
     const token = jwt.sign(
-      { userId: user._id, email: user.email },
+      {
+        userId: user._id.toString(),
+        email: user.email,
+        username: user.username,
+      },
       process.env.JWT_SECRET!,
       { expiresIn: "7d" },
     );

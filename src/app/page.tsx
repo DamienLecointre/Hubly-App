@@ -7,7 +7,8 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <SectionHeader />
+        <SectionHeader title="Mes Collections" quantity={5} />
+        {/* X = Valeur dynamique */}
         <div className="suroudedSpace_X24_YT32">
           <CollectionCard />
           <h1 className="text-white">Home</h1>
