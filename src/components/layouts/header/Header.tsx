@@ -25,7 +25,7 @@ function Header() {
   };
 
   return (
-    <header className="h-20.5 w-full centerBetween bg-card-background border-b border-b-card-border top-0 left-0 right-0 suroudedSpace_X16_Y24 shadow-bottom">
+    <header className="fixed h-20.5 w-full centerBetween bg-card-background border-b border-b-card-border top-0 left-0 right-0 suroudedSpace_X16_Y24 shadow-bottom z-100">
       <div className="flex items-center">
         <HublyLogo height="h-[40px]" width="w-[40px]" />
         <div className="flex flex-col pl-6">

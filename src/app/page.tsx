@@ -6,10 +6,10 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="pt-20.5 pb-21.25">
         <SectionHeader title="Mes Collections" quantity={5} />
         {/* X = Valeur dynamique */}
-        <div className="suroudedSpace_X24_YT32">
+        <div className="suroudedSpace_X24_YT32 overflow-y-auto ">
           <CollectionCard />
           <h1 className="text-white">Home</h1>
         </div>
