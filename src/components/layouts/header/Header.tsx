@@ -18,8 +18,7 @@ function Header() {
         <HublyLogo height="h-[40px]" width="w-[40px]" />
         <div className="flex flex-col pl-6">
           <p className="p-small text-secondary ">Bonjour,</p>
-          <h4 className="text-primary">{user}</h4>{" "}
-          {/* Utilisateur = Valeur dynamique */}
+          <h4 className="text-primary">{user}</h4>
         </div>
       </div>
       <RoundBtn type="button" icon="moon" variant="base" />

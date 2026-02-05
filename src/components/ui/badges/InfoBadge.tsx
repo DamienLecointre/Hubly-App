@@ -24,13 +24,14 @@ type InfoBadgeIcon = keyof typeof INFO_BADGE_ICONS;
 type InfoBadgeProps = {
   icon: InfoBadgeIcon;
   label: string;
-  variant?: "base" | "bgempty" | "active";
+  btnSate?: "base" | "bgempty" | "active";
+  onclick: () => void;
 };
 
-function InfoBadge({ icon, label, variant = "base" }: InfoBadgeProps) {
+function InfoBadge({ icon, label, btnSate = "base", onclick }: InfoBadgeProps) {
   const IconLeft = INFO_BADGE_ICONS[icon];
   return (
-    <div className={`infobadge ${variant}`}>
+    <div className={`select-none infobadge ${btnSate} `} onClick={onclick}>
       <IconLeft />
       <p>{label}</p>
     </div>

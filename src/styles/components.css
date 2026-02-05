@@ -84,7 +84,7 @@
   }
   /* Badges  */
   .infobadge {
-    @apply flex items-center text-secondary-btn text-nowrap  rounded-full border border-border-secondary-btn px-6 py-2 gap-2;
+    @apply flex items-center text-secondary-btn text-nowrap  rounded-full border border-border-secondary-btn px-6 py-2 gap-2 cursor-pointer;
   }
   .infobadge.base {
     @apply bg-bg-secondary-btn;
@@ -93,7 +93,7 @@
     @apply bg-transparent;
   }
   .infobadge.active {
-    @apply bg-bg-primary-btn;
+    @apply bg-bg-primary-btn text-primary-btn border-border-accent-btn;
   }
   /* ANIMATIONS  */
   @keyframes fadeout {
