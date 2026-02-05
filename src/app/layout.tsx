@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "./ClientWrapper";
+import { ThemeProvider } from "next-themes";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-font-primary",
@@ -27,13 +28,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${playfairDisplay.variable} ${plusJakarta.variable} antialiased  `}
       >
-        <div className=" min-h-dvh bg-background flexColumn pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
-          <ClientWrapper>{children}</ClientWrapper>
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          <div className=" min-h-dvh bg-background flexColumn pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+            <ClientWrapper>{children}</ClientWrapper>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

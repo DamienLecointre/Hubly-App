@@ -20,16 +20,13 @@ type RoundBtnProps = ComponentPropsWithoutRef<"button"> & {
   type: "button" | "submit";
   icon: RoundBtnIcon;
   variant?: "base" | "accent";
+  onClick: () => void;
 };
 
-function RoundBtn({ type, icon, variant = "base", ...rest }: RoundBtnProps) {
+function RoundBtn({ type, icon, variant = "base", onClick }: RoundBtnProps) {
   const Icon = ROUND_BTN_ICONS[icon];
   return (
-    <button
-      type={type}
-      {...rest}
-      className={`roundBtn ${variant} ${rest.className ?? ""}`}
-    >
+    <button type={type} className={`roundBtn ${variant} `} onClick={onClick}>
       <Icon />
     </button>
   );
