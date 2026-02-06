@@ -10,6 +10,7 @@
   --bg-gradient-light: #2e5a8d;
   --bg-gradient-dark: #12335c;
   --border-card: #475569;
+  --border-card-light: #94a3b8;
   /* Text  */
   --font-primary: "Playfair Display", serif;
   --font-secondary: "Plus Jakarta Sans", sans-serif;
@@ -73,6 +74,7 @@
   --bg-gradient-light: #faf9f6;
   --bg-gradient-dark: #cec4b5;
   --border-card: #5d5141;
+  --border-card-light: #42392e;
   /* Text  */
   --color-primary: #42392e;
   --color-secondary: #97846c;
@@ -114,6 +116,7 @@
   /* Cards  */
   --color-card-background: var(--bg-card);
   --color-card-border: var(--border-card);
+  --color-card-border-light: var(--border-card-light);
   --color-gradient-light: var(--bg-gradient-light);
   --color-gradient-dark: var(--bg-gradient-dark);
   /* Text  */

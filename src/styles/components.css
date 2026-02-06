@@ -22,6 +22,9 @@
   .suroudedSpace_X24_YT32 {
     @apply px-6 pt-8;
   }
+  .fixeSafeSpace {
+    @apply pt-20.5 pb-21.25;
+  }
 
   /* POSITION  */
   .flexColumn {

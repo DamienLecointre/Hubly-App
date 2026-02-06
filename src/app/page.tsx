@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="pt-20.5 pb-21.25">
+      <main className="fixeSafeSpace">
         <SectionHeader title="Mes Collections" quantity={5} />
         {/* X = Valeur dynamique */}
         <div className="suroudedSpace_X24_YT32 overflow-y-auto ">
