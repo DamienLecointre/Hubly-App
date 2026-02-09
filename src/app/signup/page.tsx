@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
 import { useSignupSubmit } from "@/hooks/forms/useSignupSubmit";
 
-import AuthenticationPopup from "@/components/modules/popup/AuthenticationPopup";
+import FeedbackPopup from "@/components/modules/popup/FeedbackPopup";
 import BlurLayer from "@/components/modules/popup/BlurLayer";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import SignupForm from "@/components/modules/forms/SignupForm";
@@ -26,7 +26,7 @@ function Page() {
       <main className="flexFullHeight suroudedSpace_X24_YT32">
         {submitValid && (
           <>
-            <AuthenticationPopup
+            <FeedbackPopup
               title="Félicitation !"
               subtitle="Votre compte a été créé  avec succès."
             />

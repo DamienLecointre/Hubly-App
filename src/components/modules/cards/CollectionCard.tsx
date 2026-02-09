@@ -4,7 +4,7 @@ import PillBtn from "@/components/ui/buttons/PillBtn";
 
 function CollectionCard() {
   return (
-    <div className="bg-card-gradient border border-card-border-light rounded-3xl py-4 ">
+    <div className="cardGradient ">
       <div className="flex flex-col gap-4 px-4 ">
         <div className="centerBetween  ">
           <InfoBadge icon="book" label="Livres" />{" "}

@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { useLoginSubmit } from "@/hooks/forms/useLoginSubmit";
 import { SignupContext } from "@/context/AuthContext";
-import AuthenticationPopup from "@/components/modules/popup/AuthenticationPopup";
+import FeedbackPopup from "@/components/modules/popup/FeedbackPopup";
 import BlurLayer from "@/components/modules/popup/BlurLayer";
 
 import BrandHeader from "@/components/layouts/header/BrandHeader";
@@ -26,7 +26,7 @@ function Page() {
       <main className="flexFullHeight suroudedSpace_X24_YT32">
         {submitValid && (
           <>
-            <AuthenticationPopup
+            <FeedbackPopup
               title="Bienvenue !"
               subtitle="Connexion établie avec succès."
             />

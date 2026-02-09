@@ -11,7 +11,7 @@ function Header() {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    fetch("api/me", { credentials: "include" })
+    fetch("/api/me", { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setUser(data.data.username));
   }, []);

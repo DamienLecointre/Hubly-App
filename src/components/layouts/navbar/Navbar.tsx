@@ -17,7 +17,7 @@ const buttonData = [
   },
   {
     id: "button3",
-    href: "/nouvelle_collection",
+    href: "/nouvel_element",
     label: "Add",
     icon: "plus",
     variant: "accent",

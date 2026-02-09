@@ -2755,6 +2755,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"html5-qrcode@npm:^2.3.8":
+  version: 2.3.8
+  resolution: "html5-qrcode@npm:2.3.8"
+  checksum: 10c0/3d7d0b3687e41a6fc0a06345f67e89ad3c7c00a3d0d8846d6fd31985e1ed2ac1c310e625f0b650dbc689f6b83469e3378417e7431ae5a9194178f1172bf6a93a
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.1":
   version: 4.2.0
   resolution: "http-cache-semantics@npm:4.2.0"
@@ -2795,6 +2802,7 @@ __metadata:
     bcrypt: "npm:^6.0.0"
     eslint: "npm:^9"
     eslint-config-next: "npm:^16.1.6"
+    html5-qrcode: "npm:^2.3.8"
     jsonwebtoken: "npm:^9.0.3"
     mongoose: "npm:^9.1.5"
     next: "npm:^16.1.6"

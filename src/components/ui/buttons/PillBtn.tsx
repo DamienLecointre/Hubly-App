@@ -2,11 +2,17 @@ type Props = {
   type: "button" | "submit";
   label: string;
   variant: "bgfull" | "bgempty";
+  onclick?: () => void;
 };
 
-function PillBtn({ type = "button", label, variant = "bgfull" }: Props) {
+function PillBtn({
+  type = "button",
+  label,
+  variant = "bgfull",
+  onclick,
+}: Props) {
   return (
-    <button type={type} className={`pillBtn ${variant}`}>
+    <button type={type} className={`pillBtn ${variant}`} onClick={onclick}>
       {label}
     </button>
   );

@@ -98,6 +98,14 @@
   .infobadge.active {
     @apply bg-bg-primary-btn text-primary-btn border-border-accent-btn;
   }
+
+  /* MODULES  */
+  /* Cards  */
+  .cardGradient {
+    @apply bg-gradient-to-t 
+           from-[var(--color-gradient-light)] 
+           to-[var(--color-gradient-dark)] border border-card-border-light shadow-bottom rounded-3xl gap-2 py-4;
+  }
   /* ANIMATIONS  */
   @keyframes fadeout {
     0% {

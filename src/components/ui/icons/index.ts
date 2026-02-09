@@ -20,3 +20,5 @@ export { default as EyeOffIcon } from "./EyeOffIcon";
 export { default as LockIcon } from "./LockIcon";
 export { default as MailIcon } from "./MailIcon";
 export { default as ArrowIcon } from "./ArrowIcon";
+export { default as FolderIcon } from "./FolderIcon";
+export { default as LayerPlusIcon } from "./LayerPlusIcon";
