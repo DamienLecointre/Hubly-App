@@ -76,6 +76,9 @@
   .navBtn.activeLink {
     @apply text-accent-btn;
   }
+  .navBtn.addActive {
+    @apply text-primary;
+  }
   .linkBtn {
     @apply gap-2 cursor-pointer;
   }

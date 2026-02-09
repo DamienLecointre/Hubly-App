@@ -44,7 +44,7 @@ function NavBtn({
   return (
     <Link
       href={href}
-      className={`navBtn ${variant} ${className ?? ""} ${isActive && href !== "/nouvel_element" ? "activeLink" : ""} `}
+      className={`navBtn ${variant} ${className ?? ""} ${isActive && href !== "/nouvel_element" ? "activeLink" : ""} ${isActive && href === "/nouvel_element" ? "addActive" : ""} `}
       {...rest}
     >
       <Icon />
