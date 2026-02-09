@@ -25,7 +25,7 @@ type InfoBadgeProps = {
   icon: InfoBadgeIcon;
   label: string;
   btnSate?: "base" | "bgempty" | "active";
-  onclick: () => void;
+  onclick?: () => void;
 };
 
 function InfoBadge({ icon, label, btnSate = "base", onclick }: InfoBadgeProps) {

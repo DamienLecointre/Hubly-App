@@ -7,9 +7,9 @@ function CollectionCard() {
     <div className="cardGradient ">
       <div className="flex flex-col gap-4 px-4 ">
         <div className="centerBetween  ">
-          <InfoBadge icon="book" label="Livres" />{" "}
+          <InfoBadge icon="book" label="Livres" />
           {/* icon + label = Valeur dynamique */}
-          <InfoBadge icon="group" label="X" />{" "}
+          <InfoBadge icon="group" label="X" />
           {/* icon + label = Valeur dynamique */}
         </div>
         <div>
