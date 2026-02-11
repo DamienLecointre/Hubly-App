@@ -17,9 +17,9 @@ const INFO_BADGE_ICONS = {
   filter: FilterIcon,
   group: GroupIcon,
   empty: () => <></>,
-};
+} as const;
 
-type InfoBadgeIcon = keyof typeof INFO_BADGE_ICONS;
+export type InfoBadgeIcon = keyof typeof INFO_BADGE_ICONS;
 
 type InfoBadgeProps = {
   icon: InfoBadgeIcon;

@@ -6,3 +6,5 @@ export const COLLECTION_TYPES = {
   BOARD_GAME: { label: "Jeux de société", icon: "boardGame" },
   VIDEO_GAME: { label: "Jeux vidéo", icon: "videoGame" },
 } as const;
+
+export type CollectionCategory = keyof typeof COLLECTION_TYPES;

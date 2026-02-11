@@ -27,7 +27,9 @@ function SectionHeader({ title, quantity }: SectionHeaderProps) {
           btnSate={isActive ? "active" : "bgempty"}
         />
       </div>
-      <p className="text-secondary px-6">{quantity} collections</p>
+      <p className="text-secondary px-6">
+        {quantity} {quantity > 1 ? "collections" : "collection"}
+      </p>
       {isActive && <FilterMenu />}
     </div>
   );

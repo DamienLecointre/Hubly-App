@@ -1,3 +1,5 @@
+"use client";
+
 import FilterMenu from "@/components/modules/submenus/FilterMenu";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import PillBtn from "@/components/ui/buttons/PillBtn";

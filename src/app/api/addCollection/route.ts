@@ -97,3 +97,49 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+export async function GET(req: NextRequest) {
+  try {
+    await ConnectToDB();
+
+    const userId = getUserIdFromRequest(req);
+
+    if (!userId) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: {
+            code: "SERVER_ERROR",
+            message: "Erreur serveur",
+          },
+          data: null,
+        },
+        { status: 401 },
+      );
+    }
+
+    const collection = await Collection.find({ owner_id: userId });
+
+    return NextResponse.json(
+      {
+        success: true,
+        error: null,
+        data: collection,
+      },
+      { status: 200 },
+    );
+  } catch (err) {
+    console.error(err);
+    return NextResponse.json(
+      {
+        success: false,
+        error: {
+          code: "SERVER_ERROR",
+          message: "Erreur serveur",
+        },
+        data: null,
+      },
+      { status: 500 },
+    );
+  }
+}
