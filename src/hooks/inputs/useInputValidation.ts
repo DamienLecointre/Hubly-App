@@ -3,12 +3,10 @@
 import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
 
-export function useInputValidation(
-  name: "user" | "email" | "password" | "passwordConfirm",
-) {
+export function useInputValidation(name: string) {
   const signupContext = useContext(SignupContext);
   if (!signupContext) {
-    throw new Error("FormInput must be used within a SignupProvider");
+    throw new Error("useInputValidation must be used within a SignupProvider");
   }
 
   const { errorMessage, apiMessage } = signupContext;
@@ -28,6 +26,11 @@ export function useInputValidation(
   }
   if (name === "passwordConfirm" && errorMessage === "confirm") {
     return "Veuillez vérifier votre saisie";
+  }
+
+  // Validation champs input création collection
+  if (name === "collectionTitle" && errorMessage === "already-exists") {
+    return "Cette collection existe déjà. Veuillez saisir un autre nom pour votre collection  ";
   }
   return null;
 }

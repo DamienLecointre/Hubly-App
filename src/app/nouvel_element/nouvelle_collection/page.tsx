@@ -1,9 +1,34 @@
-function page() {
+"use client";
+
+import { useContext } from "react";
+
+import EditorForm from "@/components/modules/forms/EditorForm";
+import BlurLayer from "@/components/modules/popup/BlurLayer";
+import FeedbackPopup from "@/components/modules/popup/FeedbackPopup";
+import { AddCollectionContext } from "@/context/AddCollectionContext";
+
+function Page() {
+  const addCollectionContext = useContext(AddCollectionContext);
+  if (!addCollectionContext) {
+    throw new Error("SignupPage must be used within a SignupProvider");
+  }
+
+  const { canCreate } = addCollectionContext;
+
   return (
-    <div>
-      <h4>Nouvelle collection</h4>
-    </div>
+    <>
+      <EditorForm title="Créer votre collection" />
+      {canCreate && (
+        <>
+          <FeedbackPopup
+            title="Félicitation !"
+            subtitle="Votre collection a été créé avec succés."
+          />
+          && <BlurLayer />
+        </>
+      )}
+    </>
   );
 }
 
-export default page;
+export default Page;

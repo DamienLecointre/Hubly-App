@@ -77,7 +77,7 @@
     @apply text-accent-btn;
   }
   .navBtn.addActive {
-    @apply text-primary;
+    @apply text-primary border-2 border-border-active-btn;
   }
   .linkBtn {
     @apply gap-2 cursor-pointer;

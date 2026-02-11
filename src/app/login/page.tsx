@@ -11,6 +11,7 @@ import LoginForm from "@/components/modules/forms/LoginForm";
 import Footer from "@/components/layouts/footer/Footer";
 import PillBtn from "@/components/ui/buttons/PillBtn";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
+import { useInputFieldWarning } from "@/hooks/inputs/useInputFieldWarning";
 
 function Page() {
   const signupContext = useContext(SignupContext);
@@ -21,6 +22,9 @@ function Page() {
   const { errorMessage, submitValid } = signupContext;
 
   const { handleLoginSubmit } = useLoginSubmit();
+
+  const errorWarning = useInputFieldWarning(errorMessage);
+
   return (
     <div className="flexFullHeight w-full ">
       <main className="flexFullHeight suroudedSpace_X24_YT32">
@@ -39,11 +43,7 @@ function Page() {
         >
           <BrandHeader location="other" />
           <LoginForm />
-          {errorMessage === "required" && (
-            <p className="text-warning text-center">
-              Tous les champs du formulaire doivent être remplis
-            </p>
-          )}
+          {errorWarning}
           <div className="flex flex-col gap-4">
             <PillBtn type="submit" label="Se connecter" variant="bgfull" />
             <div className="centerChild gap-2">

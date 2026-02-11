@@ -36,6 +36,7 @@
   --color-accent-btn: #e5a13b;
   --color-border-secondary-btn: #94a3b8;
   --color-border-accent-btn: #e5a13b;
+  --color-border-active-btn: #f8fafc;
   /* Inputs  */
   --bg-input: #12335c;
   --bg-focus: #2e5a8d;
@@ -98,6 +99,7 @@
   --color-accent-btn: #9c734a;
   --color-border-secondary-btn: #42392e;
   --color-border-accent-btn: #bd8c5a;
+  --color-border-active-btn: #42392e;
   /* Inputs  */
   --bg-input: #cec4b5;
   --bg-focus: #97846c;
@@ -144,6 +146,7 @@
   --color-accent-btn: var(--color-accent-btn);
   --color-border-secondary-btn: var(--color-border-secondary-btn);
   --color-border-accent-btn: var(--color-border-accent-btn);
+  --color-border-active-btn: var(--color-border-active-btn);
   /* Inputs  */
   --color-bg-input: var(--bg-input);
   --color-bg-focus: var(--bg-focus);

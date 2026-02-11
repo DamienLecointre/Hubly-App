@@ -15,7 +15,12 @@ export default function CameraPage() {
     <div className="flexFullHeight px-6 pt-4 pb-[calc(85px+16px)] ">
       <div className="flexColumn cardGradient px-4">
         <div className="flex items-start">
-          <LinkBtn icon="arrow" link="" label="Retour" variant="base" />
+          <LinkBtn
+            icon="arrow"
+            link="/nouvel_element/nouveau_produit"
+            label="Retour"
+            variant="base"
+          />
         </div>
         <div>
           <h4 className="text-center">Ajouter un élément</h4>
@@ -46,8 +51,7 @@ export default function CameraPage() {
         </div>
 
         <PillBtn type="button" label="Saisie manuelle" variant="bgfull" />
-        {/* <Link href="/" className="w-full flex">
-        </Link> */}
+        <Link href="/" className="w-full flex"></Link>
       </div>
     </div>
   );

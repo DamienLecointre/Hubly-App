@@ -3,7 +3,7 @@
 import { SignupContext } from "@/context/AuthContext";
 import { useContext, useRef } from "react";
 
-export function useTriggerError() {
+export function useTriggerAuthError() {
   const signupContext = useContext(SignupContext);
   if (!signupContext) {
     throw new Error("useSignupSubmit must be used within a SignupProvider");

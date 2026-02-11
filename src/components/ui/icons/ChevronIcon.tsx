@@ -1,6 +1,6 @@
 function ChevronIcon() {
   return (
-    <div className="h-8 w-8 iconBox centerChild">
+    <div className="absolute h-8 w-8 iconBox centerChild pointer-events-none right-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
 import { SignupContext } from "@/context/AuthContext";
-import { useTriggerError } from "../utils/useTriggerError";
+import { useTriggerAuthError } from "../utils/useTriggerAuthError";
 
 export function useSignupSubmit() {
   const router = useRouter();
@@ -28,7 +28,7 @@ export function useSignupSubmit() {
     setApiMessage,
   } = signupContext;
 
-  const { triggerError } = useTriggerError();
+  const { triggerError } = useTriggerAuthError();
 
   const handleSigupSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

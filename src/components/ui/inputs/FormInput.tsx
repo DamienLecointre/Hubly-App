@@ -16,6 +16,7 @@ import {
   ArrowIcon,
   PencilIcon,
 } from "@/components/ui/icons";
+import { useCollectionValidation } from "@/hooks/inputs/useCollectionValidation";
 
 const FORM_INPUT_LEFT_ICONS = {
   eye: EyeIcon,
@@ -46,9 +47,9 @@ type FormInputProps = ComponentPropsWithoutRef<"input"> & {
   iconRight: IconRight;
   value: string;
   onchange: (value: string) => void;
-  location: string;
-  name: "user" | "email" | "password" | "passwordConfirm";
-  inputBoderStyle: string;
+  location?: string;
+  name: string;
+  inputBoderStyle?: string;
 };
 
 function FormInput({
@@ -73,7 +74,8 @@ function FormInput({
         : EyeIcon
       : FORM_INPUT_RIGHT_ICONS[iconRight];
 
-  const validationMessage = useInputValidation(name);
+  const authValidationMessage = useInputValidation(name);
+  const collectionValidationMessage = useCollectionValidation(name);
 
   return (
     <>
@@ -95,7 +97,13 @@ function FormInput({
         </div>
       </div>
 
-      {validationMessage && <p className="text-warning">{validationMessage}</p>}
+      {authValidationMessage && (
+        <p className="text-warning">{authValidationMessage}</p>
+      )}
+
+      {collectionValidationMessage && (
+        <p className="text-warning">{collectionValidationMessage}</p>
+      )}
 
       {/* Affichage PasswordChecker */}
       {name === "password" && value.length > 0 && location === "signup" && (

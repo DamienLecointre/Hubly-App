@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
-import { useTriggerError } from "../utils/useTriggerError";
+import { useTriggerAuthError } from "../utils/useTriggerAuthError";
 import { useRouter } from "next/navigation";
 
 export function useLoginSubmit() {
@@ -21,7 +21,7 @@ export function useLoginSubmit() {
     setsubmitValid,
   } = signupContext;
 
-  const { triggerError } = useTriggerError();
+  const { triggerError } = useTriggerAuthError();
 
   const handleLoginSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

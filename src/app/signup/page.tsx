@@ -10,6 +10,7 @@ import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import SignupForm from "@/components/modules/forms/SignupForm";
 import PillBtn from "@/components/ui/buttons/PillBtn";
 import Footer from "@/components/layouts/footer/Footer";
+import { useInputFieldWarning } from "@/hooks/inputs/useInputFieldWarning";
 
 function Page() {
   const signupContext = useContext(SignupContext);
@@ -20,6 +21,8 @@ function Page() {
   const { errorMessage, submitValid } = signupContext;
 
   const { handleSigupSubmit } = useSignupSubmit();
+
+  const errorWarning = useInputFieldWarning(errorMessage);
 
   return (
     <div className="flexFullHeight w-full ">
@@ -43,11 +46,7 @@ function Page() {
           <h1 className="text-primary text-center">Créez votre compte</h1>
           <SignupForm />
           <div className="flexColumn gap-4">
-            {errorMessage === "required" && (
-              <p className="text-warning text-center">
-                Tous les champs du formulaire doivent être remplis
-              </p>
-            )}
+            {errorWarning}
             <PillBtn type="submit" label="Créer mon compte" variant="bgfull" />
             <div className="centerChild gap-2">
               <p className="caption text-primary">Déjà un compte ?</p>

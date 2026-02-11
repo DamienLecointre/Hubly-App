@@ -2,7 +2,7 @@ type Props = {
   type: "button" | "submit";
   label: string;
   variant: "bgfull" | "bgempty";
-  onclick?: () => void;
+  onclick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 function PillBtn({
