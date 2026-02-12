@@ -1,4 +1,4 @@
-import { AddItemData } from "@/data/AddItemData";
+import { AddItemData } from "@/data/editorFormData/AddItemData";
 
 import Header from "@/components/layouts/header/Header";
 import ChoicePopup from "@/components/modules/popup/ChoicePopup";

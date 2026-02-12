@@ -1,3 +1,5 @@
+"use client";
+
 // COMPONENTS
 // LAYOUTS
 import Header from "@/components/layouts/header/Header";
@@ -145,7 +147,7 @@ function page() {
           <h2>Badges</h2>
         </div>
         <div className="flex items-center gap-6">
-          <ImgBadge src="" />
+          <ImgBadge src="/" />
           <IconBadge icon="camera" />
           <InfoBadge icon="book" label="Livres" variant="base" />
         </div>

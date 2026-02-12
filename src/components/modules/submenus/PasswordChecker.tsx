@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
-import { passwordCheckerData } from "@/data/PasswordCheckerData";
+import { passwordCheckerData } from "@/data/submenuData/PasswordCheckerData";
 import { passwordWarningStyles } from "@/lib/passwordWarningStyles";
 
 import PasswordRequirements from "@/components/ui/feedback/PasswordRequirements";

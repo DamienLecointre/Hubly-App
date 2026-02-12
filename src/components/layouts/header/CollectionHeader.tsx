@@ -10,14 +10,14 @@ function CollectionHeader() {
   return (
     <div className="bg-card-background border-b border-b-card-border shadow-bottom-xl suroudedSpace_X16_Y24 ">
       <div className="centerBetween">
-        <InfoBadge icon="book" label="Livres" variant="bgempty" />
+        <InfoBadge iconId="BOOK" label="Livres" />
         <RoundBtn type="button" icon="cross" variant="accent" />
       </div>
       <div className="pt-2 pb-6  ">
         <div className="centerBetween">
           <h4 className="text-primary">Nom collection</h4>{" "}
           {/* Nom collection = Valeur dynamique */}
-          <InfoBadge icon="group" label="x" variant="bgempty" />{" "}
+          <InfoBadge iconId="GROUP" label="x" />{" "}
           {/* label = Valeur dynamique */}
         </div>
         <p className="text-secondary">X éléments</p>{" "}

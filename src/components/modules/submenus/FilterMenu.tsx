@@ -1,10 +1,15 @@
-import { filterMenuData } from "@/data/FilterMenuData";
+"use client";
+
+import { filterMenuData } from "@/data/submenuData/FilterMenuData";
+
 import InfoBadge from "@/components/ui/badges/InfoBadge";
-import useToggleId from "@/hooks/utils/useToggleId";
 
-function FilterMenu() {
-  const { toggle, activeId } = useToggleId();
+type FilterMenuType = {
+  activeId: string;
+  toggle: (value: string) => void;
+};
 
+function FilterMenu({ activeId, toggle }: FilterMenuType) {
   return (
     <div
       className="flex items-center overflow-x-auto [scrollbar-width:none]
@@ -14,9 +19,7 @@ function FilterMenu() {
       {filterMenuData.map((data) => (
         <InfoBadge
           key={data.id}
-          icon={data.icon}
-          label={data.label}
-          // btnSate={data.btnSate}
+          iconId={data.icon}
           btnSate={activeId === data.id ? "active" : "bgempty"}
           onclick={() => toggle(data.id)}
         />

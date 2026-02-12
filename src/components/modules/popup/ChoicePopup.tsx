@@ -4,7 +4,7 @@ import LinkBtn from "@/components/ui/buttons/LinkBtn";
 type ChoicePopupItem = Readonly<{
   id: string;
   link: string;
-  icon: "camera" | "pencil" | "folder" | "layerPlus";
+  iconId: string;
   title: string;
   description: string;
 }>;
@@ -29,7 +29,7 @@ function ChoicePopup({ goBackTo, title, dataFile }: ChoicePopupProps) {
           <InterfaceCard
             key={data.id}
             link={data.link}
-            icon={data.icon}
+            iconId={data.iconId}
             title={data.title}
             description={data.description}
           />

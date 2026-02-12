@@ -1,38 +1,32 @@
 export const filterMenuData = [
   {
     id: "filter1",
-    icon: "empty",
-    label: "Toutes",
+    icon: "EMPTY",
     btnSate: "active",
   },
   {
     id: "filter2",
-    icon: "book",
-    label: "Livres",
+    icon: "BOOK",
     btnSate: "bgempty",
   },
   {
     id: "filter3",
-    icon: "disk",
-    label: "Musiques",
+    icon: "DISK",
     btnSate: "bgempty",
   },
   {
     id: "filter4",
-    icon: "bubble",
-    label: "Bandes-dessinées",
+    icon: "BUBBLE",
     btnSate: "bgempty",
   },
   {
     id: "filter5",
-    icon: "boardGame",
-    label: "Jeux de société",
+    icon: "BOARD_GAME",
     btnSate: "bgempty",
   },
   {
     id: "filter6",
-    icon: "videoGame",
-    label: "Jeux vidéo",
+    icon: "VIDEO_GAME",
     btnSate: "bgempty",
   },
-] as const;
+];

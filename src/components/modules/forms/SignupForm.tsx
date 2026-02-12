@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
-import { signupFormData } from "@/data/SignupFormData";
+import { signupFormData } from "@/data/signupFormData/SignupFormData";
 import { inputSignupStateValue } from "@/lib/inputSignupStateValue";
 
 import FormInput from "@/components/ui/inputs/FormInput";

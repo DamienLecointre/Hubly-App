@@ -1,4 +1,4 @@
-import { NavBtnData } from "@/data/NavBtnData";
+import { NavBtnData } from "@/data/navData/NavBtnData";
 import NavBtn from "@/components/ui/buttons/NavBtn";
 
 function Navbar() {

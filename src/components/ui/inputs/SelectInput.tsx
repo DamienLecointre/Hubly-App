@@ -1,4 +1,4 @@
-import { COLLECTION_TYPES } from "@/data/CollectionTypesData";
+import { COLLECTION_TYPES } from "@/trash/CollectionTypesData";
 import ChevronIcon from "../icons/ChevronIcon";
 
 type SelectInputProps = {

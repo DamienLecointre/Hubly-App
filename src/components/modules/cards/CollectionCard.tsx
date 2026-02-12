@@ -1,52 +1,31 @@
 "use client";
 
+import { useFetchCollection } from "@/hooks/api/useFetchCollection";
+import { COLLECTION_TYPES } from "@/trash/CollectionTypesData";
+
 import ImgBadge from "@/components/ui/badges/ImgBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import PillBtn from "@/components/ui/buttons/PillBtn";
-import {
-  COLLECTION_TYPES,
-  CollectionCategory,
-} from "@/data/CollectionTypesData";
-import { useEffect, useState } from "react";
-
-type MembersType = {
-  user_id: string;
-  can_edit: boolean;
-};
-
-type CollectionType = {
-  _id: string;
-  title: string;
-  type: CollectionCategory;
-  members: MembersType[];
-  is_public: boolean;
-  owner_id: string;
-};
 
 function CollectionCard() {
-  const [collectionData, setCollectionData] = useState<CollectionType[]>([]);
-
-  useEffect(() => {
-    fetch("api/addCollection")
-      .then((res) => res.json())
-      .then((res) => {
-        setCollectionData(res.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  const { collectionData } = useFetchCollection();
 
   return (
     <>
       {collectionData.map((data) => {
-        const typeConfig = COLLECTION_TYPES[data.type];
+        // const typeConfig = COLLECTION_TYPES[data.type];
+        const dynamicLabel =
+          data.id === "GROUP"
+            ? (data.members.length + 1).toString()
+            : data.label;
         return (
           <div className="cardGradient " key={data._id}>
             <div className="flex flex-col gap-4 px-4 " key={data._id}>
               <div className="centerBetween  ">
-                <InfoBadge icon={typeConfig.icon} label={typeConfig.label} />
+                <InfoBadge iconId="BOOK" />
                 <InfoBadge
-                  icon="group"
-                  label={(data.members.length + 1).toString()}
+                  iconId="GROUP"
+                  // label={(data.members.length + 1).toString()}
                 />
               </div>
               <div>

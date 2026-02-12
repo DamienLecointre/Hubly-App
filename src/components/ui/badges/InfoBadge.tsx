@@ -1,38 +1,24 @@
-import {
-  BookIcon,
-  BubbleIcon,
-  DiskIcon,
-  VideoGameIcon,
-  BoardGameIcon,
-  FilterIcon,
-  GroupIcon,
-} from "@/components/ui/icons";
-
-const INFO_BADGE_ICONS = {
-  book: BookIcon,
-  bubble: BubbleIcon,
-  disk: DiskIcon,
-  videoGame: VideoGameIcon,
-  boardGame: BoardGameIcon,
-  filter: FilterIcon,
-  group: GroupIcon,
-  empty: () => <></>,
-} as const;
-
-export type InfoBadgeIcon = keyof typeof INFO_BADGE_ICONS;
+import { InfoBadgeData } from "@/data/badgesdata/InfoBadgeData";
 
 type InfoBadgeProps = {
-  icon: InfoBadgeIcon;
-  label: string;
+  iconId?: string;
   btnSate?: "base" | "bgempty" | "active";
   onclick?: () => void;
 };
 
-function InfoBadge({ icon, label, btnSate = "base", onclick }: InfoBadgeProps) {
-  const IconLeft = INFO_BADGE_ICONS[icon];
+function InfoBadge({ iconId, btnSate = "base", onclick }: InfoBadgeProps) {
+  const badgeId = InfoBadgeData.find((e) => e.id === iconId);
+
+  if (!badgeId) {
+    return null;
+  }
+
+  const IconLeft = badgeId.icon;
+  const label = badgeId.label;
+
   return (
     <div className={`select-none infobadge ${btnSate} `} onClick={onclick}>
-      <IconLeft />
+      {IconLeft && <IconLeft />}
       <p>{label}</p>
     </div>
   );

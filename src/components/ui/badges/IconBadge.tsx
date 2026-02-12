@@ -1,18 +1,18 @@
-import { CameraIcon, PencilIcon } from "@/components/ui/icons";
-
-const BADGE_ICONS = {
-  camera: CameraIcon,
-  pencil: PencilIcon,
-} as const;
-
-type IconBadgeIcon = keyof typeof BADGE_ICONS;
+import { IconBadgeData } from "@/data/badgesdata/IconBadgeData";
 
 type IconBadgeProps = {
-  icon: IconBadgeIcon;
+  iconId: string;
 };
 
-function IconBadge({ icon }: IconBadgeProps) {
-  const Icon = BADGE_ICONS[icon];
+function IconBadge({ iconId }: IconBadgeProps) {
+  const badgeId = IconBadgeData.find((e) => e.id === iconId);
+
+  if (!badgeId) {
+    return;
+  }
+
+  const Icon = badgeId.icon;
+
   return (
     <div className="centerChild text-primary-icon bg-bg-input rounded-md p-2 border border-border-secondary-btn ">
       <Icon />
