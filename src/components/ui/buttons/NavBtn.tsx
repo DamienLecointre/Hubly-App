@@ -2,53 +2,32 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// ICONS
-import {
-  HomeIcon,
-  HeartIcon,
-  PlusIcon,
-  SearchIcon,
-  UserIcon,
-} from "@/components/ui/icons";
 
-const NAV_BTN_ICONS = {
-  home: HomeIcon,
-  heart: HeartIcon,
-  plus: PlusIcon,
-  search: SearchIcon,
-  user: UserIcon,
-} as const;
-
-type NavBtnIcon = keyof typeof NAV_BTN_ICONS;
+import { NavBtnData } from "@/data/btnData/NavBtnData";
 
 type NavBtnProps = {
-  href: string;
-  label: string;
-  icon: NavBtnIcon;
-  variant?: "base" | "accent";
-  className?: string;
+  btnId: string;
 };
 
-function NavBtn({
-  href,
-  label,
-  icon,
-  variant = "base",
-  className,
-  ...rest
-}: NavBtnProps) {
-  const Icon = NAV_BTN_ICONS[icon];
+function NavBtn({ btnId }: NavBtnProps) {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const BtnIconId = NavBtnData.find((e) => e.id === btnId);
+  if (!BtnIconId) {
+    return null;
+  }
+  const Icon = BtnIconId.icon;
+  const isActive = pathname === BtnIconId.href;
 
   return (
     <Link
-      href={href}
-      className={`navBtn ${variant} ${className ?? ""} ${isActive && href !== "/nouvel_element" ? "activeLink" : ""} ${(isActive && href === "/nouvel_element") || href.startsWith("/nouvel_element/") ? "addActive" : ""} `}
-      {...rest}
+      href={BtnIconId.href}
+      className={`navBtn 
+        ${BtnIconId?.variant} 
+        ${isActive && BtnIconId.href !== "/nouvel_element" ? "activeLink" : ""} 
+        ${(isActive && BtnIconId.href === "/nouvel_element") || BtnIconId.href.startsWith("/nouvel_element/") ? "addActive" : ""} `}
     >
       <Icon />
-      {label}
+      {BtnIconId.label}
     </Link>
   );
 }

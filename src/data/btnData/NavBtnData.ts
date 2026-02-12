@@ -1,37 +1,45 @@
+import {
+  HomeIcon,
+  HeartIcon,
+  PlusIcon,
+  SearchIcon,
+  UserIcon,
+} from "@/components/ui/icons";
+
 export const NavBtnData = [
   {
-    id: "button1",
+    id: "HOME",
     href: "/",
     label: "Home",
-    icon: "home",
+    icon: HomeIcon,
     variant: "base",
   },
   {
-    id: "button2",
+    id: "FAVORITE",
     href: "/favoris",
     label: "Likes",
-    icon: "heart",
+    icon: HeartIcon,
     variant: "base",
   },
   {
-    id: "button3",
+    id: "ADD_NEW",
     href: "/nouvel_element",
     label: "Add",
-    icon: "plus",
+    icon: PlusIcon,
     variant: "accent",
   },
   {
-    id: "button4",
+    id: "SEARCH",
     href: "/recherche",
     label: "Search",
-    icon: "search",
+    icon: SearchIcon,
     variant: "base",
   },
   {
-    id: "button5",
+    id: "PROFIL",
     href: "/profil",
     label: "Profil",
-    icon: "user",
+    icon: UserIcon,
     variant: "base",
   },
-] as const;
+];

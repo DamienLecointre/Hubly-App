@@ -29,7 +29,7 @@ function SortMenu() {
     <div className="flex flex-col border-b border-b-card-border gap-6 p-6">
       <div className="flex items-center justify-between ">
         <p className="text-primary">Trier par :</p>
-        <RoundBtn type="button" icon="cross" variant="base" />
+        <RoundBtn btnId="CROSS_LINE" />
       </div>
       {sortlabelsData.map((data) => (
         <CheckboxInput key={data.id} label={data.label} />

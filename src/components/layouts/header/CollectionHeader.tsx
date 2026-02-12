@@ -11,7 +11,7 @@ function CollectionHeader() {
     <div className="bg-card-background border-b border-b-card-border shadow-bottom-xl suroudedSpace_X16_Y24 ">
       <div className="centerBetween">
         <InfoBadge iconId="BOOK" label="Livres" />
-        <RoundBtn type="button" icon="cross" variant="accent" />
+        <RoundBtn btnId="CROSS_LINE" />
       </div>
       <div className="pt-2 pb-6  ">
         <div className="centerBetween">

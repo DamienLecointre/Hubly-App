@@ -34,9 +34,7 @@ function Header() {
         </div>
       </div>
       <RoundBtn
-        type="button"
-        icon={theme === "light" ? "sun" : "moon"}
-        variant="base"
+        btnId={theme === "light" ? "SUN" : "MOON"}
         onClick={toggleTheme}
       />
     </header>
