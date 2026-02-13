@@ -1,4 +1,5 @@
-import { COLLECTION_TYPES } from "@/trash/CollectionTypesData";
+import { SelectCollectionData } from "@/data/collectionData/SelectCollectionData";
+
 import ChevronIcon from "../icons/ChevronIcon";
 
 type SelectInputProps = {
@@ -16,9 +17,9 @@ function SelectInput({ selectedValue, onChange }: SelectInputProps) {
         value={selectedValue}
         onChange={(e) => onChange(e.target.value)}
       >
-        {Object.entries(COLLECTION_TYPES).map(([id, { label }]) => (
-          <option key={id} value={id}>
-            {label}
+        {SelectCollectionData.map((data) => (
+          <option key={data.id} value={data.label}>
+            {data.label}
           </option>
         ))}
       </select>

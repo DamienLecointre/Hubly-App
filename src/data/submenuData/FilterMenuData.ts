@@ -1,7 +1,7 @@
 export const filterMenuData = [
   {
     id: "filter1",
-    icon: "EMPTY",
+    icon: "TOUTES",
     btnSate: "active",
   },
   {

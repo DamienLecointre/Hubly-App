@@ -6,7 +6,7 @@ import EditorForm from "@/components/modules/forms/EditorForm";
 import BlurLayer from "@/components/modules/popup/BlurLayer";
 import FeedbackPopup from "@/components/modules/popup/FeedbackPopup";
 import { AddCollectionContext } from "@/context/AddCollectionContext";
-import { inputCreateCollectionData } from "@/data/InputCreateCollectionData";
+import { inputCreateCollectionData } from "@/data/collectionData/InputCreateCollectionData";
 
 function Page() {
   const addCollectionContext = useContext(AddCollectionContext);

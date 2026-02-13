@@ -17,7 +17,7 @@ export type InfoBadgeItem = {
 
 export const InfoBadgeData: InfoBadgeItem[] = [
   {
-    id: "EMPTY",
+    id: "TOUTES",
     label: "Toutes",
     icon: null,
   },

@@ -2,11 +2,17 @@ import { InfoBadgeData } from "@/data/badgesdata/InfoBadgeData";
 
 type InfoBadgeProps = {
   iconId?: string;
+  labelValue?: string;
   btnSate?: "base" | "bgempty" | "active";
   onclick?: () => void;
 };
 
-function InfoBadge({ iconId, btnSate = "base", onclick }: InfoBadgeProps) {
+function InfoBadge({
+  iconId,
+  labelValue,
+  btnSate = "base",
+  onclick,
+}: InfoBadgeProps) {
   const badgeId = InfoBadgeData.find((e) => e.id === iconId);
 
   if (!badgeId) {
@@ -14,7 +20,7 @@ function InfoBadge({ iconId, btnSate = "base", onclick }: InfoBadgeProps) {
   }
 
   const IconLeft = badgeId.icon;
-  const label = badgeId.label;
+  const label = labelValue ? labelValue : badgeId.label;
 
   return (
     <div className={`select-none infobadge ${btnSate} `} onClick={onclick}>

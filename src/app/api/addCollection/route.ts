@@ -10,6 +10,7 @@ export async function POST(req: NextRequest) {
     const userId = getUserIdFromRequest(req);
 
     if (!userId) {
+      console.warn("Unauthorized request");
       return NextResponse.json(
         {
           success: false,
@@ -64,6 +65,7 @@ export async function POST(req: NextRequest) {
       members: members || [],
       is_public: is_public || false,
     });
+
     await newCollection.save();
 
     const response = NextResponse.json(
@@ -83,7 +85,7 @@ export async function POST(req: NextRequest) {
     );
     return response;
   } catch (err) {
-    console.error(err);
+    console.error("Error creating collection:", err);
     return NextResponse.json(
       {
         success: false,

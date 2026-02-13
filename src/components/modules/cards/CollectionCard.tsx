@@ -1,7 +1,6 @@
 "use client";
 
 import { useFetchCollection } from "@/hooks/api/useFetchCollection";
-import { COLLECTION_TYPES } from "@/trash/CollectionTypesData";
 
 import ImgBadge from "@/components/ui/badges/ImgBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
@@ -13,19 +12,14 @@ function CollectionCard() {
   return (
     <>
       {collectionData.map((data) => {
-        // const typeConfig = COLLECTION_TYPES[data.type];
-        const dynamicLabel =
-          data.id === "GROUP"
-            ? (data.members.length + 1).toString()
-            : data.label;
         return (
           <div className="cardGradient " key={data._id}>
             <div className="flex flex-col gap-4 px-4 " key={data._id}>
               <div className="centerBetween  ">
-                <InfoBadge iconId="BOOK" />
+                <InfoBadge iconId={data.type} />
                 <InfoBadge
                   iconId="GROUP"
-                  // label={(data.members.length + 1).toString()}
+                  labelValue={(data.members.length + 1).toString()}
                 />
               </div>
               <div>

@@ -2,8 +2,8 @@ import mongoose, { Schema, Types } from "mongoose";
 
 export type CollectionLabel =
   | "BOOK"
-  | "MUSIC"
-  | "COMIC_STRIP"
+  | "DISK"
+  | "BUBBLE"
   | "BOARD_GAME"
   | "VIDEO_GAME";
 
@@ -16,7 +16,7 @@ export type CollectionType = {
   title: string;
   type: CollectionLabel;
   owner_id: Types.ObjectId;
-  members: MembersCollectionType;
+  members: MembersCollectionType[];
   is_public: boolean;
 };
 
@@ -30,7 +30,7 @@ const collectionSchema = new Schema<CollectionType>(
 
     type: {
       type: String,
-      enum: ["BOOK", "MUSIC", "COMIC_STRIP", "BOARD_GAME", "VIDEO_GAME"],
+      enum: ["BOOK", "DISK", "BUBBLE", "BOARD_GAME", "VIDEO_GAME"],
       required: true,
     },
 

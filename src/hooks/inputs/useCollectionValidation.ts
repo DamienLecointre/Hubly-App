@@ -14,7 +14,7 @@ export function useCollectionValidation(name: string) {
   const { errorMessage } = addCollectionContext;
 
   // Validation champs input création collection
-  if (name === "collectionTitle" && errorMessage === "already-exists") {
+  if (name === "TITLE" && errorMessage === "already-exists") {
     return "Cette collection existe déjà. Veuillez saisir un autre nom pour votre collection  ";
   }
 
