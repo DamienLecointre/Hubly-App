@@ -1,8 +1,7 @@
 "use client";
 
-import { ElementType, useContext } from "react";
+import { useContext } from "react";
 import { useCreateCollection } from "@/hooks/forms/useCreateCollection";
-import { inputCreateCollectionData } from "@/data/InputCreateCollectionData";
 
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import SelectInput from "@/components/ui/inputs/SelectInput";

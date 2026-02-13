@@ -14,7 +14,7 @@ function FilterMenu({ activeId, toggle }: FilterMenuType) {
     <div
       className="flex items-center overflow-x-auto [scrollbar-width:none]
     [-ms-overflow-style:none]
-    [&::-webkit-scrollbar]:hidden gap-2 pt-6 pl-6 "
+    [&::-webkit-scrollbar]:hidden gap-2 pt-6 pl-6 pr-6 "
     >
       {filterMenuData.map((data) => (
         <InfoBadge

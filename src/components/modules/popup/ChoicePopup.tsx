@@ -1,18 +1,12 @@
+import { inputDataType, InterfaceCardType } from "@/types/Inputs/inputDataType";
+
 import InterfaceCard from "../cards/InterfaceCard";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
-
-type ChoicePopupItem = Readonly<{
-  id: string;
-  link: string;
-  iconId: string;
-  title: string;
-  description: string;
-}>;
 
 type ChoicePopupProps = {
   goBackTo: string;
   title: string;
-  dataFile: readonly ChoicePopupItem[];
+  dataFile: readonly InterfaceCardType[];
 };
 
 function ChoicePopup({ goBackTo, title, dataFile }: ChoicePopupProps) {

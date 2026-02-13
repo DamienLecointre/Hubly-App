@@ -9,3 +9,11 @@ export type inputDataType = Readonly<{
   placeholder: string;
   iconRight: ElementType | null;
 }>;
+
+export type InterfaceCardType = Readonly<{
+  id: string;
+  link: string;
+  iconId: string;
+  title: string;
+  description: string;
+}>;

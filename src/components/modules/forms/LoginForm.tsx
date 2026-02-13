@@ -1,4 +1,4 @@
-import { loginFormData } from "@/data/loginFormData/LoginFormData";
+"use client";
 
 import FormInput from "@/components/ui/inputs/FormInput";
 import { useContext } from "react";
