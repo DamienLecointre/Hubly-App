@@ -1,81 +1,54 @@
 "use client";
 
-import { ComponentPropsWithoutRef } from "react";
-import { useInputValidation } from "@/hooks/inputs/useInputValidation";
+import { ComponentPropsWithoutRef, ElementType } from "react";
+import { useAuthInputValidation } from "@/hooks/inputs/useAuthInputValidation";
 import { useToggle } from "@/hooks/utils/useToggle";
-
-import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
-
-import {
-  EyeIcon,
-  EyeOffIcon,
-  LockIcon,
-  MailIcon,
-  UserIcon,
-  PlusIcon,
-  ArrowIcon,
-  PencilIcon,
-} from "@/components/ui/icons";
 import { useCollectionValidation } from "@/hooks/inputs/useCollectionValidation";
+import { signupFormData } from "@/data/signupFormData/SignupFormData";
+import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
+import { inputDataType } from "@/types/Inputs/inputDataType";
 
-const FORM_INPUT_LEFT_ICONS = {
-  eye: EyeIcon,
-  lock: LockIcon,
-  mail: MailIcon,
-  user: UserIcon,
-  empty: () => <></>,
-} as const;
-
-const FORM_INPUT_RIGHT_ICONS = {
-  eye: EyeIcon,
-  eyeOff: EyeOffIcon,
-  lock: LockIcon,
-  mail: MailIcon,
-  plus: PlusIcon,
-  arrow: ArrowIcon,
-  pencil: PencilIcon,
-  empty: () => <></>,
-} as const;
-
-type IconLeft = keyof typeof FORM_INPUT_LEFT_ICONS;
-type IconRight = keyof typeof FORM_INPUT_RIGHT_ICONS;
+import { EyeIcon, EyeOffIcon } from "@/components/ui/icons";
 
 type FormInputProps = ComponentPropsWithoutRef<"input"> & {
-  iconLeft: IconLeft;
-  type: "text" | "email" | "password";
-  placeholder: string;
-  iconRight: IconRight;
+  inputId: string;
+  dataFile: readonly inputDataType[];
   value: string;
   onchange: (value: string) => void;
   location?: string;
-  name: string;
   inputBoderStyle?: string;
 };
 
 function FormInput({
-  iconLeft,
-  type,
-  placeholder,
-  iconRight,
+  inputId,
+  dataFile,
   value,
   onchange,
   location,
-  name,
   inputBoderStyle,
+  ...rest
 }: FormInputProps) {
   const { isActive, toggle } = useToggle();
-  const inputType = isActive ? "text" : type;
 
-  const IconLeft = FORM_INPUT_LEFT_ICONS[iconLeft];
-  const IconRight =
-    type === "password"
-      ? isActive
-        ? EyeOffIcon
-        : EyeIcon
-      : FORM_INPUT_RIGHT_ICONS[iconRight];
+  const inputTypeId = dataFile?.find((e) => e.id === inputId);
 
-  const authValidationMessage = useInputValidation(name);
-  const collectionValidationMessage = useCollectionValidation(name);
+  const authValidationMessage = useAuthInputValidation(inputId);
+  const collectionValidationMessage = useCollectionValidation(inputId);
+
+  if (!inputTypeId) {
+    return null;
+  }
+  const isPassword =
+    inputTypeId.id === "PASSWORD" || inputTypeId.id === "PASSWORD_APPROUVE";
+
+  const inputType = isActive ? "text" : inputTypeId.type;
+
+  const IconLeft = inputTypeId.iconLeft;
+  const IconRight = isPassword
+    ? isActive
+      ? EyeOffIcon
+      : EyeIcon
+    : inputTypeId.iconRight;
 
   return (
     <>
@@ -83,17 +56,18 @@ function FormInput({
         className={`centerBetween font-secondary font-normal text-[16px] bg-bg-input text-primary-input p-4 border ${inputBoderStyle} rounded-2xl placeholder:text-primary-input focus-within:ring-1 focus-within:ring-border-focus`}
       >
         <div className="w-full flex items-center gap-4">
-          <IconLeft />
+          {IconLeft && <IconLeft />}
           <input
             className="w-full outline-none"
+            {...rest}
             type={inputType}
-            placeholder={placeholder}
+            placeholder={inputTypeId.placeholder}
             value={value}
             onChange={(e) => onchange(e.target.value)}
           ></input>
         </div>
-        <div onClick={toggle}>
-          <IconRight />
+        <div onClick={isPassword ? toggle : undefined}>
+          {IconRight && <IconRight />}
         </div>
       </div>
 
@@ -106,9 +80,9 @@ function FormInput({
       )}
 
       {/* Affichage PasswordChecker */}
-      {name === "password" && value.length > 0 && location === "signup" && (
-        <PasswordChecker />
-      )}
+      {inputTypeId.id === "PASSWORD" &&
+        value.length > 0 &&
+        location === "signup" && <PasswordChecker />}
     </>
   );
 }

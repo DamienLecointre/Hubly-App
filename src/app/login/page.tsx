@@ -5,13 +5,14 @@ import { useLoginSubmit } from "@/hooks/forms/useLoginSubmit";
 import { SignupContext } from "@/context/AuthContext";
 import FeedbackPopup from "@/components/modules/popup/FeedbackPopup";
 import BlurLayer from "@/components/modules/popup/BlurLayer";
+import { useInputFieldWarning } from "@/hooks/inputs/useInputFieldWarning";
+import { loginFormData } from "@/data/loginFormData/LoginFormData";
 
 import BrandHeader from "@/components/layouts/header/BrandHeader";
 import LoginForm from "@/components/modules/forms/LoginForm";
 import Footer from "@/components/layouts/footer/Footer";
 import PillBtn from "@/components/ui/buttons/PillBtn";
 import LinkBtn from "@/components/ui/buttons/LinkBtn";
-import { useInputFieldWarning } from "@/hooks/inputs/useInputFieldWarning";
 
 function Page() {
   const signupContext = useContext(SignupContext);
@@ -42,7 +43,7 @@ function Page() {
           className="flexFullHeight justify-between gap-6"
         >
           <BrandHeader location="other" />
-          <LoginForm />
+          <LoginForm dataFile={loginFormData} />
           {errorWarning}
           <div className="flex flex-col gap-4">
             <PillBtn type="submit" label="Se connecter" variant="bgfull" />

@@ -1,18 +1,28 @@
-export const loginFormData = [
+import { ElementType } from "react";
+
+import { EyeIcon, LockIcon, MailIcon } from "@/components/ui/icons";
+
+export type LoginFormDataType = {
+  id: string;
+  iconLeft: ElementType | null;
+  type: "email" | "password";
+  placeholder: string;
+  iconRight: ElementType | null;
+};
+
+export const loginFormData: LoginFormDataType[] = [
   {
-    id: "loginForm1",
-    iconLeft: "mail",
+    id: "MAIL",
+    iconLeft: MailIcon,
     type: "email",
     placeholder: "Adresse email",
-    iconRight: "empty",
-    name: "email",
+    iconRight: null,
   },
   {
-    id: "loginForm2",
-    iconLeft: "lock",
+    id: "PASSWORD",
+    iconLeft: LockIcon,
     type: "password",
     placeholder: "Mot de passe",
-    iconRight: "eye",
-    name: "password",
+    iconRight: EyeIcon,
   },
 ] as const;

@@ -1,34 +1,42 @@
-export const signupFormData = [
+import { ElementType } from "react";
+
+import { EyeIcon, LockIcon, MailIcon, UserIcon } from "@/components/ui/icons";
+
+export type SignupFormDataType = {
+  id: string;
+  iconLeft: ElementType | null;
+  type: "text" | "email" | "password";
+  placeholder: string;
+  iconRight: ElementType | null;
+};
+
+export const signupFormData: SignupFormDataType[] = [
   {
-    id: "signupForm1",
-    iconLeft: "user",
+    id: "USER",
+    iconLeft: UserIcon,
     type: "text",
     placeholder: "Nom d'utilisateur",
-    iconRight: "empty",
-    name: "user",
+    iconRight: null,
   },
   {
-    id: "signupForm2",
-    iconLeft: "mail",
+    id: "MAIL",
+    iconLeft: MailIcon,
     type: "email",
     placeholder: "Adresse email",
-    iconRight: "empty",
-    name: "email",
+    iconRight: null,
   },
   {
-    id: "signupForm3",
-    iconLeft: "lock",
+    id: "PASSWORD",
+    iconLeft: LockIcon,
     type: "password",
     placeholder: "Mot de passe",
-    iconRight: "eye",
-    name: "password",
+    iconRight: EyeIcon,
   },
   {
-    id: "signupForm4",
-    iconLeft: "lock",
+    id: "PASSWORD_APPROUVE",
+    iconLeft: LockIcon,
     type: "password",
     placeholder: "Confirmez vote mot de passe",
-    iconRight: "empty",
-    name: "passwordConfirm",
+    iconRight: EyeIcon,
   },
-] as const;
+];

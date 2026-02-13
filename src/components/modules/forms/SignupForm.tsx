@@ -2,12 +2,16 @@
 
 import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
-import { signupFormData } from "@/data/signupFormData/SignupFormData";
+import { inputDataType } from "@/types/Inputs/inputDataType";
 import { inputSignupStateValue } from "@/lib/inputSignupStateValue";
 
 import FormInput from "@/components/ui/inputs/FormInput";
 
-function SignupForm() {
+type SignupFormType = {
+  dataFile: readonly inputDataType[];
+};
+
+function SignupForm({ dataFile }: SignupFormType) {
   const signupContext = useContext(SignupContext);
   if (!signupContext) {
     throw new Error("SignupForm must be used within a SignupProvider");
@@ -42,17 +46,14 @@ function SignupForm() {
       <p className="text-secondary text-center">
         Rejoignez Hubly et commencez à créer votre première collection
       </p>
-      {signupFormData.map((data, i) => (
+      {dataFile?.map((data, i) => (
         <FormInput
           key={data.id}
-          iconLeft={data.iconLeft}
-          type={data.type}
-          placeholder={data.placeholder}
-          iconRight={data.iconRight}
+          inputId={data.id}
+          dataFile={dataFile}
           value={stateValueMapping[i].value}
           onchange={stateValueMapping[i].setter}
           inputBoderStyle={stateValueMapping[i].borderStyle}
-          name={data.name}
           location="signup"
         />
       ))}

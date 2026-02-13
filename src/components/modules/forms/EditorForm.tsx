@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ElementType, useContext } from "react";
 import { useCreateCollection } from "@/hooks/forms/useCreateCollection";
 import { inputCreateCollectionData } from "@/data/InputCreateCollectionData";
 
@@ -11,12 +11,14 @@ import PillBtn from "@/components/ui/buttons/PillBtn";
 import { AddCollectionContext } from "@/context/AddCollectionContext";
 import { SignupContext } from "@/context/AuthContext";
 import { useInputFieldWarning } from "@/hooks/inputs/useInputFieldWarning";
+import { inputDataType } from "@/types/Inputs/inputDataType";
 
 type EditorFormProps = {
   title: string;
+  dataFile: readonly inputDataType[];
 };
 
-function EditorForm({ title }: EditorFormProps) {
+function EditorForm({ title, dataFile }: EditorFormProps) {
   const { handleCreate } = useCreateCollection();
 
   const signupContext = useContext(SignupContext);
@@ -50,16 +52,13 @@ function EditorForm({ title }: EditorFormProps) {
             <h4 className="text-center">{title}</h4>
           </div>
           <SelectInput onChange={handleSelect} selectedValue={selectValue} />
-          {inputCreateCollectionData.map((data) => (
+          {dataFile?.map((data) => (
             <FormInput
               key={data.id}
-              iconLeft={data.iconLeft}
-              type={data.type}
-              placeholder={data.placeholder}
-              iconRight={data.iconRight}
+              inputId={data.id}
+              dataFile={dataFile}
               value={titleValue}
               onchange={handleChange}
-              name={data.name}
             />
           ))}
         </div>

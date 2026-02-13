@@ -1,10 +1,21 @@
-export const inputCreateCollectionData = [
+import { ElementType } from "react";
+
+import { PencilIcon } from "@/components/ui/icons";
+
+export type InputCreateCollectionType = {
+  id: string;
+  iconLeft: ElementType | null;
+  type: "text";
+  placeholder: string;
+  iconRight: ElementType | null;
+};
+
+export const inputCreateCollectionData: InputCreateCollectionType[] = [
   {
-    id: "formInput1",
-    iconLeft: "empty",
+    id: "TITLE",
+    iconLeft: null,
     type: "text",
     placeholder: "Titre de la collection",
-    iconRight: "pencil",
-    name: "collectionTitle",
+    iconRight: PencilIcon,
   },
 ] as const;

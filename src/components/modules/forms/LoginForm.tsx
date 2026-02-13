@@ -4,8 +4,13 @@ import FormInput from "@/components/ui/inputs/FormInput";
 import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
 import { inputLoginStateValue } from "@/lib/inputLoginStateValue";
+import { inputDataType } from "@/types/Inputs/inputDataType";
 
-function LoginForm() {
+type LoginFormType = {
+  dataFile: readonly inputDataType[];
+};
+
+function LoginForm({ dataFile }: LoginFormType) {
   const signupContext = useContext(SignupContext);
   if (!signupContext) {
     throw new Error("LoginForm must be used within a Provider");
@@ -30,17 +35,14 @@ function LoginForm() {
   return (
     <div className="flex flex-col text-secondary gap-4 ">
       <p>Connectez vous à votre compte</p>
-      {loginFormData.map((data, i) => (
+      {dataFile?.map((data, i) => (
         <FormInput
           key={data.id}
-          iconLeft={data.iconLeft}
-          type={data.type}
-          placeholder={data.placeholder}
-          iconRight={data.iconRight}
+          inputId={data.id}
+          dataFile={dataFile}
           value={stateValueMapping[i].value}
           onchange={stateValueMapping[i].setter}
           inputBoderStyle={stateValueMapping[i].borderStyle}
-          name={data.name}
           location="login"
         />
       ))}

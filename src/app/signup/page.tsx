@@ -3,6 +3,8 @@
 import { useContext } from "react";
 import { SignupContext } from "@/context/AuthContext";
 import { useSignupSubmit } from "@/hooks/forms/useSignupSubmit";
+import { useInputFieldWarning } from "@/hooks/inputs/useInputFieldWarning";
+import { signupFormData } from "@/data/signupFormData/SignupFormData";
 
 import FeedbackPopup from "@/components/modules/popup/FeedbackPopup";
 import BlurLayer from "@/components/modules/popup/BlurLayer";
@@ -10,7 +12,6 @@ import LinkBtn from "@/components/ui/buttons/LinkBtn";
 import SignupForm from "@/components/modules/forms/SignupForm";
 import PillBtn from "@/components/ui/buttons/PillBtn";
 import Footer from "@/components/layouts/footer/Footer";
-import { useInputFieldWarning } from "@/hooks/inputs/useInputFieldWarning";
 
 function Page() {
   const signupContext = useContext(SignupContext);
@@ -44,7 +45,7 @@ function Page() {
           className="flexFullHeight justify-between gap-8"
         >
           <h1 className="text-primary text-center">Créez votre compte</h1>
-          <SignupForm />
+          <SignupForm dataFile={signupFormData} />
           <div className="flexColumn gap-4">
             {errorWarning}
             <PillBtn type="submit" label="Créer mon compte" variant="bgfull" />
