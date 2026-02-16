@@ -1,6 +1,6 @@
 import React from "react";
 
-function page() {
+function Page() {
   return (
     <div>
       <h2 className="text-white">Favoris</h2>
@@ -8,4 +8,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

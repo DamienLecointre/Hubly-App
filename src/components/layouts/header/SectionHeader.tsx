@@ -7,6 +7,7 @@ import type { CollectionType } from "@/components/modules/cards/CollectionCard";
 
 import FilterMenu from "@/components/modules/submenus/FilterMenu";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
+import { FilterCollectionData } from "@/data/submenuData/FilterCollectionData";
 
 type SectionHeaderProps = {
   title:
@@ -26,7 +27,9 @@ function SectionHeader({
   selectedCategory,
 }: SectionHeaderProps) {
   const { toggle, isActive } = useToggle();
-  const { toggleId, activeId } = useToggleId();
+  const { toggleId, activeId } = useToggleId({
+    defaultValue: "TOUTES",
+  });
 
   useEffect(() => {
     selectedCategory(activeId);
@@ -71,7 +74,13 @@ function SectionHeader({
           {quantity} {quantity > 1 ? "collections" : "collection"}
         </p>
       </div>
-      {isActive && <FilterMenu toggle={toggleId} activeId={activeId} />}
+      {isActive && (
+        <FilterMenu
+          toggle={() => toggleId("TOUTES")}
+          activeId={activeId}
+          dataFile={FilterCollectionData}
+        />
+      )}
     </div>
   );
 }

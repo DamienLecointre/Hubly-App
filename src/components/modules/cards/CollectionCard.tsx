@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import ImgBadge from "@/components/ui/badges/ImgBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import PillBtn from "@/components/ui/buttons/PillBtn";
@@ -48,7 +49,9 @@ function CollectionCard({ collection }: CollectionCardProps) {
       </div>
       <div className="centerBetween px-4 ">
         <PillBtn type="button" label="Ajouter un élément" variant="bgfull" />
-        <PillBtn type="button" label="Consulter" variant="bgfull" />
+        <Link href="/produits">
+          <PillBtn type="button" label="Consulter" variant="bgfull" />
+        </Link>
       </div>
     </div>
   );

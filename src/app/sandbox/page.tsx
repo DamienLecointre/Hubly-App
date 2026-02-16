@@ -5,7 +5,7 @@
 import Header from "@/components/layouts/header/Header";
 import BrandHeader from "@/components/layouts/header/BrandHeader";
 import SectionHeader from "@/components/layouts/header/SectionHeader";
-import CollectionHeader from "@/components/layouts/header/CollectionHeader";
+import CollectionHeader from "@/components/layouts/header/ItemHeader";
 import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar/Navbar";
 // CARDS

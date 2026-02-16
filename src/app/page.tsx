@@ -14,15 +14,11 @@ export default function Home() {
 
   const [category, setCategory] = useState<CollectionType["type"] | null>(null);
 
-  console.log("collectionData : ", collectionData);
-
   const filteredCollections =
     category !== "TOUTES"
       ? collectionData.filter((e: CollectionType) => e.type === category)
       : collectionData;
 
-  console.log("category:", category);
-  console.log("filtered:", filteredCollections);
   return (
     <>
       <Header />

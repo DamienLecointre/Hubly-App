@@ -1,4 +1,4 @@
-function page() {
+function Page() {
   return (
     <div>
       <h4>add manual</h4>
@@ -6,4 +6,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

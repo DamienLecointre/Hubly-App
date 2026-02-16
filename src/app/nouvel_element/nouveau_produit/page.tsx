@@ -3,7 +3,7 @@ import { AddItemData } from "@/data/editorFormData/AddItemData";
 import Header from "@/components/layouts/header/Header";
 import ChoicePopup from "@/components/modules/popup/ChoicePopup";
 
-function page() {
+function Page() {
   return (
     <>
       <Header />
@@ -20,4 +20,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

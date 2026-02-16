@@ -2,12 +2,15 @@
 
 import { useState } from "react";
 
-export function useToggleId() {
-  const [activeId, setActiveId] = useState("TOUTES");
+type UseToggleIdType = {
+  defaultValue: string;
+};
+
+export function useToggleId({ defaultValue }: UseToggleIdType) {
+  const [activeId, setActiveId] = useState(defaultValue);
 
   const toggleId = (id: string) => {
-    setActiveId((prev) => (prev === id ? "" : id));
-    console.log("useToggleId : ", id);
+    setActiveId((prev) => (prev === id ? defaultValue : id));
   };
 
   return { activeId, setActiveId, toggleId };

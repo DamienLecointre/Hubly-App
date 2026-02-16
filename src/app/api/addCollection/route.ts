@@ -111,8 +111,8 @@ export async function GET(req: NextRequest) {
         {
           success: false,
           error: {
-            code: "SERVER_ERROR",
-            message: "Erreur serveur",
+            code: "UNAUTHORIZED",
+            message: "Non autorisé : session invalide ou expirée",
           },
           data: null,
         },

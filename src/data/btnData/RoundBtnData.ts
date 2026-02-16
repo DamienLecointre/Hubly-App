@@ -19,7 +19,7 @@ export const RoundBtnData = [
   {
     id: "CROSS_LINE",
     icon: CrossLineIcon,
-    variant: "base",
+    variant: "accent",
   },
   {
     id: "HEART",

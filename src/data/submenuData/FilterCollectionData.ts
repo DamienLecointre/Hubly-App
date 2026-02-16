@@ -1,4 +1,4 @@
-export const filterMenuData = [
+export const FilterCollectionData = [
   {
     id: "TOUTES",
     icon: "TOUTES",
