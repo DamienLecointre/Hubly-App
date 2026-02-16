@@ -14,7 +14,7 @@ type SectionHeaderProps = {
     | "Mes Favoris"
     | "Chercher un article"
     | "Mon Profil";
-  subtitle: string;
+  subtitle: string | null;
   quantity: number;
   selectedCategory: (value: CollectionType["type"] | null) => void;
 };
@@ -65,8 +65,8 @@ function SectionHeader({
           btnSate={isActive ? "active" : "bgempty"}
         />
       </div>
-      <div className="flex text-secondary px-6 gap-[8px]">
-        <p>{value} : </p>
+      <div className="flex text-secondary px-6 gap-1">
+        <p>{value} :</p>
         <p>
           {quantity} {quantity > 1 ? "collections" : "collection"}
         </p>
