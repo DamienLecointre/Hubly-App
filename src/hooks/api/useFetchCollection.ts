@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CollectionCategory } from "@/trash/CollectionTypesData";
 
 type MembersType = {
   user_id: string;
@@ -11,7 +10,7 @@ type MembersType = {
 type CollectionType = {
   _id: string;
   title: string;
-  type: CollectionCategory;
+  type: "DEFAULT" | "BOOK" | "DISK" | "BUBBLE" | "BOARD_GAME" | "VIDEO_GAME";
   members: MembersType[];
   is_public: boolean;
   owner_id: string;
@@ -38,6 +37,7 @@ export function useFetchCollection() {
     }
     fetchCollection();
   }, []);
+  // console.log(collectionData);
 
   return { collectionData };
 }

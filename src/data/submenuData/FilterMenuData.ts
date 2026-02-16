@@ -1,31 +1,31 @@
 export const filterMenuData = [
   {
-    id: "filter1",
+    id: "TOUTES",
     icon: "TOUTES",
     btnSate: "active",
   },
   {
-    id: "filter2",
+    id: "BOOK",
     icon: "BOOK",
     btnSate: "bgempty",
   },
   {
-    id: "filter3",
+    id: "DISK",
     icon: "DISK",
     btnSate: "bgempty",
   },
   {
-    id: "filter4",
+    id: "BUBBLE",
     icon: "BUBBLE",
     btnSate: "bgempty",
   },
   {
-    id: "filter5",
+    id: "BOARD_GAME",
     icon: "BOARD_GAME",
     btnSate: "bgempty",
   },
   {
-    id: "filter6",
+    id: "VIDEO_GAME",
     icon: "VIDEO_GAME",
     btnSate: "bgempty",
   },
