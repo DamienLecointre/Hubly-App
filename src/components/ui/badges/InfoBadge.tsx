@@ -1,9 +1,9 @@
 import { InfoBadgeData } from "@/data/badgesdata/InfoBadgeData";
 
 type InfoBadgeProps = {
-  iconId?: string;
+  iconId: string;
   labelValue?: string;
-  btnSate?: "base" | "bgempty" | "active";
+  btnSate?: "base" | "bgempty" | "active" | "little";
   onclick?: () => void;
 };
 

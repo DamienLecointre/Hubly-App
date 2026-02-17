@@ -55,6 +55,9 @@
   .pillBtn.bgempty {
     @apply bg-transparent text-secondary-btn border border-border-secondary-btn px-4 py-2;
   }
+  .pillBtn.little {
+    @apply text-primary-btn bg-bg-primary-btn px-4 py-2;
+  }
   .roundBtn {
     @apply h-fit w-fit border rounded-4xl p-2 cursor-pointer;
   }
@@ -101,14 +104,45 @@
   .infobadge.active {
     @apply bg-bg-primary-btn text-primary-btn border-border-accent-btn;
   }
+  .infobadge.little {
+    @apply bg-bg-secondary-btn px-4 py-2;
+  }
 
   /* MODULES  */
   /* Cards  */
   .cardGradient {
     @apply bg-gradient-to-t 
            from-[var(--color-gradient-light)] 
-           to-[var(--color-gradient-dark)] border border-card-border-light shadow-bottom rounded-3xl gap-2 py-4;
+           to-[var(--color-gradient-dark)] border border-card-border-light shadow-bottom rounded-3xl;
   }
+  /* py-4 */
+
+  .menu-wrapper {
+    display: grid;
+    grid-template-rows: 0fr; /* Fermé par défaut */
+    transition: grid-template-rows 0.4s ease-out;
+    overflow: hidden;
+  }
+
+  .menu-wrapper.is-open {
+    grid-template-rows: 1fr; /* S'ouvre selon la taille du contenu */
+  }
+
+  /* Le contenu interne pour l'opacité */
+  .menu-content {
+    min-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s;
+  }
+
+  .menu-wrapper.is-open .menu-content {
+    visibility: visible;
+    opacity: 1;
+  }
+
   /* ANIMATIONS  */
   @keyframes fadeout {
     0% {
@@ -155,4 +189,32 @@
   .translatePopup {
     animation: showPopup 2s ease-in-out forwards;
   }
+
+  /* @keyframes translateYDown {
+    0% {
+      display: flex;
+      flex-direction: column;
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  .translateDown {
+    animation: translateYDown 0.5s ease-in-out forwards;
+  }
+
+  @keyframes translateYUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .translateUp {
+    animation: translateYUp 0.5s ease-in-out forwards;
+  } */
 }

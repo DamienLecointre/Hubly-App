@@ -10,21 +10,30 @@ import InfoBadge from "@/components/ui/badges/InfoBadge";
 import RoundBtn from "@/components/ui/buttons/RoundBtn";
 import SearchInput from "@/components/ui/inputs/SearchInput";
 
-function ItemHeader() {
+type ItemHeaderType = {
+  isFilterMenu: (value: string) => void;
+};
+
+function ItemHeader({ isFilterMenu }: ItemHeaderType) {
+  const router = useRouter();
   const toggleMenu = useToggleId({
     defaultValue: "",
   });
   const filterMenu = useToggleId({
     defaultValue: "TOUS",
   });
-  const router = useRouter();
+
+  const handleOpenMenu = (value: string) => {
+    toggleMenu.toggleId(value);
+    isFilterMenu(value);
+  };
 
   const handleClose = () => {
     router.push("/");
   };
 
   return (
-    <header className="fixed w-full bg-card-background border-b border-b-card-border shadow-bottom py-6">
+    <header className="sticky top-0 z-50 w-full bg-card-background border-b border-b-card-border shadow-bottom py-6 ">
       <div className="centerBetween px-6 pb-2">
         <InfoBadge iconId="BOOK" />
         <RoundBtn btnId="CROSS_LINE" onClick={handleClose} />
@@ -48,7 +57,7 @@ function ItemHeader() {
                 key={data.id}
                 iconId={data.id}
                 btnSate={toggleMenu.activeId === data.id ? "active" : "bgempty"}
-                onclick={() => toggleMenu.toggleId(data.id)}
+                onclick={() => handleOpenMenu(data.id)}
               />
             );
           }

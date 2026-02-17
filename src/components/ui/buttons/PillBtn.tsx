@@ -1,7 +1,7 @@
 type Props = {
   type: "button" | "submit";
   label: string;
-  variant: "bgfull" | "bgempty";
+  variant: "bgfull" | "bgempty" | "little";
   onclick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 

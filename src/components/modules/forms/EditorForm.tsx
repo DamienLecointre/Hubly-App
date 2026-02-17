@@ -37,7 +37,7 @@ function EditorForm({ title, dataFile }: EditorFormProps) {
 
   return (
     <div className="flexFullHeight px-6 pt-4 pb-[calc(85px+16px)]">
-      <div className="flexColumn cardGradient px-4 gap-6">
+      <div className="flexColumn cardGradient p-4 gap-6">
         <div className="flexColumn gap-2">
           <div className="flex items-start">
             <LinkBtn

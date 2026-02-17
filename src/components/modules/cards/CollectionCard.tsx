@@ -25,7 +25,7 @@ type CollectionCardProps = {
 
 function CollectionCard({ collection }: CollectionCardProps) {
   return (
-    <div className="cardGradient ">
+    <div className="cardGradient py-4 gap-2">
       <div className="flex flex-col gap-4 px-4 ">
         <div className="centerBetween  ">
           <InfoBadge iconId={collection.type} />
