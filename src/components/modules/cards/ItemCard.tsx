@@ -23,7 +23,7 @@ function ItemCard({ title, subtitle }) {
             <p className="caption">Vol.1</p>
           </div>
           <p className="h-full flex items-end caption text-secondary">
-            Ajouter par <span className="text-primary ml-[6px]">Damien</span>
+            Ajouter par <span className="text-primary ml-1.5">Damien</span>
           </p>
         </div>
         <PillBtn type="button" label="Consulter" variant="little" />

@@ -76,7 +76,7 @@ function SectionHeader({
       </div>
       {isActive && (
         <FilterMenu
-          toggle={() => toggleId("TOUTES")}
+          toggle={toggleId}
           activeId={activeId}
           dataFile={FilterCollectionData}
         />
