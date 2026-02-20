@@ -1,4 +1,4 @@
-export const SelectCollectionData = [
+export const SelectCategoryData = [
   {
     id: "DEFAULT",
     label: "Sélectionner une catégorie",

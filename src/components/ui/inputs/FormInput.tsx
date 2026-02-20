@@ -1,10 +1,9 @@
 "use client";
 
-import { ComponentPropsWithoutRef, ElementType } from "react";
+import { ComponentPropsWithoutRef } from "react";
 import { useAuthInputValidation } from "@/hooks/inputs/useAuthInputValidation";
 import { useToggle } from "@/hooks/utils/useToggle";
 import { useCollectionValidation } from "@/hooks/inputs/useCollectionValidation";
-import { signupFormData } from "@/data/signupFormData/SignupFormData";
 import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
 import { inputDataType } from "@/types/Inputs/inputDataType";
 

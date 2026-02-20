@@ -4,6 +4,7 @@ import Link from "next/link";
 import ImgBadge from "@/components/ui/badges/ImgBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import PillBtn from "@/components/ui/buttons/PillBtn";
+import { useState } from "react";
 
 type MembersType = {
   user_id: string;
@@ -24,6 +25,13 @@ type CollectionCardProps = {
 };
 
 function CollectionCard({ collection }: CollectionCardProps) {
+  // const [collectionTitle, setCollectionTitle] = useState("");
+
+  // const handleClick = () => {
+  //   console.log("click : ", collection.title);
+  //   setCollectionTitle(collection.title);
+  // };
+
   return (
     <div className="cardGradient py-4 gap-2">
       <div className="flex flex-col gap-4 px-4 ">
@@ -48,7 +56,14 @@ function CollectionCard({ collection }: CollectionCardProps) {
         <ImgBadge src="/img/1003w-4f3qPZ3bak0.webp" />
       </div>
       <div className="centerBetween px-4 ">
-        <PillBtn type="button" label="Ajouter un élément" variant="bgfull" />
+        <Link href="/nouvel_element/nouveau_produit">
+          <PillBtn
+            type="button"
+            label="Ajouter un élément"
+            variant="bgfull"
+            // onclick={handleClick}
+          />
+        </Link>
         <Link href="/produits">
           <PillBtn type="button" label="Consulter" variant="bgfull" />
         </Link>

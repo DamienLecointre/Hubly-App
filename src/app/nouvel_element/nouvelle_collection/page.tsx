@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 
-import EditorForm from "@/components/modules/forms/EditorForm";
+import EditorCollectionForm from "@/components/modules/forms/EditorCollectionForm";
 import BlurLayer from "@/components/modules/popup/BlurLayer";
 import FeedbackPopup from "@/components/modules/popup/FeedbackPopup";
 import { AddCollectionContext } from "@/context/AddCollectionContext";
@@ -18,7 +18,7 @@ function Page() {
 
   return (
     <>
-      <EditorForm
+      <EditorCollectionForm
         title="Créer votre collection"
         dataFile={inputCreateCollectionData}
       />

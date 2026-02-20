@@ -1,13 +1,18 @@
 import mongoose, { Schema, Types } from "mongoose";
 
-export type StatusType = "en cours" | "terminé";
+export type StatusType = "IN_PROGRESS" | "DONE" | "NEW";
+
+type VisualType = {
+  url: string;
+  public_id: string;
+};
 
 type ItemType = {
-  visuals: string[];
+  visuals: VisualType[];
   title: string;
   author_artiste: string;
   added_by: Types.ObjectId;
-  collection: Types.ObjectId;
+  collection_id: Types.ObjectId;
   status: StatusType;
   tome?: string;
   genre?: string;
@@ -17,9 +22,17 @@ type ItemType = {
 const itemSchema = new Schema<ItemType>(
   {
     visuals: {
-      type: [String],
+      type: [
+        {
+          url: { type: String, required: true },
+          public_id: { type: String, required: true },
+        },
+      ],
       required: true,
-      default: [],
+      validate: {
+        validator: (arr: VisualType[]) => arr.length > 0,
+        message: "At least one image is required",
+      },
     },
     title: {
       type: String,
@@ -36,14 +49,15 @@ const itemSchema = new Schema<ItemType>(
       ref: "User",
       required: true,
     },
-    collection: {
+    collection_id: {
       type: Schema.Types.ObjectId,
       ref: "Collection",
       required: true,
     },
     status: {
       type: String,
-      enum: ["en cours", "terminé"],
+      enum: ["IN_PROGRESS", "DONE", "NEW"],
+      default: "NEW",
       required: true,
     },
     tome: {

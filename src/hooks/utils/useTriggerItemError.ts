@@ -1,16 +1,16 @@
 "use client";
 
 import { useContext, useRef } from "react";
-import { AddCollectionContext } from "@/context/AddCollectionContext";
+import { AddItemContext } from "@/context/AddItemContext";
 
-export function useTriggerCollectionError() {
-  const addCollectionContext = useContext(AddCollectionContext);
-  if (!addCollectionContext) {
+export function useTriggerItemError() {
+  const addItemContext = useContext(AddItemContext);
+  if (!addItemContext) {
     throw new Error(
-      "useTriggerCollectionError must be used within a AddCollectionProvider",
+      "useTriggerItemError must be used within a AddItemProvider",
     );
   }
-  const { setErrorMessage } = addCollectionContext;
+  const { setErrorMessage } = addItemContext;
   const errorTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const triggerError = (type: string) => {

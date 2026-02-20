@@ -22,3 +22,4 @@ export { default as MailIcon } from "./MailIcon";
 export { default as ArrowIcon } from "./ArrowIcon";
 export { default as FolderIcon } from "./FolderIcon";
 export { default as LayerPlusIcon } from "./LayerPlusIcon";
+export { default as BinIcon } from "./BinIcon";

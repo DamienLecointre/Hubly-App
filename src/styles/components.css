@@ -58,6 +58,9 @@
   .pillBtn.little {
     @apply text-primary-btn bg-bg-primary-btn px-4 py-2;
   }
+  .pillBtn.fullwidth {
+    @apply w-full;
+  }
   .roundBtn {
     @apply h-fit w-fit border rounded-4xl p-2 cursor-pointer;
   }

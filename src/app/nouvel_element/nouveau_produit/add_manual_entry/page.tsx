@@ -1,8 +1,16 @@
+"use client";
+
+import EditorItemForm from "@/components/modules/forms/EditorItemForm";
+import { InputCreateItemData } from "@/data/ItemData/InputCreateItemData";
+
 function Page() {
   return (
-    <div>
-      <h4>add manual</h4>
-    </div>
+    <>
+      <EditorItemForm
+        title="Ajouter un produit"
+        dataFile={InputCreateItemData}
+      />
+    </>
   );
 }
 

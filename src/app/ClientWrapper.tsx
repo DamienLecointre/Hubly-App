@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import BrandHeader from "@/components/layouts/header/BrandHeader";
 import AddCollectionProvider from "@/context/AddCollectionContext";
+import AddItemProvider from "@/context/AddItemContext";
 
 export default function ClientWrapper({
   children,
@@ -58,10 +59,12 @@ export default function ClientWrapper({
   return (
     <AuthProvider>
       <AddCollectionProvider>
-        <div className="flexFullHeight">
-          {children}
-          {!isAuthPage && <Navbar />}
-        </div>
+        <AddItemProvider>
+          <div className="flexFullHeight">
+            {children}
+            {!isAuthPage && <Navbar />}
+          </div>
+        </AddItemProvider>
       </AddCollectionProvider>
     </AuthProvider>
   );

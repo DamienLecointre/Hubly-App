@@ -31,30 +31,14 @@ export function useCreateCollection() {
   const handleCreate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!selectValue || !titleValue) {
-      triggerError("required");
-      return;
-    }
-
     setCanCreate(false);
-
-    const COLLECTION_MAP = {
-      Livres: "BOOK",
-      Musiques: "DISK",
-      "Bandes-dessinées": "BUBBLE",
-      "Jeux de société": "BOARD_GAME",
-      "Jeux vidéo": "VIDEO_GAME",
-    } as const;
-
-    const collectionType =
-      COLLECTION_MAP[selectValue as keyof typeof COLLECTION_MAP];
 
     try {
       const response = await fetch("/api/addCollection", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          type: collectionType,
+          type: selectValue,
           title: titleValue,
         }),
       });

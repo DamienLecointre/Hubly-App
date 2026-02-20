@@ -3,6 +3,7 @@ import {
   SunIcon,
   CrossLineIcon,
   HeartIcon,
+  BinIcon,
 } from "@/components/ui/icons";
 
 export const RoundBtnData = [
@@ -24,6 +25,11 @@ export const RoundBtnData = [
   {
     id: "HEART",
     icon: HeartIcon,
+    variant: "base",
+  },
+  {
+    id: "BIN",
+    icon: BinIcon,
     variant: "base",
   },
 ];
