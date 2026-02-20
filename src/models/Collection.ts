@@ -26,6 +26,7 @@ const collectionSchema = new Schema<CollectionType>(
       type: String,
       required: true,
       trim: true,
+      lowercase: true,
     },
 
     type: {

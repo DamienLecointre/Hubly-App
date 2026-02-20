@@ -1,6 +1,6 @@
 export const InputCreateItemData = [
   {
-    id: "TITRE",
+    id: "TITLE",
     iconLeft: null,
     type: "text",
     placeholder: "Titre",

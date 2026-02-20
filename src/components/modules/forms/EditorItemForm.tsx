@@ -82,7 +82,7 @@ function EditorItemForm({ title, dataFile }: EditorFormProps) {
           <div className="py-6">
             <h4 className="text-center">{title}</h4>
           </div>
-          <FileInput onchange={setVisualContent} />
+          <FileInput fileId="FILE_INPUT" onchange={setVisualContent} />
           <p className="text-secondary">Remplir les champs ci-dessous :</p>
           {dataFile?.map((data, i) => (
             <FormInput

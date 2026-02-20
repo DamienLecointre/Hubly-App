@@ -3,6 +3,7 @@
 import { ComponentPropsWithoutRef } from "react";
 import { useAuthInputValidation } from "@/hooks/inputs/useAuthInputValidation";
 import { useToggle } from "@/hooks/utils/useToggle";
+import { useItemValidation } from "@/hooks/inputs/useItemValidation";
 import { useCollectionValidation } from "@/hooks/inputs/useCollectionValidation";
 import PasswordChecker from "@/components/modules/submenus/PasswordChecker";
 import { inputDataType } from "@/types/Inputs/inputDataType";
@@ -33,6 +34,7 @@ function FormInput({
 
   const authValidationMessage = useAuthInputValidation(inputId);
   const collectionValidationMessage = useCollectionValidation(inputId);
+  const itemValidationMessage = useItemValidation(inputId);
 
   if (!inputTypeId) {
     return null;
@@ -76,6 +78,9 @@ function FormInput({
 
       {collectionValidationMessage && (
         <p className="text-warning">{collectionValidationMessage}</p>
+      )}
+      {itemValidationMessage && (
+        <p className="text-warning">{itemValidationMessage}</p>
       )}
 
       {/* Affichage PasswordChecker */}

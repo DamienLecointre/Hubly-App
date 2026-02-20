@@ -58,17 +58,20 @@ export function useCreateItem() {
       if (!response.ok) {
         if (!data.success) {
           switch (data.error.code) {
-            case "ITEM_ALREADY_EXIST":
-              triggerError("already-exists");
-              break;
             case "MISSING_FIELDS":
               triggerError("required");
               break;
-            case "INVALID_FILE_TYPE":
-              triggerError("invalid-file");
+            case "ITEM_ALREADY_EXIST":
+              triggerError("already-exists");
               break;
             case "TOO_MANY_IMAGES":
               triggerError("too-many-images");
+              break;
+            case "FILE_TOO_LARGE":
+              triggerError("file-to large");
+              break;
+            case "INVALID_FILE_TYPE":
+              triggerError("invalid-file");
               break;
             default:
               triggerError("server");

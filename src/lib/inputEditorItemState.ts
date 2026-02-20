@@ -29,12 +29,12 @@ export function inputEditorItemState({
     {
       value: authorValue,
       setter: setAuthorValue,
-      borderStyle: getInputBorderStyle(errorMessage === "already-exists"),
+      borderStyle: "",
     },
     {
       value: tomeValue,
       setter: setTomeValue,
-      borderStyle: getInputBorderStyle(errorMessage === "already-exists"),
+      borderStyle: "",
     },
   ];
 }

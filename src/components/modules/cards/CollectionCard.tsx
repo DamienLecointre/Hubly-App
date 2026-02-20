@@ -1,10 +1,11 @@
 "use client";
 
+import { useCapitalizeWord } from "@/hooks/utils/useCapitalizeWord";
+
 import Link from "next/link";
 import ImgBadge from "@/components/ui/badges/ImgBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import PillBtn from "@/components/ui/buttons/PillBtn";
-import { useState } from "react";
 
 type MembersType = {
   user_id: string;
@@ -25,6 +26,7 @@ type CollectionCardProps = {
 };
 
 function CollectionCard({ collection }: CollectionCardProps) {
+  const collectionName = useCapitalizeWord(collection.title);
   // const [collectionTitle, setCollectionTitle] = useState("");
 
   // const handleClick = () => {
@@ -43,7 +45,7 @@ function CollectionCard({ collection }: CollectionCardProps) {
           />
         </div>
         <div>
-          <h4 className="text-primary">Collection {collection.title}</h4>
+          <h4 className="text-primary">Collection {collectionName}</h4>
           <p className="text-secondary">X éléments</p>{" "}
           {/* X = Valeur dynamique */}
         </div>

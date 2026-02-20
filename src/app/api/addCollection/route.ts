@@ -25,6 +25,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { title, type, members, is_public } = await req.json();
+    const normalizedTitle = title.trim().toLowerCase();
 
     if (!title || !type) {
       return NextResponse.json(
@@ -41,7 +42,7 @@ export async function POST(req: NextRequest) {
     }
 
     const existingCollection = await Collection.findOne({
-      title,
+      title: normalizedTitle,
       owner_id: userId,
     });
     if (existingCollection) {
@@ -59,7 +60,7 @@ export async function POST(req: NextRequest) {
     }
 
     const newCollection = new Collection({
-      title: title.trim(),
+      title: normalizedTitle,
       type,
       owner_id: userId,
       members: members || [],

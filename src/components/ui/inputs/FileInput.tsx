@@ -5,15 +5,16 @@ import Image from "next/image";
 import { useItemValidation } from "@/hooks/inputs/useItemValidation";
 
 import { CameraIcon, PlusIcon } from "../icons";
-import BinIcon from "../icons/BinIcon";
 import RoundBtn from "../buttons/RoundBtn";
 
 type FileInputProps = {
+  fileId: string;
   inputBoderStyle?: string;
   onchange: (files: File[]) => void;
 };
 
 export default function FileInput({
+  fileId,
   inputBoderStyle,
   onchange,
 }: FileInputProps) {
@@ -21,7 +22,7 @@ export default function FileInput({
   const cameraRef = useRef<HTMLInputElement>(null);
   const galleryRef = useRef<HTMLInputElement>(null);
 
-  const itemValidationMessage = useItemValidation();
+  const itemValidationMessage = useItemValidation(fileId);
 
   const handleFiles = (newFiles: FileList | null) => {
     if (!newFiles) return;
