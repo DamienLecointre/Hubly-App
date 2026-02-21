@@ -38,11 +38,13 @@ const itemSchema = new Schema<ItemType>(
       type: String,
       required: true,
       trim: true,
+      lowercase: true,
     },
     author_artiste: {
       type: String,
       required: true,
       trim: true,
+      lowercase: true,
     },
     added_by: {
       type: Schema.Types.ObjectId,
@@ -63,14 +65,17 @@ const itemSchema = new Schema<ItemType>(
     tome: {
       type: String,
       trim: true,
+      lowercase: true,
     },
     genre: {
       type: String,
       trim: true,
+      lowercase: true,
     },
     note: {
       type: String,
       trim: true,
+      lowercase: true,
     },
   },
   {

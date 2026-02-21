@@ -23,7 +23,7 @@ export function useItemValidation(name: string) {
   }
   // Vérification du nombre d'image
   if (name === "FILE_INPUT" && errorMessage === "file-to large") {
-    return "La taille des images ne doivent pas dépasser 2Mb ";
+    return "La taille des images ne doivent pas dépasser 5Mb ";
   }
   // Vérification du format d'image
   if (name === "FILE_INPUT" && errorMessage === "invalid-file") {

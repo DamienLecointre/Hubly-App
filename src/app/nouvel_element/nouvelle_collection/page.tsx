@@ -25,8 +25,8 @@ function Page() {
       {canCreate && (
         <>
           <FeedbackPopup
-            title="Félicitation !"
-            subtitle="Votre collection a été créé avec succés."
+            title="Collection créée !"
+            subtitle="Félicitation ! Votre collection a été créé avec succés."
           />
           && <BlurLayer />
         </>

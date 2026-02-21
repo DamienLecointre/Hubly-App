@@ -26,6 +26,8 @@ type AddItemContextType = {
   handleCollection: (value: string) => void;
   handleStatus: (value: string) => void;
   handleGenre: (value: string) => void;
+  canCreate: boolean;
+  setCanCreate: Dispatch<SetStateAction<boolean>>;
   errorMessage: string;
   setErrorMessage: Dispatch<SetStateAction<string>>;
 };
@@ -45,15 +47,14 @@ export default function AddItemProvider({ children }: ChildrenProps) {
   const [tomeValue, setTomeValue] = useState("");
   const [genreValue, setGenreValue] = useState("");
   const [noteValue, setNoteValue] = useState("");
+  const [canCreate, setCanCreate] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleCollection = (selection: string) => {
     setCollectionValue(selection);
-    console.log("handleCollection : ", selection);
   };
   const handleStatus = (selection: string) => {
     setStatusValue(selection);
-    console.log("handleStatus :", selection);
   };
   const handleGenre = (selection: string) => {
     setGenreValue(selection);
@@ -81,6 +82,8 @@ export default function AddItemProvider({ children }: ChildrenProps) {
         handleCollection,
         handleStatus,
         handleGenre,
+        canCreate,
+        setCanCreate,
         errorMessage,
         setErrorMessage,
       }}

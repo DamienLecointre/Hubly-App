@@ -19,12 +19,20 @@ export function useCreateItem() {
   const {
     visualContent,
     titleValue,
+    setTitleValue,
     authorValue,
+    setAuthorValue,
     collectionValue,
+    setCollectionValue,
     statusValue,
+    setStatusValue,
     tomeValue,
+    setTomeValue,
     genreValue,
+    setGenreValue,
     noteValue,
+    setNoteValue,
+    setCanCreate,
   } = addItemContext;
 
   const { triggerError } = useTriggerItemError();
@@ -82,8 +90,18 @@ export function useCreateItem() {
         return;
       }
 
+      setCanCreate(true);
+      setTitleValue("");
+      setAuthorValue("");
+      setCollectionValue("");
+      setStatusValue("");
+      setTomeValue("");
+      setGenreValue("");
+      setNoteValue("");
+
       timeoutRef.current = setTimeout(() => {
         router.replace("/");
+        setCanCreate(false);
       }, 2000);
     } catch (err) {
       console.error(err);

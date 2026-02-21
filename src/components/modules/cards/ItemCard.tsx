@@ -4,6 +4,7 @@ import PillBtn from "@/components/ui/buttons/PillBtn";
 import RoundBtn from "@/components/ui/buttons/RoundBtn";
 
 function ItemCard({ title, subtitle }) {
+  // NOTA : importer useCapitalizeWord pour la mise en forme des titres (maj aux premiers mots)
   return (
     <div className="cardGradient flex p-2 gap-4  ">
       <div className="flexColumn gap-2">

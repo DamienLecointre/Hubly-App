@@ -12,7 +12,7 @@ cloudinary.config({
 });
 
 const MAX_IMAGES = 5;
-const MAX_FILE_SIZE = 2 * 1024 * 1024;
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 export async function POST(req: NextRequest) {
@@ -61,8 +61,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const normalizedTitle = title.trim().toLowerCase();
+
     const isExistingItem = await Item.findOne({
-      title,
+      title: normalizedTitle,
       added_by: userId,
       collection_id,
     });
@@ -167,14 +169,14 @@ export async function POST(req: NextRequest) {
 
     const newItem = new Item({
       visuals: uploadedImages,
-      title,
-      author_artiste,
+      title: normalizedTitle,
+      author_artiste: author_artiste.trim().toLowerCase(),
       added_by: userId,
       collection_id,
       status,
-      tome,
-      genre,
-      note,
+      tome: tome?.trim().toLowerCase(),
+      genre: genre?.trim().toLowerCase(),
+      note: note?.trim().toLowerCase(),
     });
 
     await newItem.save();
