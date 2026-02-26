@@ -15,9 +15,6 @@ export function useLoginSubmit() {
     setEmailValue,
     passwordValue,
     setPasswordValue,
-    isLoginField,
-    isValidEmail,
-    setApiMessage,
     setsubmitValid,
   } = signupContext;
 
@@ -25,17 +22,6 @@ export function useLoginSubmit() {
 
   const handleLoginSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    setApiMessage(false);
-
-    if (!isLoginField) {
-      triggerError("required");
-      return;
-    }
-    if (!isValidEmail) {
-      triggerError("email");
-      return;
-    }
 
     try {
       const response = await fetch("/api/auth/login", {
@@ -51,11 +37,21 @@ export function useLoginSubmit() {
 
       const data = await response.json();
 
-      if (!data.success && data.error.code === "UNAUTHORIZED") {
-        triggerError("wrongId");
-        setApiMessage(true);
+      if (!response.ok) {
+        switch (data?.error?.code) {
+          case "MISSING_FIELDS":
+            triggerError("required");
+            break;
+          case "UNAUTHORIZED":
+            triggerError("wrongId");
+            break;
+          default:
+            triggerError("server");
+        }
+
         return;
       }
+
       setsubmitValid(true);
       setEmailValue("");
       setPasswordValue("");

@@ -10,7 +10,13 @@ export async function POST(req: NextRequest) {
 
     if (!email || !password) {
       return NextResponse.json(
-        { success: false, error: { message: "Champs requis" } },
+        {
+          success: false,
+          error: {
+            code: "MISSING_FIELDS",
+            message: "Tous les champs sont obligatoires",
+          },
+        },
         { status: 400 },
       );
     }
@@ -20,7 +26,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error: { code: "UNAUTHORIZED", message: "Identifiants incorrects" },
+          error: {
+            code: "UNAUTHORIZED",
+            message: "Identifiants incorrects",
+          },
         },
         { status: 401 },
       );

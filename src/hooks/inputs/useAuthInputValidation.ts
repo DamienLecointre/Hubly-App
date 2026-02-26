@@ -9,7 +9,7 @@ export function useAuthInputValidation(name: string) {
     throw new Error("useInputValidation must be used within a SignupProvider");
   }
 
-  const { errorMessage, apiMessage } = signupContext;
+  const { errorMessage } = signupContext;
 
   // Validation champs input signup & login
   if (name === "PASSWORD" && errorMessage === "password") {
@@ -21,7 +21,7 @@ export function useAuthInputValidation(name: string) {
   if (name === "MAIL" && errorMessage === "emailUsed") {
     return "Un compte a déjà été créé avec cet email. Veuillez saisir une autre adresse mail.";
   }
-  if (name === "PASSWORD" && apiMessage && errorMessage === "wrongId") {
+  if (name === "PASSWORD" && errorMessage === "wrongId") {
     return "Nom d'utilisateur ou mot de passe invalide";
   }
   if (name === "PASSWORD_APPROUVE" && errorMessage === "confirm") {

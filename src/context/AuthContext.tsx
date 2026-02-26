@@ -9,13 +9,10 @@ import {
 } from "react";
 
 type signupContextType = {
-  // isSignupField: boolean;
-  isLoginField: boolean;
   userValue: string;
   setUserValue: Dispatch<SetStateAction<string>>;
   emailValue: string;
   setEmailValue: Dispatch<SetStateAction<string>>;
-  // isValidEmail: boolean;
   passwordValue: string;
   setPasswordValue: Dispatch<SetStateAction<string>>;
   isPasswordValid: boolean;
@@ -29,8 +26,6 @@ type signupContextType = {
   setErrorMessage: Dispatch<SetStateAction<string>>;
   submitValid: boolean;
   setsubmitValid: Dispatch<SetStateAction<boolean>>;
-  apiMessage: boolean;
-  setApiMessage: Dispatch<SetStateAction<boolean>>;
 };
 
 export const SignupContext = createContext<signupContextType | null>(null);
@@ -46,10 +41,6 @@ export default function SignupProvider({ children }: ChildrenProps) {
   const [confirmValue, setConfirmValue] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [submitValid, setsubmitValid] = useState(false);
-  const [apiMessage, setApiMessage] = useState(false);
-
-  /* Contrôle si tous les champs login sont rempli */
-  const isLoginField = emailValue.length > 0 && passwordValue.length > 0;
 
   /* Contrôle la validité du champ password */
   const hasUppercase = /[A-Z]/.test(passwordValue);
@@ -67,13 +58,10 @@ export default function SignupProvider({ children }: ChildrenProps) {
   return (
     <SignupContext.Provider
       value={{
-        // isSignupField,
-        isLoginField,
         userValue,
         setUserValue,
         emailValue,
         setEmailValue,
-        // isValidEmail,
         passwordValue,
         setPasswordValue,
         isPasswordValid,
@@ -87,8 +75,6 @@ export default function SignupProvider({ children }: ChildrenProps) {
         setErrorMessage,
         submitValid,
         setsubmitValid,
-        apiMessage,
-        setApiMessage,
       }}
     >
       {children}
