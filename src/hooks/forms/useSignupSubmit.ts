@@ -13,42 +13,21 @@ export function useSignupSubmit() {
   }
 
   const {
-    isSignupField,
     userValue,
     setUserValue,
     emailValue,
     setEmailValue,
-    isValidEmail,
     passwordValue,
     setPasswordValue,
-    isPasswordValid,
     confirmValue,
     setConfirmValue,
     setsubmitValid,
-    setApiMessage,
   } = signupContext;
 
   const { triggerError } = useTriggerAuthError();
 
   const handleSigupSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!isSignupField) {
-      triggerError("required");
-      return;
-    }
-    if (!isValidEmail) {
-      triggerError("email");
-      return;
-    }
-    if (!isPasswordValid) {
-      triggerError("password");
-      return;
-    }
-    if (passwordValue !== confirmValue) {
-      triggerError("confirm");
-      return;
-    }
 
     try {
       const response = await fetch("/api/auth/signup", {
@@ -60,16 +39,37 @@ export function useSignupSubmit() {
           username: userValue,
           email: emailValue,
           password: passwordValue,
+          confirmPassword: confirmValue,
         }),
       });
 
       const data = await response.json();
+      console.log("API RESPONSE:", data);
 
-      if (!data.success && data.error.code === "EMAIL_ALREADY_USED") {
-        triggerError("emailUsed");
-        setApiMessage(true);
+      if (!response.ok) {
+        switch (data?.error?.code) {
+          case "MISSING_FIELDS":
+            triggerError("required");
+            break;
+          case "EMAIL_ALREADY_USED":
+            triggerError("emailUsed");
+            break;
+          case "INVALID_EMAIL":
+            triggerError("email");
+            break;
+          case "INVALID_PASSWORD":
+            triggerError("password");
+            break;
+          case "PASSWORDS_NOT_MATCH":
+            triggerError("confirm");
+            break;
+          default:
+            triggerError("server");
+        }
+
         return;
       }
+
       setsubmitValid(true);
       setUserValue("");
       setEmailValue("");

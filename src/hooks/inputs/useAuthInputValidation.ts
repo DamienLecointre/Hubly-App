@@ -18,7 +18,7 @@ export function useAuthInputValidation(name: string) {
   if (name === "MAIL" && errorMessage === "email") {
     return "Veuillez saisir un email valide";
   }
-  if (name === "MAIL" && apiMessage && errorMessage === "emailUsed") {
+  if (name === "MAIL" && errorMessage === "emailUsed") {
     return "Un compte a déjà été créé avec cet email. Veuillez saisir une autre adresse mail.";
   }
   if (name === "PASSWORD" && apiMessage && errorMessage === "wrongId") {
