@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AuthProvider from "@/context/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
-import Navbar from "@/components/layouts/navbar/Navbar";
-import BrandHeader from "@/components/layouts/header/BrandHeader";
+import AuthProvider from "@/context/AuthContext";
 import AddCollectionProvider from "@/context/AddCollectionContext";
 import AddItemProvider from "@/context/AddItemContext";
+import ItemHeaderProvider from "@/context/ItemHeaderContext";
+
+import Navbar from "@/components/layouts/navbar/Navbar";
+import BrandHeader from "@/components/layouts/header/BrandHeader";
 
 export default function ClientWrapper({
   children,
@@ -60,10 +62,12 @@ export default function ClientWrapper({
     <AuthProvider>
       <AddCollectionProvider>
         <AddItemProvider>
-          <div className="flexFullHeight">
-            {children}
-            {!isAuthPage && <Navbar />}
-          </div>
+          <ItemHeaderProvider>
+            <div className="flexFullHeight">
+              {children}
+              {!isAuthPage && <Navbar />}
+            </div>
+          </ItemHeaderProvider>
         </AddItemProvider>
       </AddCollectionProvider>
     </AuthProvider>

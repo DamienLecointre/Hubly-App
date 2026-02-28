@@ -1,8 +1,10 @@
 "use client";
 
+import { useContext } from "react";
+import Link from "next/link";
+import { ItemHeaderContext } from "@/context/ItemHeaderContext";
 import { useCapitalizeWord } from "@/hooks/utils/useCapitalizeWord";
 
-import Link from "next/link";
 import ImgBadge from "@/components/ui/badges/ImgBadge";
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import PillBtn from "@/components/ui/buttons/PillBtn";
@@ -27,12 +29,13 @@ type CollectionCardProps = {
 
 function CollectionCard({ collection }: CollectionCardProps) {
   const collectionName = useCapitalizeWord(collection.title);
-  // const [collectionTitle, setCollectionTitle] = useState("");
 
-  // const handleClick = () => {
-  //   console.log("click : ", collection.title);
-  //   setCollectionTitle(collection.title);
-  // };
+  const context = useContext(ItemHeaderContext);
+  if (!context) {
+    throw new Error("CollectionCard must be used within an ItemHeaderProvider");
+  }
+
+  const { handleClick } = context;
 
   return (
     <div className="cardGradient py-4 gap-2">
@@ -67,7 +70,12 @@ function CollectionCard({ collection }: CollectionCardProps) {
           />
         </Link>
         <Link href="/produits">
-          <PillBtn type="button" label="Consulter" variant="bgfull" />
+          <PillBtn
+            type="button"
+            label="Consulter"
+            variant="bgfull"
+            onclick={() => handleClick(collection)}
+          />
         </Link>
       </div>
     </div>

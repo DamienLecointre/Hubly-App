@@ -1,4 +1,8 @@
+import { useContext } from "react";
+
 import ImgBadge from "@/components/ui/badges/ImgBadge";
+import { ItemHeaderContext } from "@/context/ItemHeaderContext";
+
 import InfoBadge from "@/components/ui/badges/InfoBadge";
 import PillBtn from "@/components/ui/buttons/PillBtn";
 import RoundBtn from "@/components/ui/buttons/RoundBtn";

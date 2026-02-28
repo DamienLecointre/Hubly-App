@@ -83,6 +83,12 @@ const itemSchema = new Schema<ItemType>(
   },
 );
 
+// Index performance
+itemSchema.index({
+  added_by: 1,
+  collection_id: 1,
+});
+
 const Item = mongoose.models.Item || mongoose.model("Item", itemSchema);
 
 export default Item;
