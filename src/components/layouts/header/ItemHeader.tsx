@@ -60,8 +60,7 @@ function ItemHeader({ isFilterMenu }: ItemHeaderType) {
                 ? "1"
                 : collection?.members.length.toString()
             }
-          />{" "}
-          {/* label = Valeur dynamique */}
+          />
         </div>
         <p className="text-secondary">X éléments</p>{" "}
         {/* X = Valeur dynamique */}

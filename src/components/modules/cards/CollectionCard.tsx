@@ -62,12 +62,7 @@ function CollectionCard({ collection }: CollectionCardProps) {
       </div>
       <div className="centerBetween px-4 ">
         <Link href="/nouvel_element/nouveau_produit">
-          <PillBtn
-            type="button"
-            label="Ajouter un élément"
-            variant="bgfull"
-            // onclick={handleClick}
-          />
+          <PillBtn type="button" label="Ajouter un élément" variant="bgfull" />
         </Link>
         <Link href="/produits">
           <PillBtn
